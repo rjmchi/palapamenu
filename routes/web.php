@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::post('/order', "HomeController@processOrder");
+Route::get('/order/{item}/{option?}/{choice?}', "HomeController@addItemToOrder");
+
+Route::get('/sendorder', "HomeController@sendOrder");
+Route::get('/cancel/{id}', "HomeController@cancelOrder");
+
+Route::get('/register', "RegisterController@index");
+Route::post('/register', "RegisterController@register")->name('register');
