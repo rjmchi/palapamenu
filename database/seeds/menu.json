@@ -81,7 +81,7 @@
                                 {"es":{"name": "Fritos"}},
                                 {
                                     "en":{"name": "As you like them (specify in special instructions)"},
-                                    "es":{"Al Gusto (specify in special instructions)"},
+                                    "es":{"name":"Al Gusto (specify in special instructions)"},
                                     "instructions": true
                                 }
                             ],
@@ -322,8 +322,8 @@
                                 "description": "Flour tortillas, cheese, ham, mustartd, refried beans"
                             },
                             "es": {"name": "Sincronizadas",
+                                "description": "Tortilla de harina, queso, jamón, mostaza, frijoles refritos"}
                             },
-                            "description": "Tortilla de harina, queso, jamón, mostaza, frijoles refritos"}
                         {
                             "en":{"name": "Small Guacamole"},
                             "es": {"name":"Guacamole Chico"},
