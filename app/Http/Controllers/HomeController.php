@@ -26,6 +26,15 @@ class HomeController extends Controller
     public function index()
     {
         $data['menus'] = Menu::orderBy('sort_order')->get();
+        $data['order'] = Order::orderBy('created_at', 'desc')->where('apt', session('unit'))->where('sent', false)->get()->first();
+        if (!$data['order']) {
+            $order = new Order;
+            $order->apt = session('unit');
+            $order->name = session('name');
+            $order->save();
+            $data['order']= $order;
+            session(['orderid'=> $order->id]);
+        }        
         return view('home')->with($data);
     }
 }
