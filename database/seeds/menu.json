@@ -73,12 +73,12 @@
                             "es":{"name": "Huevos al Gusto (2)"},
                             "price": 50,
                             "choices": [
-                                {"en":{"name": "Over Easy"}},
-                                {"es":{"name": "Volteados Tiernos"}},
-                                {"en":{"name": "Scrambled"}},
-                                {"es":{"name": "Revueltos"}},
-                                {"en":{"name": "Fried"}},
-                                {"es":{"name": "Fritos"}},
+                                {"en":{"name": "Over Easy"},
+                                "es":{"name": "Volteados Tiernos"}},
+                                {"en":{"name": "Scrambled"},
+                                "es":{"name": "Revueltos"}},
+                                {"en":{"name": "Fried"},
+                                "es":{"name": "Fritos"}},
                                 {
                                     "en":{"name": "As you like them (specify in special instructions)"},
                                     "es":{"name":"Al Gusto (specify in special instructions)"},
@@ -368,7 +368,8 @@
                     ]
                 },
                 {
-                    "name": "Tacos",
+                    "en":{"name": "Tacos"},
+                    "es":{"name": "Tacos"},
                     "items": [
                         {
                             "price": 85,
@@ -395,7 +396,7 @@
                 },
                 {
                     "en":{"name": "Hamburgers"},
-                    "es":{"name": "Hambuguesa"},
+                    "es":{"name": "Hambuguesas"},
                     "choices": [
                         {
                             "en":{"name": "With French Fries"},
@@ -647,7 +648,7 @@
                                 },
                                 {
                                     "en":{"name": "7 Up"},
-                                    "es":{"name": "& Up"}
+                                    "es":{"name": "7 Up"}
                                 },
                                 {
                                     "en":{"name": "Other please specify"},
