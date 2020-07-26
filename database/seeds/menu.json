@@ -581,149 +581,149 @@
         },
         {
             "en":{"name": "Drinks"},
-            "es":{"name": ""},
+            "es":{"name": "Bebidas"},
             "categories": [
                 {
                     "en":{"name": "Soft Drinks"},
-                    "es":{"name": ""},
+                    "es":{"name": "Soft Drinks"},
                     "items": [
                         {
                             "en":{"name": "Orange Juice (Glass)"},
-                            "es":{"name": ""},
+                            "es":{"name": "Jugo de Naranja (Vaso)"},
                             "price": 40
                         },
                         {
                             "en":{"name": "Orange Juice (Pitcher)"},
-                            "es":{"name": ""},
+                            "es":{"name": "Jugo de Naranja (Jarra)"},
                             "price": 130
                         },
                         {
                             "en":{"name": "Tomato Juice (Glass)"},
-                            "es":{"name": ""},
+                            "es":{"name": "Jugo de Tomate (Vaso)"},
                             "price": 40
                         },
                         {
                             "en":{"name": "Coffee"},
-                            "es":{"name": ""},
+                            "es":{"name": "Café"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Tea"},
-                            "es":{"name": ""},
+                            "es":{"name": "Te"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Milk"},
-                            "es":{"name": ""},
+                            "es":{"name": "Leche"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Chocolate Milk"},
-                            "es":{"name": ""},
+                            "es":{"name": "Leche Chocolate"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Hot Chocolate"},
-                            "es":{"name": ""},
+                            "es":{"name": "Leche Chocolate Caliente"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Bottle of Water"},
-                            "es":{"name": ""},
+                            "es":{"name": "Botella de Agua"},
                             "price": 18
                         },
                         {
                             "en":{"name": "Soda (Coke, Seven-Up, Etc."},
-                            "es":{"name": ""},
+                            "es":{"name": "Refresco"},
                             "price": 25,
                             "choices": [
                                 {
                                     "en":{"name": "Coke (regular)"},
-                                    "es":{"name": ""}
+                                    "es":{"name": "Coke (regular)"}
                                 },
                                 {
                                     "en":{"name": "Coke (lite)"},
-                                    "es":{"name": ""}
+                                    "es":{"name": "Coke (lite)"}
                                 },
                                 {
                                     "en":{"name": "7 Up"},
-                                    "es":{"name": ""}
+                                    "es":{"name": "& Up"}
                                 },
                                 {
                                     "en":{"name": "Other please specify"},
-                                    "es":{"name": ""}
+                                    "es":{"name": "Other please specify"}
                                 }
                             ]
                         },
                         {
                            "en":{ "name": "Smoothie (fruit)"},
-                           "es":{"name": ""},
+                           "es":{"name": "Smoothie (defrutas)"},
                             "price": 35
                         },
                         {
-                            "en":{"name": "Aqua Fresca (Water of the Day)"},
-                            "es":{"name": ""},
+                            "en":{"name": "Agua Fresca (Water of the Day)"},
+                            "es":{"name": "Agua Fresca"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Limonada"},
-                            "es":{"name": ""},
+                            "es":{"name": "Limonada"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Orange-Ade"},
-                            "es":{"name": ""},
+                            "es":{"name": "Naranjada"},
                             "price": 25
                         }
                     ]
                 },
                 {
                     "en":{"name": "Coctails"},
-                    "es":{"name": ""},
+                    "es":{"name": "Cocteles"},
                     "items": [
                         {
                             "en":{"name": "Beer"},
-                            "es":{"name": ""},
+                            "es":{"name": "Cerveza"},
                             "price": 35
                         },
                         {
                             "en":{"name": "Margarita"},
-                            "es":{"name":""},
+                            "es":{"name":"Margarita"},
                             "price": 70
                         },
                         {
                             "en":{"name": "Premium Margarita"},
-                            "es":{"name":""},
+                            "es":{"name":"Margarita Premium"},
                             "price": 80
                         },
                         {
                             "en":{"name": "Rum and Coke"},
-                            "es":{"name":""},
+                            "es":{"name":"Cuba Libre"},
                             "price": 70
                         },
                         {
                             "en":{"name": "Tequila Shot"},
-                            "es":{"name":""},
+                            "es":{"name":"Caballito de Tequila"},
                             "price": 65
                         },
                         {
                             "en":{"name": "Daiquiri"},
-                            "es":{"name":""},
+                            "es":{"name":"Daiquiri"},
                             "price": 70
                         },
                         {
                             "en":{"name": "Piña Colada"},
-                            "es":{"name":""},
+                            "es":{"name":"Piña Colada"},
                             "price": 70
                         },
                         {
                             "en":{"name": "Bloody Mary"},
-                            "es":{"name":""},
+                            "es":{"name":"Bloody Mary"},
                             "price": 70
                         },
                         {
                             "en":{"name": "Michelada"},
-                            "es":{"name":""},
+                            "es":{"name":"Michelada"},
                             "price": 50
                         }
                     ]
