@@ -10,4 +10,17 @@ class Item extends Model implements TranslatableContract
 {
     use Translatable;
     public $translatedAttributes = ['name', 'description'];
+
+protected $with=['options', 'choices'];
+
+    public function category() {
+        return $this->belongsTo('App\Category');
+    }
+    public function options() {
+        return $this->hasMany('App\Option')->orderBy('sort_order');;
+    }
+    public function choices() {
+        return $this->hasMany('App\Choice')->orderBy('sort_order');;
+    }        
 }
+

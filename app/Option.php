@@ -10,4 +10,8 @@ class Option extends Model implements TranslatableContract
 {
     use Translatable;
     public $translatedAttributes = ['name'];
+
+    public function item() {
+        return $this->belongsTo('App\Item');
+    }    
 }

@@ -10,4 +10,12 @@ class Category extends Model implements TranslatableContract
 {
     use Translatable;
     public $translatedAttributes = ['name', 'description'];
+    protected $with = ['items'];
+
+    public function menu() {
+        return $this->belongsTo('App\Menu');
+    }
+    public function items() {
+        return $this->hasMany('App\Item')->orderBy('sort_order');;
+    }    
 }
