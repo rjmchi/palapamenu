@@ -21,7 +21,7 @@ Route::post('/order', "HomeController@processOrder");
 Route::get('/order/{item}/{option?}/{choice?}', "HomeController@addItemToOrder");
 
 Route::get('/sendorder', "HomeController@sendOrder");
-Route::get('/cancel/{id}', "HomeController@cancelOrder");
+Route::get('/cancel/{order}', "HomeController@cancelOrder");
 
 Route::get('/register', "RegisterController@index");
 Route::post('/register', "RegisterController@register")->name('register');

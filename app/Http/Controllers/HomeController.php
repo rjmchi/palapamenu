@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Menu;
 use App\Item;
+use App\Option;
+use App\Choice;
 use App\Order;
 use App\OrderItem;
+use App\Mail\Order as MailOrder;
+
 
 class HomeController extends Controller
 {
@@ -94,13 +98,13 @@ class HomeController extends Controller
         return redirect('/');
     }
 
-    public function cancelOrder($id) {
-        $order = new Order;
-        $order->find($id);
+    public function cancelOrder(Order $order) {
+//        $order = new Order;
+//        $order->find($id);
         $order->delete();
 
-        session()->forget('unit');
-        session()->forget('name');
+        // session()->forget('unit');
+        // session()->forget('name');
         session()->flash("message", __("Your order has been canceled"));
         return redirect('/');
     }    
