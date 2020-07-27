@@ -25,3 +25,5 @@ Route::get('/cancel/{order}', "HomeController@cancelOrder");
 
 Route::get('/register', "RegisterController@index");
 Route::post('/register', "RegisterController@register")->name('register');
+
+Route::view('/notopen', 'notopen');

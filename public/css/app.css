@@ -11091,3 +11091,7 @@ input.qty {
   line-height: 0.9em;
 }
 
+.card {
+  width: 75%;
+}
+
