@@ -39,6 +39,33 @@
                             "price": 65
                         },
                         {
+                            "en": {
+                                "name": "Frech Toast"
+                            },
+                            "es": {
+                                "name": "Frances"
+                            },
+                            "price": 55
+                        },
+                        {
+                            "en": {
+                                "name": "French Toast with fruit"
+                            },
+                            "es": {
+                                "name": "Frances con fruta"
+                            },
+                            "price": 65
+                        },
+                        {
+                            "en": {
+                                "name": "French Toast with bacon"
+                            },
+                            "es": {
+                                "name": "Frances con tocino"
+                            },
+                            "price": 65
+                        },                        
+                        {
                             "en":{"name": "Homemade Sweet Bread"},
                             "es":{"name": "Pan Dulce Casero"},
                             "price": 25
@@ -244,7 +271,7 @@
                             "price": 45,
                             "en": {
                                 "name": "Small House Salad",
-                                "description": "Lettuce. cherry tomato, carrot, cucumber"
+                                "description": "Lettuce, cherry tomato, carrot, cucumber"
                             }, 
                             "es":{"name": "Ensalada de Casa Pequeña",
                                 "description": "Lechuga, tomate sherry, zanahoria, pepino"}
@@ -319,7 +346,7 @@
                             "price": 90,
                             "en": {
                                 "name": "Sincronizadas",
-                                "description": "Flour tortillas, cheese, ham, mustartd, refried beans"
+                                "description": "Flour tortillas, cheese, ham, mustard, refried beans"
                             },
                             "es": {"name": "Sincronizadas",
                                 "description": "Tortilla de harina, queso, jamón, mostaza, frijoles refritos"}
@@ -361,7 +388,7 @@
                         {
                             "price": 40,
                             "en":{"name": "Botanas - Fresh 'Finger Food'",
-                            "description": "Cucumber, jicama, beet, carrot, lemon, salit in grain, tajin spice"},
+                            "description": "Cucumber, jicama, beet, carrot, lemon, salt in grain, Tajín spice"},
                             "es": {"name": "Botana Fresca",
                                 "description": "Pepino, jicama, betabel, zanahoria, limón, sal e grano, Tajín"}
                         }
@@ -395,36 +422,74 @@
                     ]
                 },
                 {
-                    "en":{"name": "Hamburgers"},
-                    "es":{"name": "Hambuguesas"},
-                    "choices": [
-                        {
-                            "en":{"name": "With French Fries"},
-                            "es":{"name":"con papas francesas"}
-                        },
-                        {
-                            "en":{"name": "With Sabritas"},
-                            "es":{"name": "con Sabritas"}
-                        },
-                        {
-                            "en":{"name": "With Fried Bananas"},
-                            "es":{"name": "con plátano frito"}
-                        }
-                    ],
+                    "en":{"name": "Hamburgers", "description": "with fries, Sabritas, or fried banana"},
+                    "es":{"name": "Hambuguesas", "description": "con papas francesas, Sabritas, o plátano frito"},
                     "items": [
                         {
                             "price": 85,
                             "en":{"name": "Paradise",
                             "description": "Cheese, bacon, mushrooms, roasted onion"},
                             "es":{"name": "Paraiso",
-                                "description": "Queso, tocino, champiñones, cebolla asada"}
+                                "description": "Queso, tocino, champiñones, cebolla asada"},
+                    "choices": [
+                        {
+                            "en": {
+                                "name": "With French Fries"
+                            },
+                            "es": {
+                                "name": "con papas francesas"
+                            }
+                        },
+                        {
+                            "en": {
+                                "name": "With Sabritas"
+                            },
+                            "es": {
+                                "name": "con Sabritas"
+                            }
+                        },
+                        {
+                            "en": {
+                                "name": "With Fried Bananas"
+                            },
+                            "es": {
+                                "name": "con plátano frito"
+                            }
+                        }
+                    ]                                
                         },
                         {
                             "price": 90,
                             "en":{"name": "Palmares",
                             "description": "Roasted pineapple, white cheddar cheese"},
                             "es":{"name": "Palmares",
-                                "description": "Piña asada, queso blanco"}
+                                "description": "Piña asada, queso blanco"},
+                    "choices": [
+                        {
+                            "en": {
+                                "name": "With French Fries"
+                            },
+                            "es": {
+                                "name": "con papas francesas"
+                            }
+                        },
+                        {
+                            "en": {
+                                "name": "With Sabritas"
+                            },
+                            "es": {
+                                "name": "con Sabritas"
+                            }
+                        },
+                        {
+                            "en": {
+                                "name": "With Fried Bananas"
+                            },
+                            "es": {
+                                "name": "con plátano frito"
+                            }
+                        }
+                    ]                                
                         }
                     ]
                 },
@@ -634,8 +699,8 @@
                             "price": 18
                         },
                         {
-                            "en":{"name": "Soda (Coke, Seven-Up, Etc."},
-                            "es":{"name": "Refresco"},
+                            "en":{"name": "Soda (Coke, Seven-Up, Etc.)"},
+                            "es":{"name": "Refresco (Coke, Seven-Up, Etc.)"},
                             "price": 25,
                             "choices": [
                                 {
