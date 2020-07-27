@@ -11086,3 +11086,8 @@ input.qty {
   padding: 0 15px;
 }
 
+.tipmsg {
+  margin: 10px 25px;
+  line-height: 0.9em;
+}
+

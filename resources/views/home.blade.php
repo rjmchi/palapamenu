@@ -47,6 +47,8 @@
             <a href="/sendorder" class="btn btn-primary">{{__('Send Order')}}</a>
             <a href="/cancel/{{$order->id}}" class="btn btn-danger">{{__('Cancel')}}</a>
 
+            <div class="tipmsg">{{__('Tips are not included in the menu prices.  Please tip in cash at the time of service')}}</div>
+
             <dl>
             @foreach ($order->orderItems as $item)
                 <dt>{{$item->quantity}} -  {{$item->item}}</dt>
