@@ -2,9 +2,6 @@
 
 @section('content')
 <div class="container">
-    @if ($flash=session('message'))
-        <div class="alert alert-success" role="alert">{{$flash}}</div>
-    @endif    
             <div class="card">
                 <div class="card-header">{{ __('Login') }}    
                     <h4>{{__('Orders accepted between 9:00 am and 3:00pm')}}</h4>
