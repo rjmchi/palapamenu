@@ -9,9 +9,6 @@
                     {{ session('status') }}
                 </div>
             @endif
-            {{-- @foreach ($menus as $menu)
-                <button class="btn btn-light">{{$menu->name}}</button>
-                @endforeach --}}
                 @foreach ($menus as $menu)
                 <div class="title">
                     <h2>{{$menu->name}}</h2>
@@ -42,16 +39,16 @@
         <div class="order">
             <h2>{{$order->apt}} {{$order->name}}</h2>
             <h3>{{__('Your Order')}}</h3>
-            <p>{{__('Requested delivery time:')}} {{$order->delivery_time? $order->delivery_time : __('Not specified')}}</p>
+            <p>{{__('Requested delivery time')}}: {{$order->delivery_time? $order->delivery_time : __('Not specified')}}</p>
         
             <a href="/sendorder" class="btn btn-primary">{{__('Send Order')}}</a>
-            <a href="/cancel/{{$order->id}}" class="btn btn-danger">{{__('Cancel')}}</a>
+            <a href="/cancel/{{$order->id}}" class="btn btn-danger">{{__('Cancel Order')}}</a>
 
             <div class="tipmsg">{{__('Tips are not included in the menu prices.  Please tip in cash at the time of service')}}</div>
 
             <dl>
             @foreach ($order->orderItems as $item)
-                <dt>{{$item->quantity}} -  {{$item->item}}</dt>
+                <dt>{{$item->quantity}} -  {{$item->item}} <a href="/removeitem/{{$item->id}}" title="{{__('Remove item')}}" class="remove">X</span></a></dt>
                 <dd>{{$item->option}}</dd>
                 <dd>{{$item->choice}}</dd>
                 <dd>{{$item->special}}</dd>

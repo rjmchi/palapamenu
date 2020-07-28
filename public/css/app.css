@@ -10929,7 +10929,7 @@ a.text-dark:focus {
 }
 
 body {
-  font-family: "Rubik";
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -11058,6 +11058,7 @@ body {
   border: 1px solid #333;
   border-radius: 5px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .order h2 {
@@ -11113,5 +11114,12 @@ input.qty {
 
 .card {
   width: 75%;
+}
+
+.remove {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-left: 10px;
 }
 

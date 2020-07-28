@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::post('/order', "HomeController@processOrder");
 Route::get('/order/{item}/{option?}/{choice?}', "HomeController@addItemToOrder");
+Route::get('/removeitem/{item}', "HomeController@removeItemFromOrder");
 
 Route::get('/sendorder', "HomeController@sendOrder");
 Route::get('/cancel/{order}', "HomeController@cancelOrder");

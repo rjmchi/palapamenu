@@ -45,6 +45,9 @@ class HomeController extends Controller
     }
 
     public function processOrder(Request $request) {
+
+        $request->validate(['qty'=>'required']);
+
         $orderitem = new OrderItem;
         $orderitem->order_id = session('orderid');
 
@@ -107,5 +110,10 @@ class HomeController extends Controller
         // session()->forget('name');
         session()->flash("message", __("Your order has been canceled"));
         return redirect('/');
-    }    
+    }
+
+    public function removeItemFromOrder(OrderItem $item) {
+        $item->delete();
+        return redirect('/');
+    }
 }

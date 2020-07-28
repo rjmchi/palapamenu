@@ -1,5 +1,5 @@
 body {
-    font-family: "Rubik";
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
 }
 .container {
     margin-top:25px;
@@ -108,6 +108,7 @@ body {
     border: 1px solid #333;
     border-radius: 5px;
     text-align:center;
+    margin:0 auto;
 
     h2 {
         text-align: center;
@@ -163,4 +164,9 @@ input.qty {
 .card {
     width:75%;
 }
-
+.remove {
+    color:#ff0000;
+    font-weight: bold;
+    font-size:1.1em;
+    margin-left:10px;
+}

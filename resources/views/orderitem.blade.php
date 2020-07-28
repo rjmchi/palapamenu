@@ -18,7 +18,20 @@
     <label for="special">{{__('Special Instructions')}}</label>
     <textarea name="special" class="form-control"></textarea>
     </p>
-    <p><button type="submit" class="btn btn-primary">{{__('Add to Order')}}</button></p>
+    <p>
+        <button type="submit" class="btn btn-primary">{{__('Add to Order')}}</button>
+        <a href="/" class="btn btn-danger">{{__("Cancel")}}</a>
+    </p>
     </form>
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 </div>
 @endsection
