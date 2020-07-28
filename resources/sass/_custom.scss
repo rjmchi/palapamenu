@@ -4,6 +4,11 @@ body {
 .container {
     margin-top:25px;
 }
+.container, .container-sm, .container-md {
+    max-width: 98%;
+    padding-left:2px;
+    padding-right:2px;
+}
 .navbar {
     padding:.2rem 1rem !important;
 }
@@ -29,10 +34,7 @@ body {
     justify-content: space-between;
 }
 .menu {
-    width: 45%;
-    border:1px solid #ccc;
-    border-radius: 5px;
-    padding:10px;
+    width: 48%;
     position: relative;
 
     h2 {
@@ -45,15 +47,14 @@ body {
     .title {
         text-align: center;
         background-color:#eee;
-        padding:5px;
-        margin: -10px -10px 0;
+        padding:2px;
     }
 
     .category {
         text-align:center;
         background-color:#d5cedf;
         padding:5px 0;
-        margin: 0 -10px;
+        margin: 0;
         h3 {
             font-size:1.15em;
             font-weight:bold;
@@ -70,10 +71,13 @@ body {
         color:#171758;
         border:1px solid #eee;
         display:block;
-        padding:10px 5px;
+        padding:5px;
         border-radius: 5px;
         text-decoration: none;
         margin:2px 0;
+        p {
+            margin-bottom:4px;
+        }        
     }
     a:hover {
         text-decoration: none;
@@ -83,7 +87,7 @@ body {
         display:flex;
         justify-content: space-between;
         span {
-            margin-right:10px;
+            margin-right:2px;
             font-weight: 500;
             font-size:1.1em;
         }
@@ -99,7 +103,7 @@ body {
 }
 
 .order {
-    width:45%;
+    width:48%;
     padding:10px;
     border: 1px solid #333;
     border-radius: 5px;
@@ -159,3 +163,4 @@ input.qty {
 .card {
     width:75%;
 }
+
