@@ -4,7 +4,7 @@
 <div class="container">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}    
-                    <h4>{{__('Orders accepted between 9:00 am and 3:00 pm Monday-Saturday')}}</h4>
+                    <h4>{{__('The Palapa is now closed for on-line orders')}}</h4>
                 </div>
             </div>
         </div>
