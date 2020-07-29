@@ -4,7 +4,7 @@
 <div class="container">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}    
-                    <h4>{{__('Orders accepted between 9:00 am and 3:00 pm Monday-Saturday')}}</h4>
+                    <h4>{{__('Orders accepted between 9:00 am and 3:00 pm')}}</h4>
                 </div>
 
                 <div class="card-body">
@@ -14,7 +14,9 @@
                         <input type="input" name="unit" value="{{old('unit')}}">
                         <label for="name">{{__('Last Name')}}:</label>
                         <input type="input" name="name" value="{{old('name')}}">
-                        <label for="time">{{__('Requested Delivery Time (Please allow about 1 hour)')}}: </label>
+                        <label for="phone">{{__("Phone Number")}}:</label>
+                        <input type="tel" name="phone" value="{{old('phone')}}">
+                        <label for="time">{{__('Requested Delivery Time')}} {{__('(Please allow about 1 hour)')}}: </label>
                         <input type="text" name="time" value="{{old('time')}}">
                         
                         <div class="form-group">
