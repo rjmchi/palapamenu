@@ -8,14 +8,22 @@
 </head>
 <body>
     <h1>Palapa Order</h1>
+    <h3>{{$order->date}}</h3>
     <p>{{$order->apt}} {{$order->name}}</p>
-    <p>Requested Delivery Time: {{$order->delivery_time}}</p>
+
+    <p>Hora de entrega: {{$order->delivery_time}}</p>
     <dl>
         @foreach ($order->orderItems as $item)
-            <dt>{{$item->quantity}} {{$item->item}}</dt>
-            <dd>{{$item->choice}}</dd>
+            <dt>{{$item->quantity}} {{$item->item->translate('es')->name}} <span>${{$item->price}}</span></dt>
+            @if($item->choice)
+                <dd>{{$item->choice->translate('es')->name}}</dd>
+            @endif
+            @if ($item->option)
+                <dd>{{$item->option->translate('es')->name}}</dd>
+            @endif
             <dd>{{$item->special}}</dd>
         @endforeach
     </dl>
+    <p>${{$order->total}}</p>
 </body>
 </html>

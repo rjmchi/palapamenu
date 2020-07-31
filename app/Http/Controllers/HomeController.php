@@ -10,7 +10,7 @@ use App\Choice;
 use App\Order;
 use App\OrderItem;
 use App\Mail\Order as MailOrder;
-
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -33,6 +33,7 @@ class HomeController extends Controller
     {
         $data['menus'] = Menu::orderBy('sort_order')->get();
         $data['order'] = Order::orderBy('created_at', 'desc')->where('apt', session('unit'))->where('sent', false)->get()->first();
+
         if (!$data['order']) {
             $order = new Order;
             $order->apt = session('unit');
@@ -48,17 +49,21 @@ class HomeController extends Controller
 
         $request->validate(['qty'=>'required']);
 
+        $item = Item::find($request->input('item'));
         $orderitem = new OrderItem;
         $orderitem->order_id = session('orderid');
 
         $orderitem->quantity = $request->input('qty');
-        $orderitem->item  = $request->input('item');
+        $orderitem->item_id  = $request->input('item');
+        $orderitem->price = $orderitem->quantity * $item->price;
 
         if ($request->input('option')) {
-            $orderitem->item = $request->input('option');
+            $orderitem->option_id = $request->input('option');
+            $option = Option::find($request->input('option'));
+            $orderitem->price = $orderitem->quantity * $option->price;
         }
         if ($request->input('choice')){
-            $orderitem->choice = $request->input('choice');
+            $orderitem->choice_id = $request->input('choice');
         }
         if ($request->input('special')){
             $orderitem->special = $request->input('special');
@@ -96,7 +101,13 @@ class HomeController extends Controller
 
         $order->sent = true;
         $order->save();
-        \Mail::to('rjmchi13@gmail.com')->send(new MailOrder($order));
+        $order->total = 0;
+        $now = Carbon::now('America/Mexico_City');
+        $order->date = $now->format('d/m/y h:i a');
+        foreach ($order->orderItems as $item)  {
+            $order->total += $item->price;
+        } 
+        \Mail::to('lospalmarespalapa@gmail.com')->send(new MailOrder($order));
         session()->flash("message", __("Your order has been sent"));
         return redirect('/');
     }

@@ -16,11 +16,13 @@ class CreateOrderItemsTable extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
-            $table->string ('item');
-            $table->string('choice')->nullable();
+            $table->integer('price');
             $table->text('special')->nullable();
             $table->timestamps();
             $table->foreignId('order_id')->constrained()->onDelete("cascade");   
+            $table->foreignId('item_id')->constrained()->onDelete("cascade");   
+            $table->foreignId('choice_id')->nullable()->constrained()->onDelete("cascade");   
+            $table->foreignId('option_id')->nullable()->constrained()->onDelete("cascade");   
         });
     }
 

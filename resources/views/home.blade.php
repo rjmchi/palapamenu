@@ -48,9 +48,15 @@
 
             <dl>
             @foreach ($order->orderItems as $item)
-                <dt>{{$item->quantity}} -  {{$item->item}} <a href="/removeitem/{{$item->id}}" title="{{__('Remove item')}}" class="remove">X</span></a></dt>
-                <dd>{{$item->option}}</dd>
-                <dd>{{$item->choice}}</dd>
+                <dt>
+                    {{$item->quantity}} &mdash;  {{$item->option ? $item->option->name : $item->item->name}}
+                    $<span>{{$item->price}}</span>
+                    <a href="/removeitem/{{$item->id}}" title="{{__('Remove item')}}" class="remove">X</span></a>
+                </dt>
+
+                @if ($item->choice)
+                    <dd>{{$item->choice->name}}</dd>
+                @endif
                 <dd>{{$item->special}}</dd>
             @endforeach
             </dl>
