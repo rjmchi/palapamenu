@@ -109,16 +109,14 @@ class HomeController extends Controller
         } 
         \Mail::to('lospalmarespalapa@gmail.com')->send(new MailOrder($order));
         session()->flash("message", __("Your order has been sent"));
-        return redirect('/');
+        session()->forget('unit');
+        session()->forget('name');        
+        return redirect('/register');
     }
 
     public function cancelOrder(Order $order) {
-//        $order = new Order;
-//        $order->find($id);
         $order->delete();
 
-        // session()->forget('unit');
-        // session()->forget('name');
         session()->flash("message", __("Your order has been canceled"));
         return redirect('/');
     }
