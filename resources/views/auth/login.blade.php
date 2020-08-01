@@ -10,15 +10,16 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <label for="unit">{{__('Unit Number')}}:</label>
-                        <input type="input" name="unit" value="{{old('unit')}}">
-                        <label for="name">{{__('Last Name')}}:</label>
-                        <input type="input" name="name" value="{{old('name')}}">
-                        <label for="phone">{{__("Phone Number")}}:</label>
-                        <input type="tel" name="phone" value="{{old('phone')}}">
-                        <label for="time">{{__('Requested Delivery Time')}} {{__('(Please allow about 1 hour)')}}: </label>
-                        <input type="text" name="time" value="{{old('time')}}">
-                        
+                        <div class="form-group">
+                            <label for="unit">{{__('Unit Number')}}:</label>
+                            <input type="input" name="unit" value="{{old('unit')}}">
+                            <label for="name">{{__('Last Name')}}:</label>
+                            <input type="input" name="name" value="{{old('name')}}">
+                            <label for="phone">{{__("Phone Number")}}:</label>
+                            <input type="tel" name="phone" value="{{old('phone')}}">
+                            <label for="time">{{__('Requested Delivery Time')}} {{__('(Please allow about 1 hour)')}}: </label>
+                            <input type="text" name="time" value="{{old('time')}}">
+                        </div>
                         <div class="form-group">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
