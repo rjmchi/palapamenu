@@ -796,6 +796,14 @@
                                 },
                                 {
                                     "en": {
+                                        "name": "Tecate Lite"
+                                    },
+                                    "es": {
+                                        "name": "Tecate Lite"
+                                    }
+                                },
+                                {
+                                    "en": {
                                         "name": "Modelo"
                                     },
                                     "es": {
@@ -804,10 +812,10 @@
                                 },
                                 {
                                     "en": {
-                                        "name": "Tecate"
+                                        "name": "Modelo Lite"
                                     },
                                     "es": {
-                                        "name": "Tecate"
+                                        "name": "Modelo Lite"
                                     }
                                 },
                                 {
@@ -820,10 +828,26 @@
                                 },
                                 {
                                     "en": {
+                                        "name": "Corona Lite"
+                                    },
+                                    "es": {
+                                        "name": "Corona Lite"
+                                    }
+                                },
+                                {
+                                    "en": {
                                         "name": "Pacifico"
                                     },
                                     "es": {
                                         "name": "Pacifico"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Pacifico Lite"
+                                    },
+                                    "es": {
+                                        "name": "Pacifico Lite"
                                     }
                                 }
                             ]                            
@@ -879,8 +903,20 @@
                             "price": 50, 
                             "choices":[
                                 {
-                                "en":{"name":"Tecate"},
-                                "es": {"name": "Tecate"}
+                                    "en": {
+                                        "name": "Tecate"
+                                    },
+                                    "es": {
+                                        "name": "Tecate"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Tecate Lite"
+                                    },
+                                    "es": {
+                                        "name": "Tecate Lite"
+                                    }
                                 },
                                 {
                                     "en": {
@@ -891,12 +927,28 @@
                                     }
                                 },
                                 {
-                                "en": {"name": "Tecate"},
-                                "es": {"name": "Tecate"}
+                                    "en": {
+                                        "name": "Modelo Lite"
+                                    },
+                                    "es": {
+                                        "name": "Modelo Lite"
+                                    }
                                 },
                                 {
-                                    "en": {"name": "Corona"},
-                                    "es": {"name": "Corona"}
+                                    "en": {
+                                        "name": "Corona"
+                                    },
+                                    "es": {
+                                        "name": "Corona"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Corona Lite"
+                                    },
+                                    "es": {
+                                        "name": "Corona Lite"
+                                    }
                                 },
                                 {
                                     "en": {
@@ -905,7 +957,15 @@
                                     "es": {
                                         "name": "Pacifico"
                                     }
-                                }                                
+                                },
+                                {
+                                    "en": {
+                                        "name": "Pacifico Lite"
+                                    },
+                                    "es": {
+                                        "name": "Pacifico Lite"
+                                    }
+                                }
                             ]
                         }
                     ]
