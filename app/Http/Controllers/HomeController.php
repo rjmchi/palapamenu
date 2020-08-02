@@ -96,6 +96,7 @@ class HomeController extends Controller
       
         return view('orderitem')->with($data);
     }
+
     public function sendOrder() {
         $order = Order::find(session('orderid'));
 
@@ -118,7 +119,7 @@ class HomeController extends Controller
         $order->delete();
 
         session()->flash("message", __("Your order has been canceled"));
-        return redirect('/');
+        return redirect('/register');
     }
 
     public function removeItemFromOrder(OrderItem $item) {
