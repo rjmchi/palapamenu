@@ -31,6 +31,7 @@ class Order extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.order');
+        $subject = "Order Number " . $this->order->id;
+        return $this->subject($subject)->view('emails.order');
     }
 }

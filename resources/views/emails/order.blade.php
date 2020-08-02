@@ -25,5 +25,8 @@
         @endforeach
     </dl>
     <p>${{$order->total}}</p>
+    <p></p>
+    <p></p>
+    <p style="border-bottom:1px solid #000">Signature: </p>
 </body>
 </html>
