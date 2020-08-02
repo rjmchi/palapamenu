@@ -654,14 +654,14 @@
                     "es":{"name": "Soft Drinks"},
                     "items": [
                         {
-                            "en":{"name": "Orange Juice (Glass)"},
-                            "es":{"name": "Jugo de Naranja (Vaso)"},
-                            "price": 40
+                            "en":{"name": "Glass of Fresh Squeezed Orange Juice"},
+                            "es":{"name": "Vaso de Jugo de Naranja Fresca"},
+                            "price": 35
                         },
                         {
-                            "en":{"name": "Orange Juice (Pitcher)"},
-                            "es":{"name": "Jugo de Naranja (Jarra)"},
-                            "price": 130
+                            "en":{"name": "Pitcher of Fresh Squeezed Orange Juice"},
+                            "es":{"name": "Jarra de Jugo de Naranja Fresca"},
+                            "price": 120
                         },
                         {
                             "en":{"name": "Tomato Juice (Glass)"},
@@ -671,12 +671,32 @@
                         {
                             "en":{"name": "Coffee"},
                             "es":{"name": "Café"},
-                            "price": 25
+                            "price": 25,
+                            "choices":[
+                                {
+                                    "en":{"name":"Hot"},
+                                    "es":{"name":"Caliente"}
+                                },
+                                {
+                                    "en": {"name": "Iced"},
+                                    "es": {"name": "Frio"}
+                                }                            
+                            ]
                         },
                         {
                             "en":{"name": "Tea"},
                             "es":{"name": "Te"},
-                            "price": 25
+                            "price": 25,
+                            "choices": [
+                                {
+                                    "en": {"name": "Hot"},
+                                    "es": {"name": "Caliente"}
+                                },
+                                {
+                                    "en": {"name": "Iced"},
+                                    "es": {"name": "Frio"}
+                                }
+                            ]                            
                         },
                         {
                             "en":{"name": "Milk"},
@@ -705,26 +725,40 @@
                             "choices": [
                                 {
                                     "en":{"name": "Coke (regular)"},
-                                    "es":{"name": "Coke (regular)"}
+                                    "es":{"name": "Coca (regular)"}
                                 },
                                 {
-                                    "en":{"name": "Coke (lite)"},
-                                    "es":{"name": "Coke (lite)"}
+                                    "en":{"name": "Coke (diet)"},
+                                    "es":{"name": "Coca (lite)"}
                                 },
                                 {
                                     "en":{"name": "7 Up"},
                                     "es":{"name": "7 Up"}
                                 },
                                 {
-                                    "en":{"name": "Other please specify"},
-                                    "es":{"name": "Other please specify"}
-                                }
+                                    "en":{"name": "Fanta"},
+                                    "es":{"name": "Fanta"}
+                                },
+                                {
+                                    "en": {"name": "Apple"},
+                                    "es": {"name": "Manzana"}
+                                }                                
                             ]
                         },
                         {
-                           "en":{ "name": "Smoothie (fruit)"},
-                           "es":{"name": "Smoothie (defrutas)"},
-                            "price": 35
+                           "en":{ "name": "Smoothie (fruit)", "description":"Choice of Fruit with milk or yogurt"},
+                           "es":{"name": "Smoothie (defrutas)", "description": "Fruta a elegir en leche o yogurt"},
+                            "price": 35,
+                            "choices": [
+                                {
+                                    "en": {"name": "Milk"},
+                                    "es": {"name": "Leche"}
+                                },
+                                {
+                                    "en": {"name": "Yogurt"},
+                                    "es": {"name": "Yogurt"}
+                                }
+                            ]                            
                         },
                         {
                             "en":{"name": "Agua Fresca (Water of the Day)"},
@@ -750,7 +784,49 @@
                         {
                             "en":{"name": "Beer"},
                             "es":{"name": "Cerveza"},
-                            "price": 35
+                            "price": 35,
+                            "choices": [
+                                {
+                                    "en": {
+                                        "name": "Tecate"
+                                    },
+                                    "es": {
+                                        "name": "Tecate"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Modelo"
+                                    },
+                                    "es": {
+                                        "name": "Modelo"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Tecate"
+                                    },
+                                    "es": {
+                                        "name": "Tecate"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Corona"
+                                    },
+                                    "es": {
+                                        "name": "Corona"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Pacifico"
+                                    },
+                                    "es": {
+                                        "name": "Pacifico"
+                                    }
+                                }
+                            ]                            
                         },
                         {
                             "en":{"name": "Margarita"},
@@ -768,13 +844,23 @@
                             "price": 70
                         },
                         {
+                            "en": {"name": "Rum and Orange Juice"},
+                            "es": {"name": "Ron con jugo de naranja"},
+                            "price": 70
+                        },                        
+                        {
                             "en":{"name": "Tequila Shot"},
                             "es":{"name":"Caballito de Tequila"},
                             "price": 65
                         },
                         {
-                            "en":{"name": "Daiquiri"},
-                            "es":{"name":"Daiquiri"},
+                            "en": {"name": "Premium Tequila Shot"},
+                            "es": {"name": "Premium Caballito de Tequila"},
+                            "price": 65
+                        },                        
+                        {
+                            "en":{"name": "Daiquiri", "description": "regular or fruit"},
+                            "es":{"name":"Daiquiri", "description": "regular o fruta"},
                             "price": 70
                         },
                         {
@@ -788,9 +874,39 @@
                             "price": 70
                         },
                         {
-                            "en":{"name": "Michelada"},
-                            "es":{"name":"Michelada"},
-                            "price": 50
+                            "en":{"name": "Michelada", "description":"Your choice of beer"},
+                            "es":{"name":"Michelada","description": "Cerveza a escoger"},
+                            "price": 50, 
+                            "choices":[
+                                {
+                                "en":{"name":"Tecate"},
+                                "es": {"name": "Tecate"}
+                                },
+                                {
+                                    "en": {
+                                        "name": "Modelo"
+                                    },
+                                    "es": {
+                                        "name": "Modelo"
+                                    }
+                                },
+                                {
+                                "en": {"name": "Tecate"},
+                                "es": {"name": "Tecate"}
+                                },
+                                {
+                                    "en": {"name": "Corona"},
+                                    "es": {"name": "Corona"}
+                                },
+                                {
+                                    "en": {
+                                        "name": "Pacifico"
+                                    },
+                                    "es": {
+                                        "name": "Pacifico"
+                                    }
+                                }                                
+                            ]
                         }
                     ]
                 }
