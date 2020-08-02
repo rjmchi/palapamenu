@@ -45,9 +45,14 @@
             <a href="/cancel/{{$order->id}}" class="btn btn-danger">{{__('Cancel Order')}}</a>
 
             <div class="tipmsg">{{__('Tips are not included in the menu prices.  Please tip in cash at the time of service.')}}</div>
-
+            @php
+                $total = 0;
+            @endphp
             <dl>
             @foreach ($order->orderItems as $item)
+            @php
+                $total += $item->price;
+            @endphp
                 <dt>
                     {{$item->quantity}} &mdash;  {{$item->option ? $item->option->name : $item->item->name}}
                     $<span>{{$item->price}}</span>
@@ -60,6 +65,7 @@
                 <dd>{{$item->special}}</dd>
             @endforeach
             </dl>
+            <p><strong><em>{{__('Total')}}: ${{$total}}</em></strong></p>
         </div> <!-- order-->
     </div>
 </div><!-- container-->
