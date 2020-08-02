@@ -17,7 +17,7 @@
                             <input type="input" name="name" value="{{old('name')}}">
                             <label for="phone">{{__("Phone Number")}}:</label>
                             <input type="tel" name="phone" value="{{old('phone')}}">
-                            <label for="time">{{__('Requested Delivery Time')}} {{__('(Please allow about 1 hour)')}}: </label>
+                            <label for="time">{{__('Requested Delivery Time')}} {{__("10:00 AM-4:30 PM")}}<br> {{__('(Please allow about 1 hour)')}}: </label>
                             <input type="text" name="time" value="{{old('time')}}">
                         </div>
                         <div class="form-group">
