@@ -25,7 +25,7 @@
             <dd>{{$item->special}}</dd>
         @endforeach
     </dl>
-    <p>${{$order->total}}</p>
+    <p><strong>Total: ${{$order->total}}</strong></p>
     <p></p>
     <p></p>
     <p style="border-bottom:1px solid #000">Signature: </p>
