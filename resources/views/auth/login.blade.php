@@ -19,6 +19,12 @@
                             <input type="tel" name="phone" value="{{old('phone')}}">
                             <label for="time">{{__('Requested Delivery Time')}} {{__("10:00 AM-4:30 PM")}}<br> {{__('(Please allow about 1 hour)')}}: </label>
                             <input type="text" name="time" value="{{old('time')}}">
+                            <label for="location">{{__("Deliver to")}}:</label>
+                            	<select name="location" required="required" id="location">
+	                                <option value="Departamento">{{__("Apartment")}}</option>
+	                                <option value="Alberca">{{__("Pool Deck")}}</option>
+	                                <option value="Palapa">{{__("Palapa")}}</option>
+                                </select>
                         </div>
                         <div class="form-group">
                                 <button type="submit" class="btn btn-primary">

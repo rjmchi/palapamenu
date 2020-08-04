@@ -20,6 +20,7 @@ class RegisterController extends Controller
         $order->apt = session('unit');
         $order->name = session('name');
         $order->delivery_time = $request->input('time');
+        $order->location = $request->input('location');
         $order->save();
 
         session(['orderid'=> $order->id]);

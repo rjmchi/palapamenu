@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('apt');
             $table->string('name');
             $table->string('delivery_time')->nullable();
+            $table->string('location');
             $table->boolean('sent')->default(false);
             $table->timestamps();
         });

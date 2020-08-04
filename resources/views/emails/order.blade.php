@@ -12,6 +12,7 @@
     <p>{{$order->apt}} {{$order->name}}</p>
 
     <p>Hora de entrega: {{$order->delivery_time}}</p>
+    <p>Entregar a: {{$order->location}}</p>
     <dl>
         @foreach ($order->orderItems as $item)
             <dt>{{$item->quantity}} {{$item->item->translate('es')->name}} <span>${{$item->price}}</span></dt>

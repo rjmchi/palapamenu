@@ -70,5 +70,9 @@
   "Your order has been canceled": "Su orden se ha cancelado",
   "Remove item": "Remover elemento",
   "The Palapa is now closed for on-line orders": "La Palapa esta cerrado para ordenes",
-  "Total": "Total"
+  "Total": "Total",
+  "Deliver to":"Entregar a",
+  "Apartment": "Departamento",
+  "Pool Deck":"Alberca",
+  "Palapa":"Palapa"
 }
