@@ -9,7 +9,7 @@
 <body>
     <h1>Palapa Order</h1>
     <h3>{{$order->date}}</h3>
-    <p>{{$order->apt}} {{$order->name}}</p>
+    <p><strong>{{$order->apt}} {{$order->name}}</strong></p>
 
     <p>Hora de entrega: {{$order->delivery_time}}</p>
     <p>Entregar a: {{$order->location}}</p>
