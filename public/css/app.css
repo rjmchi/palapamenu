@@ -11125,3 +11125,9 @@ input.qty {
   margin-left: 10px;
 }
 
+@media (max-width: 528px) {
+  .btn {
+    margin-top: 1em;
+  }
+}
+
