@@ -28,6 +28,6 @@
     <p><strong>Total: ${{$order->total}}</strong></p>
     <p></p>
     <p></p>
-    <p style="border-bottom:1px solid #000">Signature: </p>
+    <p style="width:50%;border-bottom:1px solid #000;">Signature: </p>
 </body>
 </html>
