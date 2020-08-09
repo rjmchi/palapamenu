@@ -6,6 +6,7 @@ use App\Category;
 use App\Item;
 use App\Option;
 use App\Choice;
+use App\Selection;
 
 class DatabaseSeeder extends Seeder
 {
@@ -92,7 +93,17 @@ class DatabaseSeeder extends Seeder
                                     if (isset($option->instructions)){
                                         $option_data['instructions'] = $option->instructions;
                                     }                                
-                                    Option::create($option_data);
+                                    $o = Option::create($option_data);
+                                    if (isset($option->selections)){
+                                        foreach($option->selections as $selection) {
+                                            $sel_data = [
+                                                'en'=> ["name" => $selection->en->name],
+                                                'es'=> ["name" => $selection->es->name],
+                                                "option_id"=> $o->id,
+                                            ];
+                                            Selection::create($sel_data);
+                                        }
+                                    }
                                 }                            
                             }
                         }

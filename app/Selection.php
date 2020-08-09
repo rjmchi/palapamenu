@@ -6,15 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 
-class Option extends Model implements TranslatableContract
+class Selection extends Model implements TranslatableContract
 {
     use Translatable;
     public $translatedAttributes = ['name'];
 
-    public function item() {
-        return $this->belongsTo('App\Item');
-    }
-    public function selections() {
-        return $this->hasMany('App\Selection');
-    }
+    public function option() {
+        return $this->belongsTo('App\Option');
+    }    
 }

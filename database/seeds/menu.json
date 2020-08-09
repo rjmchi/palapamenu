@@ -596,13 +596,103 @@
                     "items": [
                         {
                             "price": 155,
+                            "en": {"name":"Pizza Margarita"},
+                            "es": {"name": "Pizza Margarita"}
+                        },
+                        {
+                            "price": 155,
+                            "en": {
+                                "name": "Hawaiian Pizza", "description":"With pinapple and ham"
+                            },
+                            "es": {
+                                "name": "Pizza Hawaiana", "description": "con piña y jamon"
+                            }
+                        },
+                        {
+                            "price": 155,
+                            "en": {
+                                "name": "Veggie Pizza",
+                                "description": "With spinach, onions, peppers, zuccini, and mushrooms"
+                            },
+                            "es": {
+                                "name": "Veggy Pizza",
+                                "description": "con espinacas, cebollas, pimientos, calabazitas, y champiñon"
+                            }
+                        },
+                        {
+                            "price": 155,
+                            "en": {
+                                "name": "Shrimp and bacon with 4 cheeses",
+                                "description": ""
+                            },
+                            "es": {
+                                "name": "camarón con tocino y 4 quesos",
+                                "description": ""
+                            }
+                        },
+                        {
+                            "price": 155,
                             "en": {"name": "Pizza (3 Ingredients Included)"},
                             "es": {"name": "Pizza (3 Ingredientes)"},
                             "options": [
                                 {
                                     "en": {"name": "Additional for each extra ingredient"},
                                     "es": {"name": "Cada ingrediene adicional"},
-                                    "price": 20
+                                    "price": 20, 
+                                    "selections": [
+                                        { 
+                                            "en": {"name":"Italian Sausage"}, 
+                                            "es":{"name":"Salchia Italiano"}
+                                        },
+                                        {
+                                            "en": {
+                                                "name": "spinach"
+                                            },
+                                            "es": {
+                                                "name": "espinacas"
+                                            }
+                                        },
+                                        {
+                                            "en": {
+                                                "name": "onions"
+                                            },
+                                            "es": {
+                                                "name": "cebollas"
+                                            }
+                                        },
+                                        {
+                                            "en": {
+                                                "name": "peppers"
+                                            },
+                                            "es": {
+                                                "name": "pimientos"
+                                            }
+                                        },
+                                        {
+                                            "en": {
+                                                "name": "zuccini"
+                                            },
+                                            "es": {
+                                                "name": "calabazitas"
+                                            }
+                                        },
+                                        {
+                                            "en": {
+                                                "name": "pepperoni"
+                                            },
+                                            "es": {
+                                                "name": "peperoni"
+                                            }
+                                        },
+                                        {
+                                            "en": {
+                                                "name": "mushroom"
+                                            },
+                                            "es": {
+                                                "name": "champiñon"
+                                            }
+                                        }                              
+                                    ]
                                 },
                                 {
                                     "en": {"name": "Additional for Shrimp"},
@@ -656,12 +746,12 @@
                         {
                             "en":{"name": "Glass of Fresh Squeezed Orange Juice"},
                             "es":{"name": "Vaso de Jugo de Naranja Fresca"},
-                            "price": 35
+                            "price": 40
                         },
                         {
                             "en":{"name": "Pitcher of Fresh Squeezed Orange Juice"},
                             "es":{"name": "Jarra de Jugo de Naranja Fresca"},
-                            "price": 120
+                            "price": 130
                         },
                         {
                             "en":{"name": "Tomato Juice (Glass)"},
@@ -855,12 +945,80 @@
                         {
                             "en":{"name": "Margarita"},
                             "es":{"name":"Margarita"},
-                            "price": 70
+                            "price": 70,
+                            "choices": [
+                            {
+                                "en": {
+                                    "name": "Fresh Lime"
+                                },
+                                "es": {
+                                    "name": "Fresa Limón "
+                                }
+                            },
+                            {
+                                "en": {
+                                    "name": "Mango"
+                                },
+                                "es": {
+                                    "name":"Mango"
+                                }
+                            },
+                            {
+                                "en": {
+                                    "name": "Pineapple"
+                                },
+                                "es": {
+                                    "name": "Piña"
+                                }
+                            },
+                            {
+                                "en": {
+                                    "name": "Orange"
+                                },
+                                "es": {
+                                    "name": "Naranja"
+                                }
+                            }                            
+                            ]
                         },
                         {
                             "en":{"name": "Premium Margarita"},
                             "es":{"name":"Margarita Premium"},
-                            "price": 80
+                            "price": 80,
+                            "choices": [
+                                {
+                                    "en": {
+                                        "name": "Fresh Lime"
+                                    },
+                                    "es": {
+                                        "name": "Fresa Limón "
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Mango"
+                                    },
+                                    "es": {
+                                        "name": "Mango"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Pineapple"
+                                    },
+                                    "es": {
+                                        "name": "Piña"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Orange"
+                                    },
+                                    "es": {
+                                        "name": "Naranja"
+                                    }
+                                }
+                            ]                            
                         },
                         {
                             "en":{"name": "Rum and Coke"},
@@ -880,12 +1038,46 @@
                         {
                             "en": {"name": "Premium Tequila Shot"},
                             "es": {"name": "Premium Caballito de Tequila"},
-                            "price": 65
+                            "price": 75
                         },                        
                         {
                             "en":{"name": "Daiquiri", "description": "regular or fruit"},
                             "es":{"name":"Daiquiri", "description": "regular o fruta"},
-                            "price": 70
+                            "price": 70,
+                            "choices": [
+                                {
+                                    "en": {
+                                        "name": "Fresh Lime"
+                                    },
+                                    "es": {
+                                        "name": "Fresa Limón "
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Mango"
+                                    },
+                                    "es": {
+                                        "name": "Mango"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Pineapple"
+                                    },
+                                    "es": {
+                                        "name": "Piña"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "Orange"
+                                    },
+                                    "es": {
+                                        "name": "Naranja"
+                                    }
+                                }
+                            ]                            
                         },
                         {
                             "en":{"name": "Piña Colada"},
