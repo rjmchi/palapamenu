@@ -97,8 +97,9 @@ body {
     .option { 
         display:flex;
         justify-content: space-between;
+        margin-left:25px;
         span {
-            margin-right:10px;
+            margin-right:2px;
             font-size:1.1em;
         }
     }    
