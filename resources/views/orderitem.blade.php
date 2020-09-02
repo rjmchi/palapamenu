@@ -9,9 +9,11 @@
         <h3>{{$option ? $option->name : $item->name}}</h3>
         <p>{{__('Quantity')}}: <input name="qty" type="input" value="1" class="qty"></p>
         <div class="choices">
+            @php $checked = "checked=checked" @endphp
             @foreach($item->choices as $choice)
-                <label for="{{$choice->name}}"><input type="radio" id="{{$choice->name}}" name="choice" value="{{$choice->id}}"/>
+                <label for="{{$choice->name}}"><input type="radio" id="{{$choice->name}}" name="choice" {{$checked}} value="{{$choice->id}}"/>
                 {{$choice->name}}</label>
+                @php $checked = '' @endphp
             @endforeach
         </div>
     <p>
