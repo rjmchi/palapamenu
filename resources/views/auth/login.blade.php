@@ -15,8 +15,6 @@
                             <input type="input" name="unit" value="{{old('unit')}}">
                             <label for="name">{{__('Last Name')}}:</label>
                             <input type="input" name="name" value="{{old('name')}}">
-                            <label for="phone">{{__("Phone Number")}}:</label>
-                            <input type="tel" name="phone" value="{{old('phone')}}">
                             <label for="time">{{__('Requested Delivery Time')}} {{__("10:00 AM-4:30 PM")}}<br> {{__('(Please allow about 1 hour)')}}: </label>
                             <input type="text" name="time" value="{{old('time')}}">
                             <label for="location">{{__("Deliver to")}}:</label>
