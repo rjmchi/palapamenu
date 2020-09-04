@@ -595,6 +595,17 @@
                     ]
                 },
                 {
+                    "en":{"name":"Today's Special"},
+                    "es":{"name":"Especial del Dia"},
+                    "items":[
+                        {
+                            "price":85,
+                            "en": {"name":"Today's Special"},
+                            "es": {"name":"Especial del Dia"}
+                        }
+                    ]
+                },
+                {
                     "en":{"name": "Saturday and Sunday Specials"},
                     "es": {"name": "Sabado y Domingo Especiales"},
                     "items": [
