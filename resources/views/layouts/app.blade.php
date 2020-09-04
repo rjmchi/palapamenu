@@ -17,30 +17,27 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">     
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <main>
-
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-            <div class="apphead">
-                <a class="navbar-brand" href="{{ url('/') }}">
+            <nav class="titlebar">
+                <a class="logo" href="{{ url('/') }}">
                     {{ config('app.name', 'Los Palmares') }}
                 </a>
-                <div id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+
+                <div class="languages">
                         @if(count(config('app.languages')) > 1)
                             @foreach(config('app.languages') as $langLocale => $langName)
-                                <a class="lang" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                                <a class="lang" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ $langName }}</a>
                             @endforeach
                         @endif
-                    </ul>
                 </div>
-            </div>
-        </nav>
+            </nav>
             
             @if ($flash=session('message'))
                 <div class="alert alert-success" role="alert">{{$flash}}</div>
