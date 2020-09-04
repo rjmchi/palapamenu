@@ -11,7 +11,7 @@ class Selection extends Model implements TranslatableContract
     use Translatable;
     public $translatedAttributes = ['name'];
 
-    public function option() {
-        return $this->belongsTo('App\Option');
+    public function item() {
+        return $this->belongsTo('App\Item');
     }    
 }

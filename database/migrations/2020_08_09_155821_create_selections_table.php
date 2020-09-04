@@ -15,7 +15,7 @@ class CreateSelectionsTable extends Migration
     {
         Schema::create('selections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('option_id')->constrained();   
+            $table->foreignId('item_id')->constrained()->onDelete('cascade');   
             $table->timestamps();
         });
     }

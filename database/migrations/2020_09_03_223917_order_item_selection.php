@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+class OrderItemSelection extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->integer('sort_order')->default(0);
-            $table->timestamps();
-            $table->foreignId('menu_id')->constrained();              
+        Schema::create('order_item_selection', function (Blueprint $table) {
+            $table->foreignId('order_item_id')->nullable()->constrained()->onDelete('cascade');   
+            $table->foreignId('selection_id')->nullable()->constrained()->onDelete('cascade');   
         });
     }
 
@@ -28,6 +26,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        //
     }
 }

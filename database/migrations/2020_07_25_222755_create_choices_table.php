@@ -18,7 +18,7 @@ class CreateChoicesTable extends Migration
             $table->boolean('instructions')->default(false);
             $table->integer('sort_order')->default(0);
             $table->timestamps();
-            $table->foreignId('item_id')->constrained();   
+            $table->foreignId('item_id')->constrained()->onDelete('cascade');   
         });
     }
 

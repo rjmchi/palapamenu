@@ -8,10 +8,22 @@
         <input type="hidden" name="option" value="{{ $option->id ?? '' }}">
         <h3>{{$option ? $option->name : $item->name}}</h3>
         <p>{{__('Quantity')}}: <input name="qty" type="input" value="1" class="qty"></p>
+        <div class="select">
+            @if ($item->selections)
+                @if($item->no_of_choices)
+                    <input type="hidden" name="max" value="{{$item->no_of_choices}}">
+                @endif            
+                @foreach ($item->selections as $selection)
+                    <input type="checkbox" name="selection[]" value="{{$selection->id}}">{{$selection->name}}
+                @endforeach
+            @endif
+        </div>
         <div class="choices">
+            @php $checked = "checked=checked" @endphp
             @foreach($item->choices as $choice)
-                <label for="{{$choice->name}}"><input type="radio" id="{{$choice->name}}" name="choice" value="{{$choice->id}}"/>
+                <label for="{{$choice->name}}"><input type="radio" id="{{$choice->name}}" name="choice"  {{$checked}} value="{{$choice->id}}" />
                 {{$choice->name}}</label>
+                @php $checked = '' @endphp
             @endforeach
         </div>
     <p>

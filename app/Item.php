@@ -21,6 +21,9 @@ protected $with=['options', 'choices'];
     }
     public function choices() {
         return $this->hasMany('App\Choice')->orderBy('sort_order');;
-    }        
+    }
+    public function selections() {
+        return $this->hasMany('App\Selection');
+    }    
 }
 

@@ -11,6 +11,7 @@ use App\Order;
 use App\OrderItem;
 use App\Mail\Order as MailOrder;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -41,13 +42,19 @@ class HomeController extends Controller
             $order->save();
             $data['order']= $order;
             session(['orderid'=> $order->id]);
-        }        
+        }      
         return view('home')->with($data);
     }
 
     public function processOrder(Request $request) {
-
-        $request->validate(['qty'=>'required']);
+        $rules['qty'] = 'required';
+        if (isset($request->max)) {
+            $rules['selection'] = 'max:'.$request->max;
+        }
+        $validator = Validator::make($request->all(),
+        $rules,
+        ['qty.required' => __('The Quantity field is required'),
+            'selection.max' => __('Too many selections'),])->validate();
 
         $item = Item::find($request->input('item'));
         $orderitem = new OrderItem;
@@ -65,10 +72,16 @@ class HomeController extends Controller
         if ($request->input('choice')){
             $orderitem->choice_id = $request->input('choice');
         }
+        
         if ($request->input('special')){
             $orderitem->special = $request->input('special');
         }
         $orderitem->save();
+        if ($request->input('selection')){
+            foreach ($request->input('selection') as $s){
+                $orderitem->selections()->attach($s);
+            }
+        }        
         return redirect('/');
     }
 

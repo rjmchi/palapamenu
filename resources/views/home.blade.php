@@ -62,6 +62,13 @@
                 @if ($item->choice)
                     <dd>{{$item->choice->name}}</dd>
                 @endif
+                @if($item->selections)
+                    <p>
+                    @foreach ($item->selections as $sel)
+                        {{$sel->name}}, 
+                    @endforeach 
+                    </p>
+                @endif
                 <dd>{{$item->special}}</dd>
             @endforeach
             </dl>

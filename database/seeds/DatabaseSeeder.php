@@ -59,6 +59,9 @@ class DatabaseSeeder extends Seeder
                                 $item_data['en']["description"] = $item->en->description;
                                 $item_data['es']["description"] = $item->es->description;
                             }
+                            if (isset($item->no_of_choices)){
+                                $item_data["no_of_choices"] = $item->no_of_choices;
+                            }                            
                             if (isset($item->instructions)){
                                 $item_data['instructions'] = $item->instructions;
                             }
@@ -94,18 +97,18 @@ class DatabaseSeeder extends Seeder
                                         $option_data['instructions'] = $option->instructions;
                                     }                                
                                     $o = Option::create($option_data);
-                                    if (isset($option->selections)){
-                                        foreach($option->selections as $selection) {
-                                            $sel_data = [
-                                                'en'=> ["name" => $selection->en->name],
-                                                'es'=> ["name" => $selection->es->name],
-                                                "option_id"=> $o->id,
-                                            ];
-                                            Selection::create($sel_data);
-                                        }
-                                    }
                                 }                            
                             }
+                            if (isset($item->selections)){
+                                foreach($item->selections as $selection) {
+                                    $sel_data = [
+                                        'en'=> ["name" => $selection->en->name],
+                                        'es'=> ["name" => $selection->es->name],
+                                        "item_id"=> $i->id,
+                                    ];
+                                    Selection::create($sel_data);
+                                }
+                            }                            
                         }
                     }
                 }

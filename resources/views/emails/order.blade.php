@@ -22,6 +22,13 @@
             @if ($item->option)
                 <dd>{{$item->option->translate('es')->name}}</dd>
             @endif
+            @if ($item->selections)
+            <p>
+                @foreach($item->selections as $sel) 
+                    {{$sel->translate('es')->name}}, 
+                @endforeach
+            </p>
+            @endif
             <dd>{{$item->special}}</dd>
         @endforeach
     </dl>

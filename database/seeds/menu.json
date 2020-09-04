@@ -71,7 +71,7 @@
                             "price": 25
                         },
                         {
-                            "en":{"name": "Homemade Sweet Bread with cream chease, jam, butter"},
+                            "en":{"name": "Homemade Sweet Bread with cream cheese, jam, butter"},
                             "es":{"name": "Pan Dulce Casero con queso cremoso, mermelada, mantequilla"},
                             "price": 30
                         }
@@ -83,7 +83,7 @@
                         "description": "With beans, breakfast potatoes, toast, and fruit"},
                     "es":{
                         "name": "Huevos y Omelettes ",
-                        "description": "con frijoles,papas desayuno, pan tostado y fruta"},
+                        "description": "con frijoles, papas desayuno, pan tostado y fruta"},
                     "items": [
                         {
                             "en":{
@@ -115,7 +115,7 @@
                             "options": [
                                 {
                                     "en":{"name": "2 Eggs with sausage"},
-                                    "es":{"name": "2 Huevos con salchica"},
+                                    "es":{"name": "2 Huevos con salchicha"},
                                     "price": 65
                                 },
                                 {
@@ -142,7 +142,7 @@
                             },
                             "es": {
                                 "name": "Benedict Palmares",
-                                "description": "Muffin ingles, jamóno arrachera, salsa holandesa"
+                                "description": "Muffin ingles, jamón o arrachera, salsa holandesa"
                             },
                             "price": 85
                         }
@@ -180,7 +180,7 @@
                             },
                             "es": {
                                 "name": "variedad de frutas frescas de la estación de bahía de banderas:",
-                                "description": "papaya,piña,plátano,sandia,melón, naranja,jícama,pepino"
+                                "description": "papaya, piña, plátano, sandia, melón, naranja, jícama, pepino"
                             },                            
                             "price": 70
                         }
@@ -245,7 +245,7 @@
                             },
                             "es":{
                                 "name":"Ensalada Mediterranea", 
-                                "description":"Camarón,aceituna, elote, apio, cebolla, pimientos, pepino"}
+                                "description":"Camarón, aceituna, elote, apio, cebolla, pimientos, pepino"}
                         },
                         {
                             "price": 85,
@@ -297,7 +297,7 @@
                                 "description": "dipping sauce and fried bananas"
                             },
                             "es": {"name": "Nuggets de Pollo",
-                                "description": "Adrezo y plátano"}
+                                "description": "Adrezo y plátano fritos"}
                             },
                             {
                                 "price": 60,
@@ -316,12 +316,16 @@
                             },
                             "choices": [
                                 {
-                                    "en": {"name": "corn tortilla"},
-                                    "es": {"name":"maiz tortilla"}
-                                },
+                                    "en": {
+                                        "name": "flour tortilla"
+                                    },
+                                    "es": {
+                                        "name": "harina tortilla"
+                                    }
+                                },                            
                                 {
-                                    "en": {"name": "flour tortilla"},
-                                    "es": {"name":"harina tortilla"}
+                                    "en": {"name": "corn tortilla"},
+                                    "es": {"name":"maíz tortilla"}
                                 }
                             ],
                             "options": [
@@ -337,7 +341,7 @@
                                 },
                                 {
                                     "en": {"name": "Quesadillas with shrimp"},
-                                    "es": {"name": "Quesadillas con carmaron"},
+                                    "es": {"name": "Quesadillas con carmarón"},
                                     "price": 150
                                 }
                             ]
@@ -390,7 +394,7 @@
                             "en":{"name": "Botanas - Fresh 'Finger Food'",
                             "description": "Cucumber, jicama, beet, carrot, lemon, salt in grain, Tajín spice"},
                             "es": {"name": "Botana Fresca",
-                                "description": "Pepino, jicama, betabel, zanahoria, limón, sal e grano, Tajín"}
+                                "description": "Pepino, jicama, betabel, zanahoria, limón, sal en grano, Tajín"}
                         }
                     ]
                 },
@@ -403,14 +407,14 @@
                             "en": {"name": "Carnitas",
                             "description": "Mexican sauce and beans"},
                             "es":{"name": "Carnitas",
-                                "description": "Salsa Mexican y frijoles de olla"}
+                                "description": "Salsa mexicana y frijoles de olla"}
                         },
                         {
                             "price": 85,
                             "en":{"name": "Asada",
                             "description": "Mexican sauce and beans"},
                             "es":{"name": "Asada",
-                                "description": "Salsa Mexican y frijoles de olla"}
+                                "description": "Salsa mexicana y frijoles de olla"}
                         },
                         {
                             "price": 145,
@@ -516,7 +520,7 @@
                             "en":{"name": "Pharoah Sandwich",
                             "description": "Grilled chicken, lettuce, mustard, dressing, jalapeño, tomato, and roasted onion"},
                             "es": {"name": "Torta Faraon",
-                                "description": "Polloa la parrilla, lechuga, mostaza, adrezo, jalapeño, tomate, y cebolla asada"}
+                                "description": "Pollo a la parrilla, lechuga, mostaza, adrezo, jalapeño, tomate, y cebolla asada"}
                         }
                     ]
                 },
@@ -542,7 +546,7 @@
                             "price": 140,
                             "en":{"name": "Fajitas (Shrimp or Chicken)",
                             "description": "Rice and Beans"},
-                            "es": {"name": "Fajitas (Camarón o Pollo",
+                            "es": {"name": "Fajitas (Camarón o Pollo)",
                                 "description": "Arroz y Frijoles"},
                             "choices": [
                                 {
@@ -565,7 +569,7 @@
                         {
                             "price": 155,
                             "en":{"name": "Filet of Beef with Mustard",
-                            "description": "Brandy, sweet potato, and vegetable puree"},
+                            "description": "Brandy, sweet potato and vegetable puree"},
                             "es":{"name": "Filete de Res a la Mostaza",
                                 "description": "Brandy, pure de camote y verduras"}
                         },
@@ -632,75 +636,142 @@
                         },
                         {
                             "price": 155,
-                            "en": {"name": "Pizza (3 Ingredients Included)"},
-                            "es": {"name": "Pizza (3 Ingredientes)"},
-                            "options": [
+                            "en": {"name": "Pizza (3 Ingredients Included)",
+                                "description":"Additional for each extra ingredient"},
+                                "es": {"name": "Pizza (3 Ingredientes)", 
+                                    "description": "Cada ingrediene adicional"},
+                            "no_of_choices": 3,
+                            "selections":[
                                 {
-                                    "en": {"name": "Additional for each extra ingredient"},
-                                    "es": {"name": "Cada ingrediene adicional"},
-                                    "price": 20, 
-                                    "selections": [
-                                        { 
-                                            "en": {"name":"Italian Sausage"}, 
-                                            "es":{"name":"Salchia Italiano"}
-                                        },
-                                        {
-                                            "en": {
-                                                "name": "spinach"
-                                            },
-                                            "es": {
-                                                "name": "espinacas"
-                                            }
-                                        },
-                                        {
-                                            "en": {
-                                                "name": "onions"
-                                            },
-                                            "es": {
-                                                "name": "cebollas"
-                                            }
-                                        },
-                                        {
-                                            "en": {
-                                                "name": "peppers"
-                                            },
-                                            "es": {
-                                                "name": "pimientos"
-                                            }
-                                        },
-                                        {
-                                            "en": {
-                                                "name": "zuccini"
-                                            },
-                                            "es": {
-                                                "name": "calabazitas"
-                                            }
-                                        },
-                                        {
-                                            "en": {
-                                                "name": "pepperoni"
-                                            },
-                                            "es": {
-                                                "name": "peperoni"
-                                            }
-                                        },
-                                        {
-                                            "en": {
-                                                "name": "mushroom"
-                                            },
-                                            "es": {
-                                                "name": "champiñon"
-                                            }
-                                        }                              
-                                    ]
+                                    "en": {
+                                        "name": "Italian Sausage"
+                                    },
+                                    "es": {
+                                        "name": "Salchia Italiano"
+                                    }
                                 },
                                 {
-                                    "en": {"name": "Additional for Shrimp"},
-                                    "es": {"name": "Camarones"},
-                                    "price": 35
+                                    "en": {
+                                        "name": "spinach"
+                                    },
+                                    "es": {
+                                        "name": "espinacas"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "onions"
+                                    },
+                                    "es": {
+                                        "name": "cebollas"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "peppers"
+                                    },
+                                    "es": {
+                                        "name": "pimientos"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "zuccini"
+                                    },
+                                    "es": {
+                                        "name": "calabazitas"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "pepperoni"
+                                    },
+                                    "es": {
+                                        "name": "peperoni"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "mushroom"
+                                    },
+                                    "es": {
+                                        "name": "champiñon"
+                                    }
                                 }
-                            ]
-                        },
+                            ]             
+                        }, 
+                                {
+                                    "price": 20,
+                                    "en": {
+                                        "name": "-- Add Italian Sausage"
+                                    },
+                                    "es": {
+                                        "name": "-- Con Salchia Italiana"
+                                    }
+                                },
+                                {
+                                    "price": 20,
+                                    "en": {
+                                        "name": "-- Add spinach"
+                                    },
+                                    "es": {
+                                        "name": "-- Con espinacas"
+                                    }
+                                },
+                                {
+                                    "price": 20,
+                                    "en": {
+                                        "name": "-- Add onions"
+                                    },
+                                    "es": {
+                                        "name": "-- Con cebollas"
+                                    }
+                                },
+                                {
+                                    "price": 20,
+                                    "en": {
+                                        "name": "-- Add peppers"
+                                    },
+                                    "es": {
+                                        "name": "-- Con pimientos"
+                                    }
+                                },
+                                {
+                                    "price": 20,
+                                    "en": {
+                                        "name": "-- Add zuccini"
+                                    },
+                                    "es": {
+                                        "name": "-- Con calabazitas"
+                                    }
+                                },
+                                {
+                                    "price": 20,
+                                    "en": {
+                                        "name": "-- Add pepperoni"
+                                    },
+                                    "es": {
+                                        "name": "-- Con peperoni"
+                                    }
+                                },
+                                {
+                                    "price": 20,
+                                    "en": {
+                                        "name": "-- Add mushroom"
+                                    },
+                                    "es": {
+                                        "name": "-- Con champiñon"
+                                    }
+                                },
+                                {
+                                    "en": {
+                                        "name": "-- Add Shrimp"
+                                    },
+                                    "es": {
+                                        "name": "-- Con Camarónes"
+                                    },
+                                    "price": 35
+                                } ,                                  
                         {
                             "price": 155,
                             "en": {"name": "Pasta - Alfredo with chicken"},
@@ -711,8 +782,8 @@
                                     "es":{"name": "Spaghetti"}
                                 },
                                 {
-                                    "en":{"name": "Fetuccini"},
-                                    "es":{"name": "Fetuccini"}
+                                    "en":{"name": "Fettuccini"},
+                                    "es":{"name": "Fettuccini"}
                                 }
                             ]
                         },
@@ -868,7 +939,7 @@
                     ]
                 },
                 {
-                    "en":{"name": "Coctails"},
+                    "en":{"name": "Cocktails"},
                     "es":{"name": "Cocteles"},
                     "items": [
                         {

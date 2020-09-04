@@ -16,10 +16,11 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->integer('price');
+            $table->integer('no_of_choices')->default(0);
             $table->integer('sort_order')->default(0);
             $table->boolean('instructions')->default(false);
             $table->timestamps();
-            $table->foreignId('category_id')->constrained();   
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');   
         });
     }
 

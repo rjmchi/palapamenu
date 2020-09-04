@@ -14,7 +14,4 @@ class Option extends Model implements TranslatableContract
     public function item() {
         return $this->belongsTo('App\Item');
     }
-    public function selections() {
-        return $this->hasMany('App\Selection');
-    }
 }
