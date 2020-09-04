@@ -14,7 +14,9 @@
                     <input type="hidden" name="max" value="{{$item->no_of_choices}}">
                 @endif            
                 @foreach ($item->selections as $selection)
+                <div class="input-group">
                     <input type="checkbox" name="selection[]" value="{{$selection->id}}">{{$selection->name}}
+                </div>
                 @endforeach
             @endif
         </div>

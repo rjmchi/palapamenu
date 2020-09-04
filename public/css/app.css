@@ -11126,6 +11126,26 @@ input.qty {
   margin-left: 10px;
 }
 
+.select {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.select input {
+  margin-right: 5px;
+}
+
+.select .input-group {
+  flex-basis: 30%;
+  align-items: center;
+}
+
+@media (max-width: 901px) {
+  .select .input-group {
+    flex-basis: 100%;
+  }
+}
+
 @media (max-width: 528px) {
   .btn {
     margin-top: 1em;
