@@ -39,6 +39,7 @@ class HomeController extends Controller
             $order = new Order;
             $order->apt = session('unit');
             $order->name = session('name');
+            $order->location = session('location');
             $order->save();
             $data['order']= $order;
             session(['orderid'=> $order->id]);

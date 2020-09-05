@@ -16,6 +16,7 @@ class RegisterController extends Controller
 
         session(['unit' => $request->input('unit')]);
         session(['name' => $request->input('name')]);
+        session(['location' => $request->input('location')]);
         $order = new Order;
         $order->apt = session('unit');
         $order->name = session('name');
