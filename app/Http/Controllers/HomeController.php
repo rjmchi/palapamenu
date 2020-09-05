@@ -118,7 +118,7 @@ class HomeController extends Controller
         $order->save();
         $order->total = 0;
         $now = Carbon::now('America/Mexico_City');
-        $order->date = $now->format('d/m/y h:i a');
+        $order->date = $now->format('d M Y h:i a');
         foreach ($order->orderItems as $item)  {
             $order->total += $item->price;
         } 
