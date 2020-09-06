@@ -27,7 +27,7 @@
         <main>
             <nav class="titlebar">
                 <a class="logo" href="{{ url('/') }}">
-                    {{ config('app.name', 'Los Palmares') }}
+                    {{ __("Los Palmares Palapa Menu") }}
                 </a>
 
                 <div class="languages">

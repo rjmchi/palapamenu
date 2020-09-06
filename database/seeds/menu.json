@@ -67,12 +67,12 @@
                         },                        
                         {
                             "en":{"name": "Homemade Sweet Bread"},
-                            "es":{"name": "Pan Dulce Casero"},
+                            "es":{"name": "Pan dulce casero"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Homemade Sweet Bread with cream cheese, jam, butter"},
-                            "es":{"name": "Pan Dulce Casero con queso cremoso, mermelada, mantequilla"},
+                            "es":{"name": "Pan dulce casero con queso cremoso, mermelada, mantequilla"},
                             "price": 30
                         }
                     ]
@@ -91,13 +91,13 @@
                                 "description": "Cheese, spinach, mushrooms, zucchini, cherry tomato, and onion"},
                                 "es":{
                                     "name": "Omelette Luna",
-                                    "description": "queso, espinacas, champiñones, calabacita, jitomate, y cebolla"
+                                    "description": "queso, espinacas, champiñones, calabacita, jitomate y cebolla"
                                 },
                             "price": 75
                         },
                         {
                             "en":{"name": "Eggs al Gusto (2)"},
-                            "es":{"name": "Huevos al Gusto (2)"},
+                            "es":{"name": "Huevos al gusto (2)"},
                             "price": 50,
                             "choices": [
                                 {"en":{"name": "Over Easy"},
@@ -108,7 +108,7 @@
                                 "es":{"name": "Fritos"}},
                                 {
                                     "en":{"name": "As you like them (specify in special instructions)"},
-                                    "es":{"name":"Al Gusto (specify in special instructions)"},
+                                    "es":{"name":"Al gusto (especificar en las instrucciones especiales)"},
                                     "instructions": true
                                 }
                             ],
@@ -125,12 +125,12 @@
                                 },
                                 {
                                     "en":{"name": "2 Eggs Mexican"},
-                                    "es":{"name": "2 Huevos a la Mexicana"},
+                                    "es":{"name": "2 Huevos a la mexicana"},
                                     "price": 65
                                 },
                                 {
                                     "en":{"name": "2 Eggs Rancheros"},
-                                    "es":{"name": "2 Huevos Rancheros"},
+                                    "es":{"name": "2 Huevos rancheros"},
                                     "price": 65
                                 }
                             ]
@@ -142,7 +142,7 @@
                             },
                             "es": {
                                 "name": "Benedict Palmares",
-                                "description": "Muffin ingles, jamón o arrachera, salsa holandesa"
+                                "description": "Muffin inglés, jamón o arrachera, salsa holandesa"
                             },
                             "price": 85
                         }
@@ -153,7 +153,7 @@
                         "name": "Breakfast Burritos",
                         "description": "Filled with scrambled eggs, cheese, and ham or chorizo"},
                     "es": {
-                        "name": "Burritos de Desayuno",
+                        "name": "Burritos de desayuno",
                         "description": "Rellenos con huevos revueltos, queso y chorizo o jamón"
                     },
                     "items": [
@@ -176,11 +176,11 @@
                         {
                             "en": {
                                 "name": "Variety of Seasonal Fresh Fruit:",
-                                "description": "Papaya, Pineapple, Banana, Watermelon, Cantalope, Winter Melon, Orange, Jicama, Cucumber"
+                                "description": "Papaya, Pineapple, Banana, Watermelon, Cantaloupe, Winter Melon, Orange, Jicama, Cucumber"
                             },
                             "es": {
-                                "name": "variedad de frutas frescas de la estación de bahía de banderas:",
-                                "description": "papaya, piña, plátano, sandia, melón, naranja, jícama, pepino"
+                                "name": "Variedad de frutas frescas de la estación de Bahía de Banderas:",
+                                "description": "papaya, piña, plátano, sandía , melón, naranja, jícama, pepino"
                             },                            
                             "price": 70
                         }
@@ -197,7 +197,7 @@
                         },
                         {
                             "en":{"name": "Ham (2 slices)"},
-                            "es":{"name": "jamón (2 rebanadas)"},
+                            "es":{"name": "Jamón (2 rebanadas)"},
                             "price": 35
                         },
                         {
@@ -244,7 +244,7 @@
                                 "description": "Shrimp, olive, corn, celery, onion, peppers, cucumber"
                             },
                             "es":{
-                                "name":"Ensalada Mediterranea", 
+                                "name":"Ensalada Mediterránea ", 
                                 "description":"Camarón, aceituna, elote, apio, cebolla, pimientos, pepino"}
                         },
                         {
@@ -265,7 +265,7 @@
                                 "description": "Lettuce, blueberry, walnut, cherry tomato, pear, strawberry, passion fruit"
                             },
                             "es": {"name": "Ensalada Artemis",
-                                "description": "Lechuga, arandano, nuez, tomate sherry, pera, fresa, aderezo, maracuyá"}
+                                "description": "Lechuga, arándano, nuez, tomate sherry, pera, fresa, aderezo, maracuyá"}
                         },
                         {
                             "price": 45,
@@ -273,7 +273,7 @@
                                 "name": "Small House Salad",
                                 "description": "Lettuce, cherry tomato, carrot, cucumber"
                             }, 
-                            "es":{"name": "Ensalada de Casa Pequeña",
+                            "es":{"name": "Ensalada de la casa pequeña",
                                 "description": "Lechuga, tomate sherry, zanahoria, pepino"}
                         },
                         {
@@ -282,13 +282,13 @@
                                 "name": "Fried Zucchini",
                                 "description": "lettuce and vinigrette bed"
                             },
-                            "es": {"name": "Calabacitas Fritas",
+                            "es": {"name": "Calabacitas fritas",
                                 "description": "Cama de lechuga y vinagreta"}
                         },
                         {
                             "price": 145,
                             "en": {"name": "Fish Ceviche"},
-                            "es": {"name":"Ceviche de Pescado"}
+                            "es": {"name":"Ceviche de pescado"}
                         },
                         {
                             "price": 90,
@@ -296,8 +296,8 @@
                                 "name": "Chicken Nuggets",
                                 "description": "dipping sauce and fried bananas"
                             },
-                            "es": {"name": "Nuggets de Pollo",
-                                "description": "Adrezo y plátano fritos"}
+                            "es": {"name": "Nuggets de pollo",
+                                "description": "Aderezo y plátanos fritos"}
                             },
                             {
                                 "price": 60,
@@ -320,18 +320,18 @@
                                         "name": "flour tortilla"
                                     },
                                     "es": {
-                                        "name": "harina tortilla"
+                                        "name": "tortilla de harina"
                                     }
                                 },                            
                                 {
                                     "en": {"name": "corn tortilla"},
-                                    "es": {"name":"maíz tortilla"}
+                                    "es": {"name":"tortilla de maíz"}
                                 }
                             ],
                             "options": [
                                 {
                                     "en": {"name": "Quesadillas with chicken"},
-                                    "es": {"name":"Quesadillas con Pollo"},
+                                    "es": {"name":"Quesadillas con pollo"},
                                     "price": 85
                                 },
                                 {
@@ -341,7 +341,7 @@
                                 },
                                 {
                                     "en": {"name": "Quesadillas with shrimp"},
-                                    "es": {"name": "Quesadillas con carmarón"},
+                                    "es": {"name": "Quesadillas con camarón"},
                                     "price": 150
                                 }
                             ]
@@ -357,12 +357,12 @@
                             },
                         {
                             "en":{"name": "Small Guacamole"},
-                            "es": {"name":"Guacamole Chico"},
+                            "es": {"name":"Guacamole chico"},
                             "price": 45
                         },
                         {
                             "en":{"name": "Large Guacamole"},
-                            "es": {"name": "Guacamole Grande"},
+                            "es": {"name": "Guacamole grande"},
                             "price": 75
                         },
                         {
@@ -393,7 +393,7 @@
                             "price": 40,
                             "en":{"name": "Botanas - Fresh 'Finger Food'",
                             "description": "Cucumber, jicama, beet, carrot, lemon, salt in grain, Tajín spice"},
-                            "es": {"name": "Botana Fresca",
+                            "es": {"name": "Botana fresca",
                                 "description": "Pepino, jicama, betabel, zanahoria, limón, sal en grano, Tajín"}
                         }
                     ]
@@ -421,19 +421,19 @@
                             "en":{"name": "Puerto Vallarta",
                             "description": "Shrimp, coriander sauce, jalapeño"},
                             "es":{"name": "Puerto Vallarta",
-                                "description": "Camarón capeado, salsa cilantro y jalapeño"}
+                                "description": "Camarón capeado, salsa de cilantro y jalapeño"}
                         }
                     ]
                 },
                 {
                     "en":{"name": "Hamburgers", "description": "with fries, Sabritas, or fried banana"},
-                    "es":{"name": "Hambuguesas", "description": "con papas francesas, Sabritas, o plátano frito"},
+                    "es":{"name": "Hambuguesas", "description": "con papas francesas, Sabritas, o plátanos fritos"},
                     "items": [
                         {
                             "price": 85,
                             "en":{"name": "Paradise",
                             "description": "Cheese, bacon, mushrooms, roasted onion"},
-                            "es":{"name": "Paraiso",
+                            "es":{"name": "Paraíso",
                                 "description": "Queso, tocino, champiñones, cebolla asada"},
                     "choices": [
                         {
@@ -457,7 +457,7 @@
                                 "name": "With Fried Bananas"
                             },
                             "es": {
-                                "name": "con plátano frito"
+                                "name": "con plátanos fritos"
                             }
                         }
                     ]                                
@@ -519,8 +519,8 @@
                             "price": 75,
                             "en":{"name": "Pharoah Sandwich",
                             "description": "Grilled chicken, lettuce, mustard, dressing, jalapeño, tomato, and roasted onion"},
-                            "es": {"name": "Torta Faraon",
-                                "description": "Pollo a la parrilla, lechuga, mostaza, adrezo, jalapeño, tomate, y cebolla asada"}
+                            "es": {"name": "Torta Faraón",
+                                "description": "Pollo a la parrilla, lechuga, mostaza, aderezo, jalapeño, tomate y cebolla asada"}
                         }
                     ]
                 },
@@ -532,22 +532,22 @@
                             "price": 125,
                             "en":{"name": "Chicken Breast",
                             "description": "Red wine sauce, mushrooms, steamed vegetables, and sweet potato puree"},
-                            "es":{"name": "Pollo (Pechuga)",
-                                "description": "Salsa de vino tinto, champiñones, verduras al vapor, y pure de camote "}
+                            "es":{"name": "Pollo (pechuga)",
+                                "description": "Salsa de vino tinto, champiñones, verduras al vapor y puré de camote "}
                         },
                         {
                             "price": 115,
                             "en":{"name": "Breaded Chicken",
                             "description": "Rice and vegetables"},
-                            "es":{"name": "Pollo Empanizado",
+                            "es":{"name": "Pollo empanizado",
                                 "description": "Arroz y verduras"}
                         },
                         {
                             "price": 140,
                             "en":{"name": "Fajitas (Shrimp or Chicken)",
                             "description": "Rice and Beans"},
-                            "es": {"name": "Fajitas (Camarón o Pollo)",
-                                "description": "Arroz y Frijoles"},
+                            "es": {"name": "Fajitas (camarón o pollo)",
+                                "description": "Arroz y frijoles"},
                             "choices": [
                                 {
                                     "en":{"name": "Chicken"},
@@ -570,44 +570,44 @@
                             "price": 155,
                             "en":{"name": "Filet of Beef with Mustard",
                             "description": "Brandy, sweet potato and vegetable puree"},
-                            "es":{"name": "Filete de Res a la Mostaza",
-                                "description": "Brandy, pure de camote y verduras"}
+                            "es":{"name": "Filete de res a la mostaza",
+                                "description": "Brandy, puré de camote y verduras"}
                         },
                         {
                             "price": 150,
                             "en":{"name": "Coconut Shrimp",
                             "description": "Rice, vegetables, and mango sauce"},
-                            "es":{"name": "Camarónes al Coco",
-                                "description": "Arroz, verduras, y salsa mango"}
+                            "es":{"name": "Camarónes al coco",
+                                "description": "Arroz, verduras y salsa mango"}
                         },
                         {
                             "price": 150,
                             "en":{"name": "Fish in Three Chiles Sauce",
                             "description": "Butter, garlic, dried chili peppers, rice, vegetables"},
-                            "es":{"name": "Pescado a las Tres Chiles",
-                                "description": "Mantequilla, ajo, chiles secos, arroz, verduras"}
+                            "es":{"name": "Pescado a los tres chiles",
+                                "description": "Mantequilla, ajo, chiles secos, arroz y verduras"}
                         },
                         {
                             "en":{"name": "Fish Al Gusto"},
-                            "es": {"name": "Pesco Al Gusto"},
+                            "es": {"name": "Pescado al gusto"},
                             "price": 150
                         }
                     ]
                 },
                 {
                     "en":{"name":"Today's Special"},
-                    "es":{"name":"Especial del Dia"},
+                    "es":{"name":"Especial del día"},
                     "items":[
                         {
                             "price":85,
                             "en": {"name":"Today's Special"},
-                            "es": {"name":"Especial del Dia"}
+                            "es": {"name":"Especial del día"}
                         }
                     ]
                 },
                 {
                     "en":{"name": "Saturday and Sunday Specials"},
-                    "es": {"name": "Sabado y Domingo Especiales"},
+                    "es": {"name": "Especiales del Sábado y Domingo"},
                     "items": [
                         {
                             "price": 155,
@@ -620,18 +620,18 @@
                                 "name": "Hawaiian Pizza", "description":"With pinapple and ham"
                             },
                             "es": {
-                                "name": "Pizza Hawaiana", "description": "con piña y jamon"
+                                "name": "Pizza Hawaiana", "description": "con piña y jamón"
                             }
                         },
                         {
                             "price": 155,
                             "en": {
                                 "name": "Veggie Pizza",
-                                "description": "With spinach, onions, peppers, zuccini, and mushrooms"
+                                "description": "With spinach, onions, peppers, zucchini, and mushrooms"
                             },
                             "es": {
-                                "name": "Veggy Pizza",
-                                "description": "con espinacas, cebollas, pimientos, calabazitas, y champiñon"
+                                "name": "Pizza vegetariana",
+                                "description": "con espinacas, cebollas, pimientos, calabazitas y champiñon"
                             }
                         },
                         {
@@ -641,7 +641,7 @@
                                 "description": ""
                             },
                             "es": {
-                                "name": "camarón con tocino y 4 quesos",
+                                "name": "Pizza de camarón con tocino y 4 quesos",
                                 "description": ""
                             }
                         },
@@ -649,7 +649,7 @@
                             "price": 155,
                             "en": {"name": "Pizza (3 Ingredients Included)",
                                 "description":"Additional for each extra ingredient"},
-                                "es": {"name": "Pizza (3 Ingredientes)", 
+                                "es": {"name": "Pizza (3 ingredientes)", 
                                     "description": "Cada ingrediene adicional"},
                             "no_of_choices": 3,
                             "selections":[
@@ -658,7 +658,7 @@
                                         "name": "Italian Sausage"
                                     },
                                     "es": {
-                                        "name": "Salchia Italiano"
+                                        "name": "Salchia italiana"
                                     }
                                 },
                                 {
@@ -687,10 +687,10 @@
                                 },
                                 {
                                     "en": {
-                                        "name": "zuccini"
+                                        "name": "zucchini"
                                     },
                                     "es": {
-                                        "name": "calabazitas"
+                                        "name": "calabacitas"
                                     }
                                 },
                                 {
@@ -750,10 +750,10 @@
                                 {
                                     "price": 20,
                                     "en": {
-                                        "name": "-- Add zuccini"
+                                        "name": "-- Add zucchini"
                                     },
                                     "es": {
-                                        "name": "-- Con calabazitas"
+                                        "name": "-- Con calabacitas"
                                     }
                                 },
                                 {
@@ -779,14 +779,14 @@
                                         "name": "-- Add Shrimp"
                                     },
                                     "es": {
-                                        "name": "-- Con Camarónes"
+                                        "name": "-- Con camarones"
                                     },
                                     "price": 35
                                 } ,                                  
                         {
                             "price": 155,
                             "en": {"name": "Pasta - Alfredo with chicken"},
-                            "es": {"name": "Pasta - Alfredo con Pollo"},
+                            "es": {"name": "Pasta - Alfredo con pollo"},
                             "choices": [
                                 {
                                     "en":{"name": "Spaghetti"},
@@ -800,8 +800,8 @@
                         },
                         {
                             "price": 155,
-                            "en":{"name": "Pasta - Mar y Monte with shrimp and bacon"},
-                            "es": {"name": "Pasta - Mar y Monte"},
+                            "en":{"name": "Pasta Mar y Monte with shrimp and bacon"},
+                            "es": {"name": "Pasta Mar y Monte"},
                             "choices": [
                                 {
                                     "en":{"name": "Spaghetti"},
@@ -823,21 +823,21 @@
             "categories": [
                 {
                     "en":{"name": "Soft Drinks"},
-                    "es":{"name": "Soft Drinks"},
+                    "es":{"name": "sin Alcohol"},
                     "items": [
                         {
                             "en":{"name": "Glass of Fresh Squeezed Orange Juice"},
-                            "es":{"name": "Vaso de Jugo de Naranja Fresca"},
+                            "es":{"name": "Vaso de jugo de naranja fresca"},
                             "price": 40
                         },
                         {
                             "en":{"name": "Pitcher of Fresh Squeezed Orange Juice"},
-                            "es":{"name": "Jarra de Jugo de Naranja Fresca"},
+                            "es":{"name": "Jarra de jugo de naranja fresca"},
                             "price": 130
                         },
                         {
                             "en":{"name": "Tomato Juice (Glass)"},
-                            "es":{"name": "Jugo de Tomate (Vaso)"},
+                            "es":{"name": "Jugo de tomate (Vaso)"},
                             "price": 40
                         },
                         {
@@ -851,7 +851,7 @@
                                 },
                                 {
                                     "en": {"name": "Iced"},
-                                    "es": {"name": "Frio"}
+                                    "es": {"name": "Helado"}
                                 }                            
                             ]
                         },
@@ -866,7 +866,7 @@
                                 },
                                 {
                                     "en": {"name": "Iced"},
-                                    "es": {"name": "Frio"}
+                                    "es": {"name": "Helado"}
                                 }
                             ]                            
                         },
@@ -877,22 +877,22 @@
                         },
                         {
                             "en":{"name": "Chocolate Milk"},
-                            "es":{"name": "Leche Chocolate"},
+                            "es":{"name": "Leche con chocolate"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Hot Chocolate"},
-                            "es":{"name": "Leche Chocolate Caliente"},
+                            "es":{"name": "Leche con chocolate caliente"},
                             "price": 25
                         },
                         {
                             "en":{"name": "Bottle of Water"},
-                            "es":{"name": "Botella de Agua"},
+                            "es":{"name": "Botella de agua"},
                             "price": 18
                         },
                         {
                             "en":{"name": "Soda (Coke, Seven-Up, Etc.)"},
-                            "es":{"name": "Refresco (Coke, Seven-Up, Etc.)"},
+                            "es":{"name": "Refresco (Coca, Seven-Up, Etc.)"},
                             "price": 25,
                             "choices": [
                                 {
@@ -901,7 +901,7 @@
                                 },
                                 {
                                     "en":{"name": "Coke (diet)"},
-                                    "es":{"name": "Coca (lite)"}
+                                    "es":{"name": "Coca light"}
                                 },
                                 {
                                     "en":{"name": "7 Up"},
@@ -919,7 +919,7 @@
                         },
                         {
                            "en":{ "name": "Smoothie (fruit)", "description":"Choice of Fruit with milk or yogurt"},
-                           "es":{"name": "Smoothie (defrutas)", "description": "Fruta a elegir en leche o yogurt"},
+                           "es":{"name": "Smoothie (de frutas)", "description": "Fruta a elegir, en leche o yogurt"},
                             "price": 35,
                             "choices": [
                                 {
@@ -934,7 +934,7 @@
                         },
                         {
                             "en":{"name": "Agua Fresca (Water of the Day)"},
-                            "es":{"name": "Agua Fresca"},
+                            "es":{"name": "Agua fresca"},
                             "price": 25
                         },
                         {
@@ -950,8 +950,8 @@
                     ]
                 },
                 {
-                    "en":{"name": "Cocktails"},
-                    "es":{"name": "Cocteles"},
+                    "en":{"name": "Beer and Cocktails"},
+                    "es":{"name": "Bebidas Alcohólicas y Cocteles"},
                     "items": [
                         {
                             "en":{"name": "Beer"},
@@ -971,7 +971,7 @@
                                         "name": "Tecate Lite"
                                     },
                                     "es": {
-                                        "name": "Tecate Lite"
+                                        "name": "Tecate light"
                                     }
                                 },
                                 {
@@ -987,7 +987,7 @@
                                         "name": "Modelo Lite"
                                     },
                                     "es": {
-                                        "name": "Modelo Lite"
+                                        "name": "Modelo light"
                                     }
                                 },
                                 {
@@ -1003,7 +1003,7 @@
                                         "name": "Corona Lite"
                                     },
                                     "es": {
-                                        "name": "Corona Lite"
+                                        "name": "Corona light"
                                     }
                                 },
                                 {
@@ -1019,7 +1019,7 @@
                                         "name": "Pacifico Lite"
                                     },
                                     "es": {
-                                        "name": "Pacifico Lite"
+                                        "name": "Pacifico light"
                                     }
                                 }
                             ]                            
@@ -1034,7 +1034,7 @@
                                     "name": "Fresh Lime"
                                 },
                                 "es": {
-                                    "name": "Fresa Limón "
+                                    "name": "Fresa limón "
                                 }
                             },
                             {
@@ -1065,7 +1065,7 @@
                         },
                         {
                             "en":{"name": "Premium Margarita"},
-                            "es":{"name":"Margarita Premium"},
+                            "es":{"name":"Margarita premium"},
                             "price": 80,
                             "choices": [
                                 {
@@ -1073,7 +1073,7 @@
                                         "name": "Fresh Lime"
                                     },
                                     "es": {
-                                        "name": "Fresa Limón "
+                                        "name": "Fresa limón "
                                     }
                                 },
                                 {
@@ -1114,17 +1114,17 @@
                         },                        
                         {
                             "en":{"name": "Tequila Shot"},
-                            "es":{"name":"Caballito de Tequila"},
+                            "es":{"name":"Caballito de tequila"},
                             "price": 65
                         },
                         {
                             "en": {"name": "Premium Tequila Shot"},
-                            "es": {"name": "Premium Caballito de Tequila"},
+                            "es": {"name": "Caballito de tequila premium"},
                             "price": 75
                         },                        
                         {
                             "en":{"name": "Daiquiri", "description": "regular or fruit"},
-                            "es":{"name":"Daiquiri", "description": "regular o fruta"},
+                            "es":{"name":"Daiquiri", "description": "regular o de fruta"},
                             "price": 70,
                             "choices": [
                                 {
@@ -1132,7 +1132,7 @@
                                         "name": "Fresh Lime"
                                     },
                                     "es": {
-                                        "name": "Fresa Limón "
+                                        "name": "Fresa limón "
                                     }
                                 },
                                 {
@@ -1189,7 +1189,7 @@
                                         "name": "Tecate Lite"
                                     },
                                     "es": {
-                                        "name": "Tecate Lite"
+                                        "name": "Tecate light"
                                     }
                                 },
                                 {
@@ -1205,7 +1205,7 @@
                                         "name": "Modelo Lite"
                                     },
                                     "es": {
-                                        "name": "Modelo Lite"
+                                        "name": "Modelo light"
                                     }
                                 },
                                 {
@@ -1221,7 +1221,7 @@
                                         "name": "Corona Lite"
                                     },
                                     "es": {
-                                        "name": "Corona Lite"
+                                        "name": "Corona light"
                                     }
                                 },
                                 {
@@ -1237,7 +1237,7 @@
                                         "name": "Pacifico Lite"
                                     },
                                     "es": {
-                                        "name": "Pacifico Lite"
+                                        "name": "Pacifico light"
                                     }
                                 }
                             ]
