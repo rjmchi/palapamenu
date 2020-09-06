@@ -48,13 +48,15 @@ class HomeController extends Controller
     }
 
     public function processOrder(Request $request) {
-        $rules['qty'] = 'required';
+        $rules['qty'] = 'required | integer | gt:0';
         if (isset($request->max)) {
             $rules['selection'] = 'max:'.$request->max;
         }
         $validator = Validator::make($request->all(),
         $rules,
-        ['qty.required' => __('The Quantity field is required'),
+        ['qty.required' => __('The quantity field is required'),
+            'qty.integer' => __('The quantity must be a whole number'),
+            'qty.gt' => __('The quantity must be greater than zero'),
             'selection.max' => __('Too many selections'),])->validate();
 
         $item = Item::find($request->input('item'));
