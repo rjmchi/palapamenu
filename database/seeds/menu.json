@@ -280,7 +280,7 @@
                             "price": 60,
                             "en": {
                                 "name": "Fried Zucchini",
-                                "description": "lettuce and vinigrette bed"
+                                "description": "Bed of lettuce and vinaigrette"
                             },
                             "es": {"name": "Calabacitas fritas",
                                 "description": "Cama de lechuga y vinagreta"}
@@ -392,7 +392,7 @@
                         {
                             "price": 40,
                             "en":{"name": "Botanas - Fresh 'Finger Food'",
-                            "description": "Cucumber, jicama, beet, carrot, lemon, salt in grain, Tajín spice"},
+                            "description": "Cucumber, jicama, beet, carrot, lemon, course salt, Tajín spice"},
                             "es": {"name": "Botana fresca",
                                 "description": "Pepino, jicama, betabel, zanahoria, limón, sal en grano, Tajín"}
                         }
