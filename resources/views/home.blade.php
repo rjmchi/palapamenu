@@ -40,8 +40,10 @@
             <h2>{{$order->apt}} {{$order->name}}</h2>
             <h3>{{__('Your Order')}}</h3>
             <p>{{__('Requested delivery time')}}: {{$order->delivery_time? $order->delivery_time : __('Not specified')}}</p>
-        
-            <a href="/sendorder" class="btn btn-primary">{{__('Send Order')}}</a>
+        @php 
+            $disabled = sizeof($order->orderItems) < 1 ? 'disabled':''
+        @endphp
+        <a href="/sendorder" class="btn btn-primary {{$disabled}}" >{{__('Send Order')}}</a>
             <a href="/cancel/{{$order->id}}" class="btn btn-danger">{{__('Cancel Order')}}</a>
 
             <div class="tipmsg">{{__('Tips are not included in the menu prices.  Please tip in cash at the time of service.')}}</div>
