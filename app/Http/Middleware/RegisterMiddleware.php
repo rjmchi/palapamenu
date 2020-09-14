@@ -26,10 +26,10 @@ class RegisterMiddleware
         if ($dt["hour"] < 9 || $dt["hour"]>15){
             $open = false;
         }
-        // if (!$open)
-        // {
-        //     return redirect('/notopen');
-        // }
+        if (!$open)
+        {
+            return redirect('/notopen');
+        }
         if (session('unit')){
             return $next($request);
         }
