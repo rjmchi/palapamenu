@@ -1,10 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    @php
+        $time = explode(':', env('OPEN_TIME', "9:00"));
+        if (sizeof($time) < 2) {
+            $time[1] = '00'; 
+        }
+        $openTime = $time[0] . ':'. $time[1];
+        $deliveryStart = $time[0]+1 . ':'. $time[1];
+
+        $time = explode(':', env('CLOSE_TIME', "16:00"));
+         if (sizeof($time) < 2) {
+            $time[1] = '00'; 
+        }
+        if ($time[0] > 12) {
+            $time[0] -= 12;
+        }
+        $closeTime = $time[0] . ':'. $time[1];
+        $deliveryEnd = $time[0]+1 . ':'. $time[1];
+    @endphp
+    <div class="container">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}    
-                    <h4>{{__('Orders accepted between 9:00 am and 3:00 pm')}}</h4>
+                    <h4>
+                        {{__('messages.order',['startTime' => $openTime, 'endTime'=>$closeTime])}}
+                    </h4>
                 </div>
 
                 <div class="card-body">
@@ -15,7 +35,9 @@
                             <input type="input" name="unit" value="{{old('unit')}}">
                             <label for="name">{{__('Last Name')}}:</label>
                             <input type="input" name="name" value="{{old('name')}}">
-                            <label for="time">{{__('Requested Delivery Time')}} {{__("10:00 AM-4:30 PM")}}<br> {{__('(Please allow about 1 hour)')}}: </label>
+                            <label for="time">{{__('Requested Delivery Time')}} 
+                                {{__('messages.delivery', [
+                                    'startTime' => $deliveryStart,  'endTime'=>$deliveryEnd])}}<br> {{__('(Please allow about 1 hour)')}}: </label>
                             <input type="text" name="time" value="{{old('time')}}">
                             <label for="location">{{__("Deliver to")}}:</label>
                             	<select name="location" required="required" id="location">
