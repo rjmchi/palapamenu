@@ -1,11 +1,18 @@
 <div class="menupage">
+    
         <div class="menu">
+            <ul class="menu-nav">
+                @foreach($menus as $menu)
+                    <li><a href="#menu{{$menu->id}}">{{$menu->name}}</a></li>
+                @endforeach
+            </ul>              
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
                 </div>
             @endif
                 @foreach ($menus as $menu)
+                <a id="menu{{$menu->id}}"></a>                
                 <div class="title">
                     <h2>{{$menu->name}}</h2>
                 </div>
