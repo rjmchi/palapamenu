@@ -41,8 +41,8 @@
                             <input type="text" name="time" value="{{old('time')}}">
                             <label for="location">{{__("Deliver to")}}:</label>
                             	<select name="location" required="required" id="location">
-	                                <option value="Departamento">{{__("Apartment")}}</option>
-	                                <option value="Alberca">{{__("Pool Deck")}}</option>
+	                                {{-- <option value="Departamento">{{__("Apartment")}}</option>
+	                                <option value="Alberca">{{__("Pool Deck")}}</option> --}}
 	                                <option value="Palapa" selected="selected">{{__("Palapa")}}</option>
                                 </select>
                         </div>
