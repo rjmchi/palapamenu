@@ -9,6 +9,7 @@ use Astrotomic\Translatable\Translatable;
 class Option extends Model implements TranslatableContract
 {
     use Translatable;
+    protected $guarded = [];
     public $translatedAttributes = ['name'];
 
     public function item() {

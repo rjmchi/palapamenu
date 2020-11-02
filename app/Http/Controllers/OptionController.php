@@ -14,7 +14,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        //
+        return Option::orderBy('sort_order')->get();
     }
 
     /**
@@ -35,7 +35,20 @@ class OptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $option_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name], 
+            "sort_order"=>$request->sort_order, 
+            "item_id"=> $request->item_id                  
+        ];
+        if (isset($request->price)) {
+            $option_data['price'] = $request->price;
+        }    
+        if (isset($request->instructions)){
+            $option_data['instructions'] = $request->instructions;
+        }                                
+        $o = Option::create($option_data);    
+        return $o;
     }
 
     /**
@@ -46,7 +59,7 @@ class OptionController extends Controller
      */
     public function show(Option $option)
     {
-        //
+        return $option;
     }
 
     /**
@@ -69,7 +82,19 @@ class OptionController extends Controller
      */
     public function update(Request $request, Option $option)
     {
-        //
+        $option_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name], 
+            "sort_order"=>$request->sort_order, 
+        ];
+        if (isset($request->price)) {
+            $option_data['price'] = $request->price;
+        }    
+        if (isset($request->instructions)){
+            $option_data['instructions'] = $request->instructions;
+        }                                
+        $option->update($option_data);    
+        return $option;    
     }
 
     /**
@@ -80,6 +105,7 @@ class OptionController extends Controller
      */
     public function destroy(Option $option)
     {
-        //
+        $option->delete();
+        return $option;
     }
 }
