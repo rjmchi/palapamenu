@@ -9,9 +9,11 @@ use Astrotomic\Translatable\Translatable;
 class Item extends Model implements TranslatableContract
 {
     use Translatable;
+    protected $guarded = [];
+
     public $translatedAttributes = ['name', 'description'];
 
-protected $with=['options', 'choices'];
+    protected $with=['options', 'choices'];
 
     public function category() {
         return $this->belongsTo('App\Category');

@@ -14,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        return Item::orderBy('sort_order')->get();
     }
 
     /**
@@ -35,7 +35,25 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name], 
+            "price"=> $request->price,
+            "sort_order"=>$request->sort_order, 
+            "category_id"=> $request->category_id,                  
+        ];
+        if (isset($request->en_description)){
+            $item_data['en']["description"] = $request->en_description;
+            $item_data['es']["description"] = $request->es_description;
+        }
+        if (isset($request->no_of_choices)){
+            $item_data["no_of_choices"] = $request->no_of_choices;
+        }                            
+        if (isset($request->instructions)){
+            $item_data['instructions'] = $request->instructions;
+        }
+        $i = Item::create($item_data);
+        return $i;  
     }
 
     /**
@@ -46,7 +64,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return $item;
     }
 
     /**
@@ -69,7 +87,24 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        $item_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name], 
+            "price"=> $request->price,
+            "sort_order"=>$request->sort_order, 
+        ];
+        if (isset($request->en_description)){
+            $item_data['en']["description"] = $request->en_description;
+            $item_data['es']["description"] = $request->es_description;
+        }
+        if (isset($request->no_of_choices)){
+            $item_data["no_of_choices"] = $request->no_of_choices;
+        }                            
+        if (isset($request->instructions)){
+            $item_data['instructions'] = $request->instructions;
+        }
+        $item->update($item_data);
+        return $item;     
     }
 
     /**
@@ -80,6 +115,7 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
-        //
+        $item->delete();
+        return ($item);
     }
 }
