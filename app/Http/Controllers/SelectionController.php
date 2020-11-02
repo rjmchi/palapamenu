@@ -14,7 +14,7 @@ class SelectionController extends Controller
      */
     public function index()
     {
-        //
+        return Selection::orderBy('sort_order')->get();
     }
 
     /**
@@ -35,7 +35,13 @@ class SelectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sel_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name],
+            "item_id"=> $request->item_id,
+        ];
+        $s = Selection::create($sel_data);   
+        return $s;     
     }
 
     /**
@@ -46,7 +52,7 @@ class SelectionController extends Controller
      */
     public function show(Selection $selection)
     {
-        //
+        return $selection;
     }
 
     /**
@@ -67,9 +73,14 @@ class SelectionController extends Controller
      * @param  \App\Selection  $selections
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Selections $selections)
+    public function update(Request $request, Selection $selection)
     {
-        //
+        $sel_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name],
+        ];
+        $selection->update($sel_data);
+        return $selection;
     }
 
     /**
@@ -80,6 +91,7 @@ class SelectionController extends Controller
      */
     public function destroy(Selection $selection)
     {
-        //
+        $selection->delete();
+        return $selection;
     }
 }

@@ -23,3 +23,4 @@ Route::resource('category', 'CategoryController');
 Route::resource('item', 'ItemController');
 Route::resource('option', 'OptionController');
 Route::resource('choice', 'ChoiceController');
+Route::resource('selection', 'SelectionController');
