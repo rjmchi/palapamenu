@@ -14,7 +14,7 @@ class ChoiceController extends Controller
      */
     public function index()
     {
-        //
+        return Choice::orderBy('sort_order')->get();
     }
 
     /**
@@ -35,7 +35,22 @@ class ChoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!isset($request->sort_order)){
+            $request->sort_order = 0;
+        }
+        if (!isset($request->instructions)){
+            $request->instructions = false;
+        }        
+        $choice_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name],
+            "item_id"=> $request->item_id,
+            "sort_order" => $request->sort_order,
+            "instructions" => $request->instructions
+        ];
+          
+        $c = Choice::create($choice_data);   
+        return $c;     
     }
 
     /**
@@ -46,7 +61,7 @@ class ChoiceController extends Controller
      */
     public function show(Choice $choice)
     {
-        //
+        return $choice;
     }
 
     /**
@@ -69,7 +84,14 @@ class ChoiceController extends Controller
      */
     public function update(Request $request, Choice $choice)
     {
-        //
+        $choice_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name],
+            "sort_order" => $request->sort_order,
+            "instructions" => $request->instructions
+        ];    
+        $choice->update($choice_data);
+        return $choice;
     }
 
     /**
@@ -80,6 +102,7 @@ class ChoiceController extends Controller
      */
     public function destroy(Choice $choice)
     {
-        //
+        $choice->delete();
+        return $choice;
     }
 }
