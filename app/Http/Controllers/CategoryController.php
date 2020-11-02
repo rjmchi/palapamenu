@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return Category::orderBy('sort_order')->get();
     }
 
     /**
@@ -35,7 +35,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cat_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name], 
+            "sort_order"=>$request->sort_order, 
+            "menu_id"=> $request->menu_id,                  
+        ];
+        if (isset($request->en_description)){
+            $cat_data['en']["description"] = $request->en_description;
+            $cat_data['es']["description"] = $request->es_description;
+        }
+        $c = Category::create($cat_data);
+        return $c;  
     }
 
     /**
@@ -46,7 +57,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return $category;
     }
 
     /**
@@ -69,7 +80,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $cat_data = [
+            'en'=> ["name" => $request->en_name],
+            'es'=> ["name" => $request->es_name], 
+            "sort_order"=>$request->sort_order, 
+        ];
+        if (isset($request->en_description)){
+            $cat_data['en']["description"] = $request->en_description;
+            $cat_data['es']["description"] = $request->es_description;
+        }
+        $category->update($cat_data);
+        return $category;
     }
 
     /**
@@ -80,6 +101,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return ($category);
     }
 }
