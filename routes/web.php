@@ -28,3 +28,5 @@ Route::get('/register', "RegisterController@index");
 Route::post('/register', "RegisterController@register")->name('register');
 
 Route::view('/notopen', 'notopen');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
