@@ -10,6 +10,7 @@ use Astrotomic\Translatable\Translatable;
 class Menu extends Model implements TranslatableContract
 {
     use Translatable;
+    protected $guarded = [];
     public $translatedAttributes = ['name'];
 
     protected $with=['categories'];

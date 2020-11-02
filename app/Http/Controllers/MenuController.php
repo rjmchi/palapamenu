@@ -14,7 +14,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $menu = Menu::orderBy('sort_order')->get();
+        return $menu;
     }
 
     /**
@@ -35,7 +36,13 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $menu_data = [
+            'en' => ['name'  => $request->en_name],
+            'es' => ['name' => $request->es_name,],
+            'sort_order'=>$request->sort_order
+            ];
+        $m = Menu::create($menu_data);
+        return ($m);
     }
 
     /**
@@ -46,7 +53,7 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        //
+        return $menu;
     }
 
     /**
@@ -69,7 +76,13 @@ class MenuController extends Controller
      */
     public function update(Request $request, Menu $menu)
     {
-        //
+        $menu_data = [
+            'en' => ['name'  => $request->en_name,],
+            'es' => ['name' => $request->es_name,],
+            'sort_order'=>$request->sort_order
+            ];
+        $menu->update($menu_data);
+        return ($menu);
     }
 
     /**
@@ -80,6 +93,7 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
-        //
+        $menu->delete();
+        return $menu;
     }
 }
