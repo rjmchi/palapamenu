@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        Admin Control Panel
+    <admin-component></admin-component>        
     </div>
 </body>
 </html>
