@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Menu;
 use Illuminate\Http\Request;
+use App\Http\Resources\MenuResource;
 
 class MenuController extends Controller
 {
@@ -15,7 +16,8 @@ class MenuController extends Controller
     public function index()
     {
         $menu = Menu::orderBy('sort_order')->get();
-        return $menu;
+        // return $menu;
+        return MenuResource::collection($menu);
     }
 
     /**
@@ -42,8 +44,7 @@ class MenuController extends Controller
             'sort_order'=>$request->sort_order
             ];
         $m = Menu::create($menu_data);
-        return ($m);
-    }
+        return new MenuResource($m);    }
 
     /**
      * Display the specified resource.
@@ -53,7 +54,7 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        return $menu;
+        return new MenuResource($menu);
     }
 
     /**
@@ -82,7 +83,7 @@ class MenuController extends Controller
             'sort_order'=>$request->sort_order
             ];
         $menu->update($menu_data);
-        return ($menu);
+        return new MenuResource($menu);
     }
 
     /**

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Choice;
 use Illuminate\Http\Request;
+use App\Http\Resources\ChoiceResource;
+
 
 class ChoiceController extends Controller
 {
@@ -14,7 +16,7 @@ class ChoiceController extends Controller
      */
     public function index()
     {
-        return Choice::orderBy('sort_order')->get();
+        return ChoiceResource::collection(Choice::orderBy('sort_order')->get());
     }
 
     /**
@@ -50,7 +52,7 @@ class ChoiceController extends Controller
         ];
           
         $c = Choice::create($choice_data);   
-        return $c;     
+        return new ChoiceResource($c);
     }
 
     /**
@@ -61,7 +63,7 @@ class ChoiceController extends Controller
      */
     public function show(Choice $choice)
     {
-        return $choice;
+        return new ChoiceResource($choice);
     }
 
     /**
@@ -91,7 +93,7 @@ class ChoiceController extends Controller
             "instructions" => $request->instructions
         ];    
         $choice->update($choice_data);
-        return $choice;
+        return new ChoiceResource($choice);
     }
 
     /**

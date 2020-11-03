@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Resources\CategoryResource;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return Category::orderBy('sort_order')->get();
+        return CategoryResource::collection(Category::orderBy('sort_order')->get());
     }
 
     /**
@@ -46,7 +47,7 @@ class CategoryController extends Controller
             $cat_data['es']["description"] = $request->es_description;
         }
         $c = Category::create($cat_data);
-        return $c;  
+        return new CategoryResource($c);  
     }
 
     /**
@@ -57,7 +58,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return $category;
+        return new CategoryResource($category);
     }
 
     /**
@@ -90,7 +91,7 @@ class CategoryController extends Controller
             $cat_data['es']["description"] = $request->es_description;
         }
         $category->update($cat_data);
-        return $category;
+        return new CategoryResource($category);  
     }
 
     /**

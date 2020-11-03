@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Option;
 use Illuminate\Http\Request;
+use App\Http\Resources\OptionResource;
+
 
 class OptionController extends Controller
 {
@@ -14,7 +16,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return Option::orderBy('sort_order')->get();
+        return OptionResource::collection(Option::orderBy('sort_order')->get());
     }
 
     /**
@@ -48,7 +50,7 @@ class OptionController extends Controller
             $option_data['instructions'] = $request->instructions;
         }                                
         $o = Option::create($option_data);    
-        return $o;
+        return new OptionResource($o);
     }
 
     /**
@@ -59,7 +61,7 @@ class OptionController extends Controller
      */
     public function show(Option $option)
     {
-        return $option;
+        return new OptionResource($option);
     }
 
     /**
@@ -94,7 +96,7 @@ class OptionController extends Controller
             $option_data['instructions'] = $request->instructions;
         }                                
         $option->update($option_data);    
-        return $option;    
+        return new OptionResource($option);
     }
 
     /**

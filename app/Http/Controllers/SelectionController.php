@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Selection;
 use Illuminate\Http\Request;
+use App\Http\Resources\SelectionResource;
+
 
 class SelectionController extends Controller
 {
@@ -14,7 +16,7 @@ class SelectionController extends Controller
      */
     public function index()
     {
-        return Selection::orderBy('sort_order')->get();
+        return SelectionResource::collection(Selection::orderBy('sort_order')->get());
     }
 
     /**
@@ -41,7 +43,7 @@ class SelectionController extends Controller
             "item_id"=> $request->item_id,
         ];
         $s = Selection::create($sel_data);   
-        return $s;     
+        return new SelectionResource($s);
     }
 
     /**
@@ -52,7 +54,7 @@ class SelectionController extends Controller
      */
     public function show(Selection $selection)
     {
-        return $selection;
+        return new SelectionResource($selection);
     }
 
     /**
@@ -80,7 +82,7 @@ class SelectionController extends Controller
             'es'=> ["name" => $request->es_name],
         ];
         $selection->update($sel_data);
-        return $selection;
+        return new SelectionResource($selection);
     }
 
     /**

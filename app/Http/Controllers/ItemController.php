@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use Illuminate\Http\Request;
+use App\Http\Resources\ItemResource;
 
 class ItemController extends Controller
 {
@@ -14,7 +15,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return Item::orderBy('sort_order')->get();
+        return ItemResource::collection(Item::orderBy('sort_order')->get());
     }
 
     /**
@@ -53,7 +54,7 @@ class ItemController extends Controller
             $item_data['instructions'] = $request->instructions;
         }
         $i = Item::create($item_data);
-        return $i;  
+        return new ItemResource($i);
     }
 
     /**
@@ -64,7 +65,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        return $item;
+        return new ItemResource($item);
     }
 
     /**
@@ -104,7 +105,7 @@ class ItemController extends Controller
             $item_data['instructions'] = $request->instructions;
         }
         $item->update($item_data);
-        return $item;     
+        return new ItemResource($item);
     }
 
     /**
