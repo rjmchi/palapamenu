@@ -24,7 +24,9 @@ class ItemResource extends JsonResource
             'price' => $this->price,
             'instructions' => $this->instructions,
             'category_id'=> $this->category_id,
-            'no_of_choices' => $this->no_of_choices,           
+            'no_of_choices' => $this->no_of_choices,
+            'options' => OptionResource::collection($this->options),
+            'choices' => ChoiceResource::collection($this->choices),
         ];
     }
 }

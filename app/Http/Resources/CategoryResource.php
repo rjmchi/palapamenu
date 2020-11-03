@@ -22,6 +22,7 @@ class CategoryResource extends JsonResource
             'en_description' => $this->translate('en')->description,
             'sort_order' => $this->sort_order,
             'menu_id' => $this->menu_id,
+            'items' => ItemResource::collection($this->items),
         ];
     }
 }

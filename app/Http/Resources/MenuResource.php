@@ -17,7 +17,8 @@ class MenuResource extends JsonResource
         return [
             'id' => $this->id,
             'es_name' => $this->translate('es')->name,
-            'en_name' => $this->translate('en')->name
+            'en_name' => $this->translate('en')->name,
+            'categories' => CategoryResource::collection($this->categories),
         ];
     }
 }
