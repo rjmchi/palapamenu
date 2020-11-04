@@ -15,12 +15,9 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">     
-
-    <!-- Styles -->
+    
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
