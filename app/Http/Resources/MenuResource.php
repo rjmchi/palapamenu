@@ -18,6 +18,7 @@ class MenuResource extends JsonResource
             'id' => $this->id,
             'es_name' => $this->translate('es')->name,
             'en_name' => $this->translate('en')->name,
+            'sort_order'=>$this->sort_order,
             'categories' => CategoryResource::collection($this->categories),
         ];
     }
