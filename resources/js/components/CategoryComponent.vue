@@ -12,7 +12,7 @@
       <textarea name="en_description" v-model = newCategory.en_description placeholder="English Description"></textarea>
       <label for="es_description">Spanish Description:</label>
       <textarea name="es_description" v-model = newCategory.es_description placeholder="Spanish Description"></textarea>
-      <button type="submit" class="btn-sm btn-primary">AddCategory</button>
+      <button type="submit" class="btn-sm btn-primary">Add Category</button>
     </form>
 
     <span v-for="category in categories" v-bind:key=category.id>
