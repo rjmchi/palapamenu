@@ -19,7 +19,7 @@
           <input type="text" name="choices" v-model="newItem.no_of_choices">
           <label for="instructions">Instructions</label>
           <input type="checkbox" name="instructions" v-model="newItem.instructions">
-          <button type="submit" class="btn-sm btn-primary">New Item</button>
+          <button type="submit" class="btn-sm btn-primary">Add Item</button>
         </form>
 
           <span v-for="item in items" v-bind:key=item.id>

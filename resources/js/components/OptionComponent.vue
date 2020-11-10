@@ -12,7 +12,7 @@
           <input type="text" name="sort_order" v-model="newOption.sort_order">
           <label for="instructions">Instructions</label>
           <input type="checkbox" name="instructions" v-model="newOption.instructions">
-          <button type="submit" class="btn-sm btn-primary">New Option</button>
+          <button type="submit" class="btn-sm btn-primary">Add Option</button>
         </form>
     <span v-for="option in options" v-bind:key=option.id>
       <form @submit.prevent>
@@ -26,8 +26,8 @@
         <input type="text" name="sort_order" v-model="option.sort_order">
         <label for="instructions">Instructions: </label>
         <input type="checkbox" name="instructions" v-model="option.instructions"  true-value=1 false-value=0>
-      <button v-on:click="updateOption(option)" class="btn-sm btn-primary">Update Option</button>
-          <button v-on:click="deleteOption(option.id)" class="btn-sm btn-danger" >Delete Option</button>
+        <button v-on:click="updateOption(option)" class="btn-sm btn-primary">Update Option</button>
+        <button v-on:click="deleteOption(option.id)" class="btn-sm btn-danger" >Delete Option</button>
       </form> 
     </span>
   </div> 

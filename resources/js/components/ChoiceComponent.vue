@@ -10,7 +10,7 @@
           <input type="text" name="sort_order" v-model="newChoice.sort_order">
           <label for="instructions">Instructions</label>
           <input type="checkbox" name="instructions" v-model="newChoice.instructions">
-          <button type="submit" class="btn-sm btn-primary">New Choice</button>
+          <button type="submit" class="btn-sm btn-primary">Add Choice</button>
         </form>
     <span v-for="choice in choices" v-bind:key=choice.id>
       <form @submit.prevent>
@@ -23,7 +23,7 @@
         <label for="instructions">Instructions</label>
         <input type="checkbox" name="instructions:" v-model="choice.instructions"  true-value=1 false-value=0>
         <button v-on:click="updateChoice(choice)" class="btn-sm btn-primary">Update Choice</button>
-        <button v-on:click="deleteOption(choice.id)" class="btn-sm btn-danger" >Delete Option</button>
+        <button v-on:click="deleteChoice(choice.id)" class="btn-sm btn-danger" >Delete Option</button>
       </form>     
     </span>
   </div> 
@@ -73,7 +73,7 @@ export default {
         console.log(err);
       }
     },
-    delete: async function(id) {
+    deleteChoice: async function(id) {
       try {
         let resp = await fetch('http://localhost:8000/api/choice/'+id, 
         {
