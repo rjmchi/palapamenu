@@ -8,7 +8,7 @@ use App\Order;
 class RegisterController extends Controller
 {
     public function index() {
-        return (view('auth.login'));
+        return (view('login'));
     }
 
     public function register(RegisterUnit $request) {
