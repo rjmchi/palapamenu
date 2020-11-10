@@ -10899,3 +10899,34 @@ a.text-dark:focus {
   }
 }
 
+body {
+  font-family: rubik;
+}
+
+div {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 2px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form label {
+  font-weight: bold;
+  flex-basis: 20%;
+  text-align: right;
+}
+
+form input[type=text] {
+  margin: 2px;
+  flex-basis: 75%;
+}
+
+form textarea {
+  flex-basis: 75%;
+  margin: 5px;
+}
+

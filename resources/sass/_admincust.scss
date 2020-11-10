@@ -1,0 +1,27 @@
+body {
+    font-family: rubik;
+}
+div {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    label {
+        font-weight: bold;
+        flex-basis: 20%;
+        text-align: right;
+    }
+
+    input[type="text"] {
+        margin: 2px;
+        flex-basis: 75%;
+    }
+    textarea {
+        flex-basis: 75%;
+        margin: 5px;
+    }
+}
