@@ -41649,17 +41649,22 @@ var render = function() {
                     expression: "choice.instructions"
                   }
                 ],
-                attrs: { type: "checkbox", name: "instructions" },
+                attrs: {
+                  type: "checkbox",
+                  name: "instructions:",
+                  "true-value": "1",
+                  "false-value": "0"
+                },
                 domProps: {
                   checked: Array.isArray(choice.instructions)
                     ? _vm._i(choice.instructions, null) > -1
-                    : choice.instructions
+                    : _vm._q(choice.instructions, "1")
                 },
                 on: {
                   change: function($event) {
                     var $$a = choice.instructions,
                       $$el = $event.target,
-                      $$c = $$el.checked ? true : false
+                      $$c = $$el.checked ? "1" : "0"
                     if (Array.isArray($$a)) {
                       var $$v = null,
                         $$i = _vm._i($$a, $$v)
@@ -42177,7 +42182,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("label", { attrs: { for: "instructions" } }, [
-                    _vm._v("Instructions")
+                    _vm._v("Instructions:")
                   ]),
                   _vm._v(" "),
                   _c("input", {
@@ -42189,17 +42194,22 @@ var render = function() {
                         expression: "item.instructions"
                       }
                     ],
-                    attrs: { type: "checkbox", name: "instructions" },
+                    attrs: {
+                      type: "checkbox",
+                      name: "instructions",
+                      "true-value": "1",
+                      "false-value": "0"
+                    },
                     domProps: {
                       checked: Array.isArray(item.instructions)
                         ? _vm._i(item.instructions, null) > -1
-                        : item.instructions
+                        : _vm._q(item.instructions, "1")
                     },
                     on: {
                       change: function($event) {
                         var $$a = item.instructions,
                           $$el = $event.target,
-                          $$c = $$el.checked ? true : false
+                          $$c = $$el.checked ? "1" : "0"
                         if (Array.isArray($$a)) {
                           var $$v = null,
                             $$i = _vm._i($$a, $$v)
@@ -42572,7 +42582,7 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("label", { attrs: { for: "instructions" } }, [
-                _vm._v("Instructions")
+                _vm._v("Instructions: ")
               ]),
               _vm._v(" "),
               _c("input", {
@@ -42584,17 +42594,22 @@ var render = function() {
                     expression: "option.instructions"
                   }
                 ],
-                attrs: { type: "checkbox", name: "instructions" },
+                attrs: {
+                  type: "checkbox",
+                  name: "instructions",
+                  "true-value": "1",
+                  "false-value": "0"
+                },
                 domProps: {
                   checked: Array.isArray(option.instructions)
                     ? _vm._i(option.instructions, null) > -1
-                    : option.instructions
+                    : _vm._q(option.instructions, "1")
                 },
                 on: {
                   change: function($event) {
                     var $$a = option.instructions,
                       $$el = $event.target,
-                      $$c = $$el.checked ? true : false
+                      $$c = $$el.checked ? "1" : "0"
                     if (Array.isArray($$a)) {
                       var $$v = null,
                         $$i = _vm._i($$a, $$v)

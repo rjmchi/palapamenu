@@ -10,10 +10,13 @@ div {
 form {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3px;
     label {
         font-weight: bold;
         flex-basis: 20%;
         text-align: right;
+        margin: 0 2px;
     }
 
     input[type="text"] {

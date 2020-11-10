@@ -21,7 +21,7 @@
         <label for="sort_order">Sort Order:</label>
         <input type="text" name="sort_order" v-model="choice.sort_order">
         <label for="instructions">Instructions</label>
-        <input type="checkbox" name="instructions" v-model="choice.instructions">
+        <input type="checkbox" name="instructions:" v-model="choice.instructions"  true-value=1 false-value=0>
         <button v-on:click="updateChoice(choice)" class="btn-sm btn-primary">Update Choice</button>
         <button v-on:click="deleteOption(choice.id)" class="btn-sm btn-danger" >Delete Option</button>
       </form>     

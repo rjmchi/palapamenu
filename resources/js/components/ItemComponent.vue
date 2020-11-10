@@ -38,10 +38,10 @@
               <input type="text" name="sort_order" v-model="item.sort_order">
               <label for="choices">Number of Choices:</label>
               <input type="text" name="choices" v-model="item.no_of_choices">
-              <label for="instructions">Instructions</label>
-              <input type="checkbox" name="instructions" v-model="item.instructions">
+              <label for="instructions">Instructions:</label>
+              <input type="checkbox" name="instructions" v-model="item.instructions" true-value=1 false-value=0>
               <button v-on:click="updateItem(item)" class="btn-sm btn-primary">Update Item</button>
-              <button v-on:click="deleteItem(item.id)" class="btn-sm btn-danger" >Delete Item</button>
+            <button v-on:click="deleteItem(item.id)" class="btn-sm btn-danger" >Delete Item</button>
             </form> 
             <choice-component v-bind:item_id="item.id" v-bind:choices="item.choices" v-on:update="update"/>
             <option-component v-bind:item_id="item.id" v-bind:options="item.options" v-on:update="update"/>  
