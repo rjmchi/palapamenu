@@ -1982,18 +1982,47 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    'category-component': _CategoryComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    "category-component": _CategoryComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
       menus: [],
       newMenu: {
-        id: '',
-        es_name: '',
-        en_name: '',
+        id: "",
+        es_name: "",
+        en_name: "",
         sort_order: 0
       }
     };
@@ -2001,7 +2030,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     showCategory: function showCategory() {
       this.showCategories = !this.showCategories;
-      console.log('show');
+      console.log("show");
     },
     updateMenu: function () {
       var _updateMenu = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(menu) {
@@ -2011,14 +2040,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.prev = 0;
-                console.log('update');
+                console.log("update");
                 _context.next = 4;
-                return fetch('http://localhost:8000/api/menu/' + menu.id, {
-                  "method": "PUT",
+                return fetch("api/menu/" + menu.id, {
+                  method: "PUT",
                   body: JSON.stringify({
-                    "en_name": menu.en_name,
-                    "es_name": menu.es_name,
-                    "sort_order": menu.sort_order
+                    en_name: menu.en_name,
+                    es_name: menu.es_name,
+                    sort_order: menu.sort_order
                   }),
                   headers: {
                     "Content-type": "application/json"
@@ -2073,8 +2102,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context2.prev = 0;
                 _context2.next = 3;
-                return fetch('http://localhost:8000/api/menu/' + id, {
-                  "method": "DELETE"
+                return fetch("/api/menu/" + id, {
+                  method: "DELETE"
                 });
 
               case 3:
@@ -2124,12 +2153,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context3.prev = 0;
                 _context3.next = 3;
-                return fetch('http://localhost:8000/api/menu', {
-                  "method": "POST",
+                return fetch("/api/menu", {
+                  method: "POST",
                   body: JSON.stringify({
-                    "en_name": this.newMenu.en_name,
-                    "es_name": this.newMenu.es_name,
-                    "sort_order": this.newMenu.sort_order
+                    en_name: this.newMenu.en_name,
+                    es_name: this.newMenu.es_name,
+                    sort_order: this.newMenu.sort_order
                   }),
                   headers: {
                     "Content-type": "application/json"
@@ -2150,8 +2179,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 7:
                 resp = _context3.sent;
                 console.log(resp);
-                this.newMenu.en_name = '';
-                this.newMenu.es_name = '';
+                this.newMenu.en_name = "";
+                this.newMenu.es_name = "";
                 this.newMenu.sort_order = 0;
                 this.fetchMenus();
 
@@ -2187,8 +2216,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context4.prev = 0;
                 _context4.next = 3;
-                return fetch('http://localhost:8000/api/menu', {
-                  "method": "GET"
+                return fetch("/api/menu", {
+                  method: "GET"
                 });
 
               case 3:
@@ -2640,8 +2669,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       return updateChoice;
     }(),
-    "delete": function () {
-      var _delete2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(id) {
+    deleteChoice: function () {
+      var _deleteChoice = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(id) {
         var resp;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
@@ -2685,11 +2714,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2, this, [[0, 11]]);
       }));
 
-      function _delete(_x2) {
-        return _delete2.apply(this, arguments);
+      function deleteChoice(_x2) {
+        return _deleteChoice.apply(this, arguments);
       }
 
-      return _delete;
+      return deleteChoice;
     }(),
     addChoice: function () {
       var _addChoice = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
@@ -40815,7 +40844,7 @@ var render = function() {
         _c(
           "button",
           { staticClass: "btn-sm btn-primary", on: { click: _vm.addMenu } },
-          [_vm._v("Add Menu")]
+          [_vm._v("\n            Add Menu\n        ")]
         ),
         _vm._v(" "),
         _c("input", {
@@ -40978,7 +41007,11 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Update Menu")]
+                  [
+                    _vm._v(
+                      "\n                    Update Menu\n                "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -40991,7 +41024,11 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Delete Menu")]
+                  [
+                    _vm._v(
+                      "\n                    Delete Menu\n                "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c("category-component", {
@@ -41193,7 +41230,7 @@ var render = function() {
           _c(
             "button",
             { staticClass: "btn-sm btn-primary", attrs: { type: "submit" } },
-            [_vm._v("AddCategory")]
+            [_vm._v("Add Category")]
           )
         ]
       ),
@@ -41544,7 +41581,7 @@ var render = function() {
           _c(
             "button",
             { staticClass: "btn-sm btn-primary", attrs: { type: "submit" } },
-            [_vm._v("New Choice")]
+            [_vm._v("Add Choice")]
           )
         ]
       ),
@@ -41705,7 +41742,7 @@ var render = function() {
                   staticClass: "btn-sm btn-danger",
                   on: {
                     click: function($event) {
-                      return _vm.deleteOption(choice.id)
+                      return _vm.deleteChoice(choice.id)
                     }
                   }
                 },
@@ -41988,7 +42025,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn-sm btn-primary", attrs: { type: "submit" } },
-              [_vm._v("New Item")]
+              [_vm._v("Add Item")]
             )
           ]
         ),
@@ -42466,7 +42503,7 @@ var render = function() {
           _c(
             "button",
             { staticClass: "btn-sm btn-primary", attrs: { type: "submit" } },
-            [_vm._v("New Option")]
+            [_vm._v("Add Option")]
           )
         ]
       ),
