@@ -42324,16 +42324,11 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("option-component", {
-                directives: [
-                  {
-                    name: "bibd",
-                    rawName: "v-bibd:url",
-                    value: _vm.url,
-                    expression: "url",
-                    arg: "url"
-                  }
-                ],
-                attrs: { item_id: item.id, options: item.options },
+                attrs: {
+                  item_id: item.id,
+                  options: item.options,
+                  url: _vm.url
+                },
                 on: { update: _vm.update }
               })
             ],

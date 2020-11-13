@@ -49,7 +49,7 @@
             v-on:update="update"/>
             <option-component v-bind:item_id="item.id" 
             v-bind:options="item.options" 
-            v-bibd:url="url"
+            v-bind:url="url"
             v-on:update="update"/>  
           </span>                     
           </div>  
