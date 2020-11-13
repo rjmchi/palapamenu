@@ -32,7 +32,7 @@
 <script>
 
 export default {
-    props: ['choices', 'item_id'],
+    props: ['choices', 'item_id', 'url'],
   data () {
     return {
       showForm:false,
@@ -50,7 +50,7 @@ export default {
     updateChoice: async function(choice) {
       try {
         console.log('update');
-        let resp = await fetch('http://localhost:8000/api/choice/'+choice.id, 
+        let resp = await fetch(this.url+"/choice/"+choice.id, 
         {
           "method": "PUT",
             body: JSON.stringify({
@@ -75,7 +75,7 @@ export default {
     },
     deleteChoice: async function(id) {
       try {
-        let resp = await fetch('http://localhost:8000/api/choice/'+id, 
+        let resp = await fetch(this.url+"/choice/"+id, 
         {
           "method": "DELETE",
         });
@@ -89,7 +89,7 @@ export default {
     },
     addChoice: async function() {
       try {
-        let resp = await fetch('http://localhost:8000/api/choice', 
+        let resp = await fetch(this.url+"/choice/", 
         {
           "method": "POST",
             body: JSON.stringify({

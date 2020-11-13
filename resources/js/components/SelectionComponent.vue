@@ -39,7 +39,7 @@ export default {
     updateSelection: async function(selection) {
       try {
         console.log('update');
-        let resp = await fetch('http://localhost:8000/api/selection/'+selection.id, 
+        let resp = await fetch(this.url+"/selection/"+selection.id, 
         {
           "method": "PUT",
             body: JSON.stringify({
@@ -61,7 +61,7 @@ export default {
     },
     deleteSelection: async function(id) {
       try {
-        let resp = await fetch('http://localhost:8000/api/selection/'+id, 
+        let resp = await fetch(this.url+"/selection/"+id, 
         {
           "method": "DELETE",
         });
@@ -75,7 +75,7 @@ export default {
     },
     addSelection: async function() {
       try {
-        let resp = await fetch('http://localhost:8000/api/selection', 
+        let resp = await fetch(this.url+"/selection/", 
         {
           "method": "POST",
             body: JSON.stringify({

@@ -45,6 +45,7 @@
                     <category-component
                         v-bind:menu_id="menu.id"
                         v-bind:categories="menu.categories"
+                        v-bind:url="url"
                         v-on:update="update"
                     />
                 </form>
@@ -68,7 +69,8 @@ export default {
                 es_name: "",
                 en_name: "",
                 sort_order: 0
-            }
+            },
+            url: "http://www.lospalmarespalapa.com/api",
         };
     },
     methods: {
@@ -80,7 +82,7 @@ export default {
             try {
                 console.log("update");
                 let resp = await fetch(
-                    "http://www.lospalmarespalapa.com/api/menu/" + menu.id,
+                    this.url+"/menu/" + menu.id,
                     {
                         method: "PUT",
                         body: JSON.stringify({
@@ -104,7 +106,7 @@ export default {
         },
         deleteMenu: async function(id) {
             try {
-                let resp = await fetch("http://www.lospalmarespalapa.com/api/menu/" + id, {
+                let resp = await fetch(this.url+"/menu/"  + id, {
                     method: "DELETE"
                 });
                 if (resp.ok) {
@@ -117,7 +119,7 @@ export default {
         },
         addMenu: async function() {
             try {
-                let resp = await fetch("http://www.lospalmarespalapa.com/api/menu", {
+                let resp = await fetch(this.url+"/menu/" , {
                     method: "POST",
                     body: JSON.stringify({
                         en_name: this.newMenu.en_name,
@@ -142,7 +144,7 @@ export default {
         },
         fetchMenus: async function() {
             try {
-                let resp = await fetch("http://www.lospalmarespalapa.com/api/menu", { method: "GET" });
+                let resp = await fetch(this.url+"/menu/" , { method: "GET" });
                 console.log(resp.status);
                 if (resp.ok) {
                     resp = await resp.json();

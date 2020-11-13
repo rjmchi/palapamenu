@@ -36,7 +36,7 @@
 <script>
 
 export default {
-    props: ['options', 'item_id', 'showOptions'],
+    props: ['options', 'item_id', 'showOptions', 'url'],
   data () {
     return {
       showForm: false,
@@ -55,7 +55,7 @@ export default {
     updateOption: async function(option) {
       console.log('update');
       try {
-        let resp = await fetch('http://localhost:8000/api/option/'+option.id, 
+        let resp = await fetch(this.url+"/option/"+option.id, 
         {
           "method": "PUT",
             body: JSON.stringify({
@@ -80,7 +80,7 @@ export default {
     },
     deleteOption: async function(id) {
       try {
-        let resp = await fetch('http://localhost:8000/api/option/'+id, 
+        let resp = await fetch(this.url+"/option/"+id, 
         {
           "method": "DELETE",
         });
@@ -94,7 +94,7 @@ export default {
     },
     addOption: async function() {
       try {
-        let resp = await fetch('http://localhost:8000/api/option', 
+        let resp = await fetch(this.url+"/option/", 
         {
           "method": "POST",
             body: JSON.stringify({

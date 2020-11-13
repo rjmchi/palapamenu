@@ -31,7 +31,9 @@
         <button v-on:click="deleteCategory(category.id)" class="btn-sm btn-danger" >Delete Category</button>
       </form>
       
-      <item-component v-bind:items="category.items" v-bind:category_id="category.id" v-on:update="update"/>
+      <item-component v-bind:items="category.items" v-bind:category_id="category.id" 
+      v-bind:url="url"
+      v-on:update="update"/>
     </span>
   </div> 
 </template>
@@ -43,7 +45,7 @@ export default {
   components: {
     'item-component': item_component,
     },    
-    props: ['categories', 'menu_id'],
+    props: ['categories', 'menu_id', 'url'],
   data () {
     return {
       showForm: false,
@@ -65,7 +67,7 @@ export default {
     updateCategory: async function(category) {
       try {
         console.log('update category');
-        let resp = await fetch('http://localhost:8000/api/category/'+category.id, 
+        let resp = await fetch(this.url+"/category/" +category.id, 
         {
           "method": "PUT",
             body: JSON.stringify({
@@ -90,7 +92,7 @@ export default {
     },
     deleteCategory: async function(id) {
       try {
-        let resp = await fetch('http://localhost:8000/api/category/'+id, 
+        let resp = await fetch(this.url+"/category/"+id, 
         {
           "method": "DELETE",
         });
@@ -104,7 +106,7 @@ export default {
     },
     addCategory: async function() {
       try {
-        let resp = await fetch('http://localhost:8000/api/category', 
+        let resp = await fetch(this.url+"/category/", 
         {
           "method": "POST",
             body: JSON.stringify({

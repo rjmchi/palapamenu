@@ -43,8 +43,14 @@
               <button v-on:click="updateItem(item)" class="btn-sm btn-primary">Update Item</button>
             <button v-on:click="deleteItem(item.id)" class="btn-sm btn-danger" >Delete Item</button>
             </form> 
-            <choice-component v-bind:item_id="item.id" v-bind:choices="item.choices" v-on:update="update"/>
-            <option-component v-bind:item_id="item.id" v-bind:options="item.options" v-on:update="update"/>  
+            <choice-component v-bind:item_id="item.id" 
+            v-bind:choices="item.choices" 
+            v-bind:url="url"
+            v-on:update="update"/>
+            <option-component v-bind:item_id="item.id" 
+            v-bind:options="item.options" 
+            v-bibd:url="url"
+            v-on:update="update"/>  
           </span>                     
           </div>  
     
@@ -62,7 +68,7 @@ export default {
     'selection-component': selection_component,
     'option-component': option_component,
     },    
-    props: ['items', 'category_id', 'showItems'],
+    props: ['items', 'category_id', 'showItems', 'url'], 
   data () {
     return {
       showForm: false,
@@ -84,7 +90,7 @@ export default {
     updateItem: async function(item) {
       try {
         console.log('update');
-        let resp = await fetch('http://localhost:8000/api/item/'+item.id, 
+        let resp = await fetch(this.url+"/item/"+item.id, 
         {
           "method": "PUT",
             body: JSON.stringify({
@@ -112,7 +118,7 @@ export default {
     },
     deleteItem: async function(id) {
       try {
-        let resp = await fetch('http://localhost:8000/api/item/'+id, 
+        let resp = await fetch(this.url+"/item/"+id, 
         {
           "method": "DELETE",
         });
@@ -126,7 +132,7 @@ export default {
     },
     addItem: async function() {
       try {
-        let resp = await fetch('http://localhost:8000/api/item', 
+        let resp = await fetch(this.url+"/item/", 
         {
           "method": "POST",
             body: JSON.stringify({
