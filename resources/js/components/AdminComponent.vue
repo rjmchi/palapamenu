@@ -80,7 +80,7 @@ export default {
             try {
                 console.log("update");
                 let resp = await fetch(
-                    "api/menu/" + menu.id,
+                    "http://www.lospalmarespalapa.com/api/menu/" + menu.id,
                     {
                         method: "PUT",
                         body: JSON.stringify({
@@ -104,7 +104,7 @@ export default {
         },
         deleteMenu: async function(id) {
             try {
-                let resp = await fetch("/api/menu/" + id, {
+                let resp = await fetch("http://www.lospalmarespalapa.com/api/menu/" + id, {
                     method: "DELETE"
                 });
                 if (resp.ok) {
@@ -117,7 +117,7 @@ export default {
         },
         addMenu: async function() {
             try {
-                let resp = await fetch("/api/menu", {
+                let resp = await fetch("http://www.lospalmarespalapa.com/api/menu", {
                     method: "POST",
                     body: JSON.stringify({
                         en_name: this.newMenu.en_name,
@@ -142,7 +142,7 @@ export default {
         },
         fetchMenus: async function() {
             try {
-                let resp = await fetch("/api/menu", { method: "GET" });
+                let resp = await fetch("http://www.lospalmarespalapa.com/api/menu", { method: "GET" });
                 console.log(resp.status);
                 if (resp.ok) {
                     resp = await resp.json();
