@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     box-shadow: 4px 4px 6px 1px rgba(0, 0, 0, 1);
     justify-content: center;
-    font-size: 28px;
+    font-size: 1.5rem;
     width: 99%;
     margin: 0 auto;
     .logo {
@@ -83,7 +83,7 @@
 
     h2 {
         border-radius: 5px;
-        font-size: 1.5em;
+        font-size: 1.3rem;
         font-weight: bold;
         text-transform: uppercase;
     }
@@ -101,13 +101,13 @@
         padding: 5px 0;
         margin: 0;
         h3 {
-            font-size: 1.15em;
+            font-size: 1.1rem;
             font-weight: bold;
             font-variant: small-caps;
         }
         h4 {
             text-align: center;
-            font-size: 1.15em;
+            font-size: 1rem;
             margin: 0 15px;
             font-style: italic;
         }
@@ -143,7 +143,7 @@
         margin-left: 25px;
         span {
             margin-right: 2px;
-            font-size: 1.1em;
+            font-size: 1rem;
         }
     }
 }
@@ -162,7 +162,7 @@
         padding: 5px;
         font-weight: bold;
         margin: -10px -10px 10px;
-        font-size: 1.7em;
+        font-size: 1.2rem;
         border-radius: 5px;
     }
 
@@ -210,7 +210,7 @@ input.qty {
 .remove {
     color: #ff0000;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1rem;
     margin-left: 10px;
 }
 
@@ -234,7 +234,7 @@ ul.menu-nav {
         display: inline;
         a {
             display: inline-block;
-            font-size: 1.2em;
+            font-size: 1rem;
             font-weight: bold;
             padding: 5px;
             margin-left: 2px;
@@ -255,6 +255,6 @@ ul.menu-nav {
         margin-top: 1em;
     }
     ul.menu-nav li a {
-        font-size: 1.1em;
+        font-size: 0.75rem;
     }
 }
