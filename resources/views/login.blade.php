@@ -43,7 +43,8 @@
                             	<select name="location" required="required" id="location">
 	                                {{-- <option value="Departamento">{{__("Apartment")}}</option>
 	                                <option value="Alberca">{{__("Pool Deck")}}</option> --}}
-	                                <option value="Palapa" selected="selected">{{__("Palapa")}}</option>
+                                    <option value="Palapa" selected="selected">{{__("Palapa")}}</option>
+	                                <option value="Pick up" >{{__("Pick up")}}</option>                                    
                                 </select>
                         </div>
                         <div class="form-group">

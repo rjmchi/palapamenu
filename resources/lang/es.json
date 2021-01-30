@@ -76,5 +76,6 @@
   "Palapa":"Palapa",
   "Los Palmares Palapa Menu": "Menú de la Palapa órdenes",
   "The quantity must be a whole number": "La cantidad debe ser un número entero",
-  "The quantity must be greater than zero":"La cantidad debe ser mayor que cero"
+  "The quantity must be greater than zero":"La cantidad debe ser mayor que cero",
+  "Pick up":"Para llevar"
 }
