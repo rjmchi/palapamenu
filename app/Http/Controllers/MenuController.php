@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Menu;
 use Illuminate\Http\Request;
 use App\Http\Resources\MenuResource;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
@@ -38,13 +39,20 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+            return 'unauthorized';
+        }
         $menu_data = [
             'en' => ['name'  => $request->en_name],
             'es' => ['name' => $request->es_name,],
-            'sort_order'=>$request->sort_order
-            ];
+            'sort_order' => $request->sort_order
+        ];
         $m = Menu::create($menu_data);
-        return new MenuResource($m);    }
+        if ($request->web == true) {
+            return redirect(route('admin.menulist'));
+        }
+        return new MenuResource($m);
+    }
 
     /**
      * Display the specified resource.
@@ -65,7 +73,8 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        //
+        $data['menu'] = $menu;
+        return view('newadmin.menuedit')->with($data);
     }
 
     /**
@@ -80,9 +89,12 @@ class MenuController extends Controller
         $menu_data = [
             'en' => ['name'  => $request->en_name,],
             'es' => ['name' => $request->es_name,],
-            'sort_order'=>$request->sort_order
-            ];
+            'sort_order' => $request->sort_order
+        ];
         $menu->update($menu_data);
+        if ($request->web == true) {
+            return redirect(route('admin.menuedit', $menu->id));
+        }
         return new MenuResource($menu);
     }
 
@@ -95,6 +107,9 @@ class MenuController extends Controller
     public function destroy(Menu $menu)
     {
         $menu->delete();
+        if (request('web') == true) {
+            return redirect(route('admin.menulist'));
+        }
         return $menu;
     }
 }

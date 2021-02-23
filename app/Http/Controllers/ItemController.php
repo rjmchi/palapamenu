@@ -37,23 +37,27 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $item_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name], 
-            "price"=> $request->price,
-            "sort_order"=>$request->sort_order, 
-            "category_id"=> $request->category_id,                  
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
+            "price" => $request->price,
+            "sort_order" => $request->sort_order,
+            "category_id" => $request->category_id,
         ];
-        if (isset($request->en_description)){
+        if (isset($request->en_description)) {
             $item_data['en']["description"] = $request->en_description;
             $item_data['es']["description"] = $request->es_description;
         }
-        if (isset($request->no_of_choices)){
+        if (isset($request->no_of_choices)) {
             $item_data["no_of_choices"] = $request->no_of_choices;
-        }                            
-        if (isset($request->instructions)){
+        }
+        if (isset($request->instructions)) {
             $item_data['instructions'] = $request->instructions;
         }
         $i = Item::create($item_data);
+
+        if ($request->web == true) {
+            return redirect(route('admin.categoryedit', $request->category_id));
+        }
         return new ItemResource($i);
     }
 
@@ -76,7 +80,8 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        //
+        $data['item'] = $item;
+        return view('newadmin.itemedit')->with($data);
     }
 
     /**
@@ -89,22 +94,25 @@ class ItemController extends Controller
     public function update(Request $request, Item $item)
     {
         $item_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name], 
-            "price"=> $request->price,
-            "sort_order"=>$request->sort_order, 
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
+            "price" => $request->price,
+            "sort_order" => $request->sort_order,
         ];
-        if (isset($request->en_description)){
+        if (isset($request->en_description)) {
             $item_data['en']["description"] = $request->en_description;
             $item_data['es']["description"] = $request->es_description;
         }
-        if (isset($request->no_of_choices)){
+        if (isset($request->no_of_choices)) {
             $item_data["no_of_choices"] = $request->no_of_choices;
-        }                            
-        if (isset($request->instructions)){
+        }
+        if (isset($request->instructions)) {
             $item_data['instructions'] = $request->instructions;
         }
         $item->update($item_data);
+        if ($request->web == true) {
+            return redirect(route('admin.itemedit', $item->id));
+        }
         return new ItemResource($item);
     }
 
@@ -117,6 +125,9 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         $item->delete();
+        if (request('web') == true) {
+            return redirect(route('admin.categoryedit', request('category_id')));
+        }
         return ($item);
     }
 }

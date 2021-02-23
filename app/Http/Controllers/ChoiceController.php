@@ -37,21 +37,24 @@ class ChoiceController extends Controller
      */
     public function store(Request $request)
     {
-        if (!isset($request->sort_order)){
+        if (!isset($request->sort_order)) {
             $request->sort_order = 0;
         }
-        if (!isset($request->instructions)){
+        if (!isset($request->instructions)) {
             $request->instructions = false;
-        }        
+        }
         $choice_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name],
-            "item_id"=> $request->item_id,
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
+            "item_id" => $request->item_id,
             "sort_order" => $request->sort_order,
             "instructions" => $request->instructions
         ];
-          
-        $c = Choice::create($choice_data);   
+
+        $c = Choice::create($choice_data);
+        if ($request->web == true) {
+            return redirect(route('admin.itemedit', $request->item_id));
+        }
         return new ChoiceResource($c);
     }
 
@@ -74,7 +77,8 @@ class ChoiceController extends Controller
      */
     public function edit(Choice $choice)
     {
-        //
+        $data['choice'] = $choice;
+        return view('newadmin.choiceedit')->with($data);
     }
 
     /**
@@ -87,12 +91,16 @@ class ChoiceController extends Controller
     public function update(Request $request, Choice $choice)
     {
         $choice_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name],
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
             "sort_order" => $request->sort_order,
-            "instructions" => $request->instructions
-        ];    
+            "instructions" => $request->has('instructions')
+        ];
+
         $choice->update($choice_data);
+        if ($request->web == true) {
+            return redirect(route('admin.itemedit', $request->item_id));
+        }
         return new ChoiceResource($choice);
     }
 
@@ -105,6 +113,9 @@ class ChoiceController extends Controller
     public function destroy(Choice $choice)
     {
         $choice->delete();
+        if (request('web') == true) {
+            return redirect(route('admin.itemedit', request('item_id')));
+        }
         return $choice;
     }
 }

@@ -38,18 +38,21 @@ class OptionController extends Controller
     public function store(Request $request)
     {
         $option_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name], 
-            "sort_order"=>$request->sort_order, 
-            "item_id"=> $request->item_id                  
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
+            "sort_order" => $request->sort_order,
+            "item_id" => $request->item_id
         ];
         if (isset($request->price)) {
             $option_data['price'] = $request->price;
-        }    
-        if (isset($request->instructions)){
+        }
+        if (isset($request->instructions)) {
             $option_data['instructions'] = $request->instructions;
-        }                                
-        $o = Option::create($option_data);    
+        }
+        $o = Option::create($option_data);
+        if ($request->web == true) {
+            return redirect(route('admin.itemedit', $request->item_id));
+        }
         return new OptionResource($o);
     }
 
@@ -72,7 +75,8 @@ class OptionController extends Controller
      */
     public function edit(Option $option)
     {
-        //
+        $data['option'] = $option;
+        return view('newadmin.optionedit')->with($data);
     }
 
     /**
@@ -85,17 +89,20 @@ class OptionController extends Controller
     public function update(Request $request, Option $option)
     {
         $option_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name], 
-            "sort_order"=>$request->sort_order, 
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
+            "sort_order" => $request->sort_order,
         ];
         if (isset($request->price)) {
             $option_data['price'] = $request->price;
-        }    
-        if (isset($request->instructions)){
+        }
+        if (isset($request->instructions)) {
             $option_data['instructions'] = $request->instructions;
-        }                                
-        $option->update($option_data);    
+        }
+        $option->update($option_data);
+        if ($request->web == true) {
+            return redirect(route('admin.itemedit', $request->item_id));
+        }
         return new OptionResource($option);
     }
 
@@ -108,6 +115,9 @@ class OptionController extends Controller
     public function destroy(Option $option)
     {
         $option->delete();
+        if (request('web') == true) {
+            return redirect(route('admin.itemedit', request('item_id')));
+        }
         return $option;
     }
 }

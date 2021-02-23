@@ -70,7 +70,8 @@ export default {
                 en_name: "",
                 sort_order: 0
             },
-            url: "http://www.lospalmarespalapa.com/api",
+            // url: "http://www.lospalmarespalapa.com/api",
+            url: "/api",
         };
     },
     methods: {

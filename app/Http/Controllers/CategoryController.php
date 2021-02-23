@@ -37,17 +37,20 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $cat_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name], 
-            "sort_order"=>$request->sort_order, 
-            "menu_id"=> $request->menu_id,                  
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
+            "sort_order" => $request->sort_order,
+            "menu_id" => $request->menu_id,
         ];
-        if (isset($request->en_description)){
+        if (isset($request->en_description)) {
             $cat_data['en']["description"] = $request->en_description;
             $cat_data['es']["description"] = $request->es_description;
         }
         $c = Category::create($cat_data);
-        return new CategoryResource($c);  
+        if ($request->web == true) {
+            return redirect(route('admin.menuedit', $request->menu_id));
+        }
+        return new CategoryResource($c);
     }
 
     /**
@@ -69,7 +72,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $data['category'] = $category;
+        return view('newadmin.categoryedit')->with($data);
     }
 
     /**
@@ -82,16 +86,19 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $cat_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name], 
-            "sort_order"=>$request->sort_order, 
+            'en' => ["name" => $request->en_name],
+            'es' => ["name" => $request->es_name],
+            "sort_order" => $request->sort_order,
         ];
-        if (isset($request->en_description)){
+        if (isset($request->en_description)) {
             $cat_data['en']["description"] = $request->en_description;
             $cat_data['es']["description"] = $request->es_description;
         }
         $category->update($cat_data);
-        return new CategoryResource($category);  
+        if ($request->web == true) {
+            return redirect(route('admin.categoryedit', $category->id));
+        }
+        return new CategoryResource($category);
     }
 
     /**
@@ -103,6 +110,9 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
+        if (request('web') == true) {
+            return redirect(route('admin.menuedit', request('menu_id')));
+        }
         return ($category);
     }
 }
