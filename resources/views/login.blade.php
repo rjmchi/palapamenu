@@ -37,7 +37,7 @@
                             <input type="input" name="name" value="{{old('name')}}">
                             <label for="time">{{__('Requested Delivery Time')}} 
                                 {{__('messages.delivery', [
-                                    'startTime' => $deliveryStart,  'endTime'=>$deliveryEnd])}}<br> {{__('(Please allow about 1 hour)')}}: </label>
+                                    'startTime' => $deliveryStart,  'endTime'=>$deliveryEnd])}}<br> {{__('(Please allow about 30 minutes)')}}: </label>
                             <input type="text" name="time" value="{{old('time')}}">
                             <label for="location">{{__("Deliver to")}}:</label>
                             	<select name="location" required="required" id="location">
