@@ -17,18 +17,21 @@ class RegisterMiddleware
     public function handle($request, Closure $next)
     {
         $open = explode(':', env('OPEN_TIME', "9:00"));
-        if (sizeof($open) < 2){
+        if (sizeof($open) < 2) {
             $open[1] = 0;
         }
-        $closed = explode(':', env('CLOSE_TIME', "4:00"));
-        if (sizeof($closed) < 2){
+        $closed = explode(':', env('CLOSE_TIME', "16:00"));
+        if (sizeof($closed) < 2) {
             $closed[1] = 0;
-        }        
+        }
+        if ($closed[0] < 12) {
+            $closed[0] += 12;
+        }
         $days = str_getcsv(env('DAYS_OPEN', '0,1,2,3,4,5,6'));
 
         $isOpen = false;
         $now = Carbon::now('America/Mexico_City');
-        if (in_array($now->dayOfWeek, $days)){
+        if (in_array($now->dayOfWeek, $days)) {
             $isOpen = true;
             $openTime = Carbon::now('America/Mexico_City');
             $openTime->hour = $open[0];
@@ -37,16 +40,15 @@ class RegisterMiddleware
             $closeTime = Carbon::now('America/Mexico_City');
             $closeTime->hour = $closed[0];
             $closeTime->minute = $closed[1];
-            if ($now < $openTime || $now > $closeTime){
+            if ($now < $openTime || $now > $closeTime) {
                 $isOpen = false;
             }
         }
-              
-        if (!$isOpen)
-        {
+
+        if (!$isOpen) {
             return redirect('/notopen');
         }
-        if (session('unit')){
+        if (session('unit')) {
             return $next($request);
         }
         return redirect('/register');
