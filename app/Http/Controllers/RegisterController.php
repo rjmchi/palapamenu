@@ -28,7 +28,7 @@ class RegisterController extends Controller
 
         // $deliveryStart = Carbon::create($openTime->toDateTimeString());
         $deliveryStart = Carbon::now('America/Mexico_City');
-        $deliveryStart->add(30, 'minutes');
+        $deliveryStart->add(31, 'minutes');
 
         $deliveryEnd = Carbon::create($closeTime->toDateTimeString());
         $deliveryEnd->add(30, 'minutes');

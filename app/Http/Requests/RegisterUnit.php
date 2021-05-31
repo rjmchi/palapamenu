@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\deliveryTime;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterUnit extends FormRequest
@@ -24,16 +25,21 @@ class RegisterUnit extends FormRequest
     public function rules()
     {
         return [
-            'unit' => 'required|in:101, 102, 103, 104, 201, 202, 203, 301, 302, 303, 401, 402, 403, 501, 502, 601, 602, 701, 702, 703, 801, 802, 803, 901, 902, 903, 1001, 1002, 1003, 1101, 1102, 1201',
-            'name' => 'required'
-        ]; 
+            'unit' => [
+                'required',
+                'in:101, 102, 103, 104, 201, 202, 203, 301, 302, 303, 401, 402, 403, 501, 502, 601, 602, 701, 702, 703, 801, 802, 803, 901, 902, 903, 1001, 1002, 1003, 1101, 1102, 1201'
+            ],
+            'name' => ['required'],
+            'time' => ['required', new deliveryTime()],
+        ];
     }
-    
-    public function messages() {
+
+    public function messages()
+    {
         return [
             'unit.required' => __('You must enter a unit number'),
             'unit.in' => __('The Unit number is not valid'),
             'name.required' => __('You must enter a name')
         ];
-    }    
+    }
 }

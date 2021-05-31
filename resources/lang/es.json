@@ -14,7 +14,6 @@
   "If you did not receive the email": "Si no ha recibido el correo electrónico",
   "If you did not request a password reset, no further action is required.": "Si no ha solicitado el restablecimiento de contraseña, omita este correo electrónico.",
   "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "Si tiene problemas para hacer clic en el botón \":actionText\", copie y pegue la siguiente URL \nen su navegador web:",
-  "Invalid signature.": "Firma no válida.",
   "Login": "Entrar",
   "Logout": "Salir",
   "Name": "Nombre",
@@ -54,7 +53,7 @@
   "Unit Number": "Número de unidad",
   "Last Name": "Apellido",
   "Requested Delivery Time":"Hora de entrega",
-  "(Please allow 30 minutes)":" (permita 30 minutos para la entrega)",
+  "Please allow at least 30 minutes":"permita al menos 30 minutos para la entrega",
   "The Unit number is not valid":"Número de la unidad incorrecto",
   "You must enter a name": "Debe poner su nombre",
   "You must enter a unit number": "Debe de poner el número de la unidad",
@@ -77,5 +76,9 @@
   "Los Palmares Palapa Menu": "Menú de la Palapa órdenes",
   "The quantity must be a whole number": "La cantidad debe ser un número entero",
   "The quantity must be greater than zero":"La cantidad debe ser mayor que cero",
-  "Pick up":"Para llevar"
+  "Pick up":"Para llevar",
+  "I will eat at the Palapa" : "Comer en la Palapa",
+  "use glass dishes":"usar cristaleria",
+  "I will pick up from the Palapa" : "Para llevar",
+  "use paper plates" : "usar desechable"
 }

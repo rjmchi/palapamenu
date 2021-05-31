@@ -20,15 +20,20 @@
                             <input type="input" name="name" value="{{old('name')}}">
                             <label for="time">{{__('Requested Delivery Time')}} 
                                 {{__('messages.delivery', [
-                                    'startTime' => $deliveryStart,  'endTime'=>$deliveryEnd])}}<br> {{__('(Please allow 30 minutes)')}}: </label>
-                            <input type="text" name="time" value="{{old('time')}}" placeholder="{{$deliveryStart}}">
-                            <label for="location">{{__("Deliver to")}}:</label>
-                            	<select name="location" required="required" id="location">
-	                                {{-- <option value="Departamento">{{__("Apartment")}}</option>
-	                                <option value="Alberca">{{__("Pool Deck")}}</option> --}}
-                                    <option value="Palapa" selected="selected">{{__("Palapa")}}</option>
-	                                <option value="Pick up" >{{__("Pick up")}}</option>                                    
-                                </select>
+                                    'startTime' => $deliveryStart,  'endTime'=>$deliveryEnd])}}<br> ({{__('Please allow at least 30 minutes')}}): </label>
+                            <input type="text" name="time" value="{{(old('time')) ? old('time'): $deliveryStart}}" placeholder="{{$deliveryStart}}">
+
+                            <div class="form-check">
+                            <label class="form-check-label"> 
+                                <input class="form-check-input"  type="radio" name="location" value="Palapa" id="location1" {{ (old('location') == 'Palapa' || old('location')=='') ? 'checked' : '' }}>
+                                    {{__('I will eat at the Palapa')}} &mdash; {{__('use glass dishes')}}
+                                </label>
+                                
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="location" value="Para llegar" id="location2" {{ (old('location') == 'Para llegar') ? 'checked' : '' }}>  
+		                            {{__('I will pick up from the Palapa')}} &mdash; {{__('use paper plates')}}
+                                </label>   
+                            </div>                                 
                         </div>
                         <div class="form-group">
                                 <button type="submit" class="btn btn-primary">
