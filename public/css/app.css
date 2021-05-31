@@ -11130,6 +11130,11 @@ input.qty {
 
 .card {
   width: 75%;
+  margin-bottom: 25px;
+}
+
+.card-header {
+  text-align: center;
 }
 
 .remove {
