@@ -30,7 +30,7 @@
                                 </label>
                                 
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="location" value="Para llegar" id="location2" {{ (old('location') == 'Para llegar') ? 'checked' : '' }}>  
+                                    <input class="form-check-input" type="radio" name="location" value="Para llevar" id="location2" {{ (old('location') == 'Para llevar') ? 'checked' : '' }}>  
 		                            {{__('I will pick up from the Palapa')}} &mdash; {{__('use paper plates')}}
                                 </label>   
                             </div>                                 
