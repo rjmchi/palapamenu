@@ -30,6 +30,7 @@ class deliveryTime implements Rule
         $deliveryStart->add(30, 'minutes');
 
         $deliveryTime = Carbon::create($value, 'America/Mexico_City');
+
         if ($deliveryStart->greaterThan($deliveryTime))
             return false;
         return true;

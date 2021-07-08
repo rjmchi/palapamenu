@@ -21,7 +21,11 @@
                             <label for="time">{{__('Requested Delivery Time')}} 
                                 {{__('messages.delivery', [
                                     'startTime' => $deliveryStart,  'endTime'=>$deliveryEnd])}}<br> ({{__('Please allow at least 30 minutes')}}): </label>
-                            <input type="text" name="time" value="{{(old('time')) ? old('time'): $deliveryStart}}" placeholder="{{$deliveryStart}}">
+                                    <select name="time" id="time">
+                                    @foreach($deliveryTimes as $deliveryTime)
+                                    <option value="{{$deliveryTime}}">{{$deliveryTime}}</option>
+                                    @endforeach
+                                    </select>
 
                             <div class="form-check">
                             <label class="form-check-label"> 

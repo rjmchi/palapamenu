@@ -10,35 +10,35 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        $openTime = Carbon::today();
-        $time = explode(':', env('OPEN_TIME', "9:00"));
-        $openTime->hour = $time[0];
-        if (sizeof($time) == 2) {
-            $openTime->minute = $time[1];
-        }
-        $closeTime = Carbon::today();
-        $time = explode(':', env('CLOSE_TIME', "16:00"));
-        if ($time[0] < 12) {
-            $time[0] += 12;
-        }
-        $closeTime->hour = $time[0];
-        if (sizeof($time) == 2) {
-            $closeTime->minute = $time[1];
-        }
+        $openTime = Carbon::create(env('OPEN_TIME', "9:00"), 'America/Mexico_City');
 
-        // $deliveryStart = Carbon::create($openTime->toDateTimeString());
+        $closeTime = Carbon::create(env('CLOSE_TIME', "15:00"), 'America/Mexico_City');
         $deliveryStart = Carbon::now('America/Mexico_City');
-        $m = $deliveryStart->minute;
-        $v = 5 - $m % 5;
-        $deliveryStart->add(30 + $v, 'minutes');
+        if ($deliveryStart < $openTime) {
+            $deliveryStart = $openTime;
+        }
+        $deliveryStart->second = 0;
 
-        $deliveryEnd = Carbon::create($closeTime->toDateTimeString());
+        $deliveryStart->add(29, 'minutes');
+
+        $m = $deliveryStart->minute;
+        $v = 15 - $m % 15;
+        $deliveryStart->add($v, 'minutes');
+
+        $deliveryEnd = Carbon::create($closeTime->toDateTimeString(), 'America/Mexico_City');
         $deliveryEnd->add(30, 'minutes');
 
         $data['openTime'] = $openTime->format('g:i A');
         $data['closeTime'] = $closeTime->format('g:i A');
         $data['deliveryStart'] = $deliveryStart->format('g:i A');
         $data['deliveryEnd'] = $deliveryEnd->format('g:i A');
+
+        $deliveryTimes = array();
+        while ($deliveryStart <= $deliveryEnd) {
+            $deliveryTimes[] = $deliveryStart->format('g:i A');
+            $deliveryStart->add(15, "minutes");
+        }
+        $data['deliveryTimes'] = $deliveryTimes;
         return (view('login')->with($data));
     }
 
