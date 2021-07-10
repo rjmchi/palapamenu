@@ -66,4 +66,5 @@ Route::group([
     Route::post('/choice', 'ChoiceController@store')->name('choicestore');
     Route::put('choice/{choice}', 'ChoiceController@update')->name('choiceupdate');
     Route::delete('choice/delete/{choice}', 'ChoiceController@destroy')->name('choicedelete');
+    Route::get('/list', 'MenuController@list');
 });

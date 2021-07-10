@@ -21,6 +21,13 @@ class MenuController extends Controller
         return MenuResource::collection($menu);
     }
 
+    public function list()
+    {
+        $menu = Menu::orderBy('sort_order')->get();
+        $data['menus'] = $menu;
+        return view('listMenu')->with($data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
