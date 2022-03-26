@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<h2>Edit Choice</h2>
+    <h2>Edit Choice</h2>
         <form class="editform" action="{{route('admin.choiceupdate', $choice->id)}}" method="POST">
             @csrf
             @method('put')
@@ -20,4 +20,5 @@
                 <input type="checkbox" name="instructions" checked value="{{$choice->instructions}}">
             </div>
             <button type="submit" class="btn btn-primary">Update Choice</button>
-        </form>@endsection
+        </form>
+    @endsection

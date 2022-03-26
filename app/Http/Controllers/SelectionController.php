@@ -42,7 +42,10 @@ class SelectionController extends Controller
             'es'=> ["name" => $request->es_name],
             "item_id"=> $request->item_id,
         ];
-        $s = Selection::create($sel_data);   
+        $s = Selection::create($sel_data); 
+        if ($request->web == true)  {
+            return redirect(route('admin.itemedit', $request->item_id));
+        }
         return new SelectionResource($s);
     }
 
@@ -65,7 +68,8 @@ class SelectionController extends Controller
      */
     public function edit(Selection $selection)
     {
-        //
+        $data['selection'] = $selection;
+        return view('newadmin.selectionedit')->with($data);
     }
 
     /**
@@ -82,6 +86,9 @@ class SelectionController extends Controller
             'es'=> ["name" => $request->es_name],
         ];
         $selection->update($sel_data);
+        if ($request->web == true)  {
+            return redirect(route('admin.itemedit', $request->item_id));
+        }        
         return new SelectionResource($selection);
     }
 
@@ -94,6 +101,9 @@ class SelectionController extends Controller
     public function destroy(Selection $selection)
     {
         $selection->delete();
+        if (request('web') == true)  {
+            return redirect(route('admin.itemedit', request('item_id')));
+        }
         return $selection;
     }
 }

@@ -66,5 +66,12 @@ Route::group([
     Route::post('/choice', 'ChoiceController@store')->name('choicestore');
     Route::put('choice/{choice}', 'ChoiceController@update')->name('choiceupdate');
     Route::delete('choice/delete/{choice}', 'ChoiceController@destroy')->name('choicedelete');
+
+    Route::get('/selection', 'AdminController@selections')->name('selectionlist');
+    Route::get('/selection/edit/{selection}', 'SelectionController@edit')->name('selectionedit');
+    Route::post('/selection', 'SelectionController@store')->name('selectionstore');
+    Route::put('selection/{selection}', 'SelectionController@update')->name('selectionupdate');
+    Route::delete('selection/delete/{selection}', 'SelectionController@destroy')->name('selectiondelete');
+
     Route::get('/list', 'MenuController@list');
 });

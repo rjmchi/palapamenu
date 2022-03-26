@@ -40,6 +40,9 @@
                     <p><span>English Description:</span>{{$item->translate('en')->description}}</p>
                     <p><span>Spanish Description: </span>{{$item->translate('es')->description}}</p>
                     <p><span>Price: </span>{{$item->price}}</p>
+                    @if ($item->no_of_choices > 0)
+                        <p><span>Number of Selections: </span>{{$item->no_of_choices}}</p>
+                    @endif
                     <p><span>Sort Order: </span>{{$item->sort_order}}</p>
                 </a>
             </div>

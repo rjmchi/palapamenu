@@ -23,6 +23,8 @@
     <div class="input-group col-5">
         <label for="price">Price: </label>
         <input type="text" name="price" value="{{$item->price}}" class="form-control">
+        <label for="no_of_choices">Number of Selections: </label>
+        <input type="text" name="no_of_choices" value={{$item->no_of_choices}} class="form-control">
         <label for="sort_order">Sort order: </label>        
         <input type="text" name="sort_order" value="{{$item->sort_order}}" class="form-control">
         <button class="btn btn-primary">Update Item</button>
@@ -115,6 +117,46 @@
                     <input type="text" name="sort_order" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary">Add Option</button>
+            </form>
+        </div>    
+    </div>
+
+    <div class="top-level">
+        <h3>Selections</h3>
+        @foreach ($item->selections as $selection)
+        <div class="sub-level">
+            <div class="content">
+                <a href="{{route('admin.selectionedit', $selection->id)}}">
+                    <p><span>English Name: </span>{{$selection->translate('en')->name}}</p>
+                    <p><span>Spanish Name: </span>{{$selection->translate('es')->name}}</p>
+                </a>
+            </div>
+            <form method="post" action="{{route('admin.selectiondelete', $selection->id)}}">
+                @csrf
+                @method('delete')
+                <input type="hidden" name="web" value="true">
+                <input type="hidden" name="id" value="{{$selection->id}}">
+                <input type="hidden" name="item_id" value="{{$item->id}}">
+
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div> 
+        @endforeach
+
+    <div class="newform">
+        <h2>New Selection</h2>
+            <form action="{{route('admin.selectionstore')}}" method="POST">
+                @csrf
+                <input type="hidden" name="web" value="true">
+                <input type="hidden" name="item_id" value="{{$item->id}}">
+                <div class="input-group">
+                    <label for="en_name">English Name</label>
+                    <input type="text" name="en_name" class="form-control">
+                    <label for="es_name">Spanish Name</label>
+                    <input type="text" name="es_name" class="form-control">
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Add Selection</button>
             </form>
         </div>    
     </div>
