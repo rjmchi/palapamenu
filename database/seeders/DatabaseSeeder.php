@@ -1,5 +1,5 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Menu;
 use App\Category;
@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UserSeeder::class);
         $string = file_get_contents(database_path("seeds/menu.json"));
-        $json_a = json_decode($string);  
+        $json_a = json_decode($string);
         $menu_sort =0;
         $category_sort = 0;
         $item_sort = 0;
@@ -36,9 +36,9 @@ class DatabaseSeeder extends Seeder
                 foreach ($menu->categories as $category) {
                    $cat_data = [
                         'en'=> ["name" => $category->en->name],
-                        'es'=> ["name" => $category->es->name], 
-                        "sort_order"=>$category_sort++, 
-                        "menu_id"=> $m->id                   
+                        'es'=> ["name" => $category->es->name],
+                        "sort_order"=>$category_sort++,
+                        "menu_id"=> $m->id
                    ];
                    if (isset($category->en->description)){
                        $cat_data['en']["description"] = $category->en->description;
@@ -50,10 +50,10 @@ class DatabaseSeeder extends Seeder
                         foreach ($category->items as $item) {
                             $item_data = [
                                 'en'=> ["name" => $item->en->name],
-                                'es'=> ["name" => $item->es->name], 
+                                'es'=> ["name" => $item->es->name],
                                 "price"=> $item->price,
-                                "sort_order"=>$item_sort++, 
-                                "category_id"=> $c->id                   
+                                "sort_order"=>$item_sort++,
+                                "category_id"=> $c->id
                             ];
                             if (isset($item->en->description)){
                                 $item_data['en']["description"] = $item->en->description;
@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
                             }
                             if (isset($item->no_of_choices)){
                                 $item_data["no_of_choices"] = $item->no_of_choices;
-                            }                            
+                            }
                             if (isset($item->instructions)){
                                 $item_data['instructions'] = $item->instructions;
                             }
@@ -72,10 +72,10 @@ class DatabaseSeeder extends Seeder
                                 foreach($item->choices as $choice) {
                                     $choice_data = [
                                         'en'=> ["name" => $choice->en->name],
-                                        'es'=> ["name" => $choice->es->name], 
-                                        "sort_order"=>$choice_sort++, 
-                                        "item_id"=> $i->id                   
-                                    ];                                   
+                                        'es'=> ["name" => $choice->es->name],
+                                        "sort_order"=>$choice_sort++,
+                                        "item_id"=> $i->id
+                                    ];
                                     if (isset($choice->instructions)){
                                         $choice_data['instructions'] = $choice->instructions;
                                     }
@@ -86,18 +86,18 @@ class DatabaseSeeder extends Seeder
                                 foreach($item->options as $option) {
                                     $option_data = [
                                         'en'=> ["name" => $option->en->name],
-                                        'es'=> ["name" => $option->es->name], 
-                                        "sort_order"=>$option_sort++, 
-                                        "item_id"=> $i->id                   
+                                        'es'=> ["name" => $option->es->name],
+                                        "sort_order"=>$option_sort++,
+                                        "item_id"=> $i->id
                                     ];
                                     if (isset($option->price)) {
                                         $option_data['price'] = $option->price;
-                                    }    
+                                    }
                                     if (isset($option->instructions)){
                                         $option_data['instructions'] = $option->instructions;
-                                    }                                
+                                    }
                                     $o = Option::create($option_data);
-                                }                            
+                                }
                             }
                             if (isset($item->selections)){
                                 foreach($item->selections as $selection) {
@@ -108,11 +108,11 @@ class DatabaseSeeder extends Seeder
                                     ];
                                     Selection::create($sel_data);
                                 }
-                            }                            
+                            }
                         }
                     }
                 }
             }
-        }        
+        }
     }
 }
