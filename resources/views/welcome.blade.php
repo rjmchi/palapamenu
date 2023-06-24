@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Los Palmares Palapa</title>
-       
+
     </head>
     <body>
         <div>
@@ -31,7 +31,7 @@
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">{{__('Register')}}</a>
                         @endif
                     @endauth
                 </div>

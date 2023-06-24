@@ -2,18 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\RegisterUnit;
-use App\Order;
+use App\Models\Order;
 use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('register',['except'=>['fullmenu']]);
+    }
+
     public function index()
     {
-        $openTime = Carbon::create(env('OPEN_TIME', "9:00"), 'America/Mexico_City');
+        // $openTime = Carbon::create(env('OPEN_TIME', "9:00"), 'America/Mexico_City');
+        $openTime = Carbon::create(env('OPEN_TIME', "9:00"), '-6:00');
 
-        $closeTime = Carbon::create(env('CLOSE_TIME', "15:00"), 'America/Mexico_City');
-        $deliveryStart = Carbon::now('America/Mexico_City');
+        // $closeTime = Carbon::create(env('CLOSE_TIME', "15:00"), 'America/Mexico_City');
+        $closeTime = Carbon::create(env('CLOSE_TIME', "15:00"), '-6:00');
+        // $deliveryStart = Carbon::now('America/Mexico_City');
+        $deliveryStart = Carbon::now('-6:00');
+
         if ($deliveryStart < $openTime) {
             $deliveryStart = $openTime;
         }
@@ -25,7 +35,8 @@ class RegisterController extends Controller
         $v = 15 - $m % 15;
         $deliveryStart->add($v, 'minutes');
 
-        $deliveryEnd = Carbon::create($closeTime->toDateTimeString(), 'America/Mexico_City');
+        // $deliveryEnd = Carbon::create($closeTime->toDateTimeString(), 'America/Mexico_City');
+        $deliveryEnd = Carbon::create($closeTime->toDateTimeString(), '-6:00');
         $deliveryEnd->add(30, 'minutes');
 
         $data['openTime'] = $openTime->format('g:i A');
@@ -59,5 +70,4 @@ class RegisterController extends Controller
         session(['orderid' => $order->id]);
 
         return redirect('/');
-    }
-}
+    }}

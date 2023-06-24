@@ -1,0 +1,16 @@
+{
+  "public/images/lospalmareslogo.png": {
+    "file": "assets/lospalmareslogo.d18503b7.png",
+    "src": "public/images/lospalmareslogo.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.2896b7a8.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.14cca1fd.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  }
+}

@@ -3,35 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Menu;
-use App\Item;
-use App\Option;
-use App\Choice;
-use App\Order;
-use App\OrderItem;
-use App\Mail\Order as MailOrder;
+
+use App\Models\Menu;
+use App\Models\Item;
+use App\Models\Option;
+use App\Models\Choice;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Carbon\Carbon;
+use App\Mail\Order as MailOrder;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
-        $this->middleware('register');
+        $this->middleware('register',['except'=>['fullmenu']]);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
+    public function index() {
         $data['menus'] = Menu::orderBy('sort_order')->get();
         $data['order'] = Order::orderBy('created_at', 'desc')->where('apt', session('unit'))->where('sent', false)->get()->first();
 
@@ -43,7 +34,7 @@ class HomeController extends Controller
             $order->save();
             $data['order']= $order;
             session(['orderid'=> $order->id]);
-        }      
+        }
         return view('home')->with($data);
     }
 
@@ -75,7 +66,7 @@ class HomeController extends Controller
         if ($request->input('choice')){
             $orderitem->choice_id = $request->input('choice');
         }
-        
+
         if ($request->input('special')){
             $orderitem->special = $request->input('special');
         }
@@ -84,7 +75,7 @@ class HomeController extends Controller
             foreach ($request->input('selection') as $s){
                 $orderitem->selections()->attach($s);
             }
-        }        
+        }
         return redirect('/');
     }
 
@@ -109,7 +100,7 @@ class HomeController extends Controller
         } else {
             $data['choice'] = '';
         }
-      
+
         return view('orderitem')->with($data);
     }
 
@@ -118,16 +109,21 @@ class HomeController extends Controller
 
         $order->sent = true;
         $order->save();
+        $order->subtotal = 0;
         $order->total = 0;
-        $now = Carbon::now('America/Mexico_City');
+        $order->serviceCharge = 0;
+        $now = Carbon::now('+6:00');
+        // $now = Carbon::now('America/Mexico_City');
         $order->date = $now->format('d M Y h:i a');
         foreach ($order->orderItems as $item)  {
-            $order->total += $item->price;
-        } 
-        \Mail::to('lospalmarespalapa@gmail.com')->send(new MailOrder($order));
+            $order->subtotal += $item->price;
+        }
+        $order->serviceCharge = round($order->subtotal * .15);
+        $order->total = $order->subtotal + $order->serviceCharge;
+        Mail::to('lospalmarespalapa@gmail.com')->send(new MailOrder($order));
         session()->flash("message", __("Your order has been sent"));
         session()->forget('unit');
-        session()->forget('name');        
+        session()->forget('name');
         return redirect('/register');
     }
 

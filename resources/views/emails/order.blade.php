@@ -7,7 +7,7 @@
     <title>Palapa Order</title>
 </head>
 <body>
-    <h1>Palapa Order</h1>
+    <h1>Palapa Order v2</h1>
     <h3>{{$order->date}}</h3>
     <p><strong>{{$order->apt}} {{$order->name}}</strong></p>
 
@@ -24,17 +24,19 @@
             @endif
             @if ($item->selections)
             <p>
-                @foreach($item->selections as $sel) 
-                    {{$sel->translate('es')->name}}, 
+                @foreach($item->selections as $sel)
+                    {{$sel->translate('es')->name}},
                 @endforeach
             </p>
             @endif
             <dd>{{$item->special}}</dd>
         @endforeach
     </dl>
+    <p>Subtotal: ${{$order->subtotal}}</p>
+    <p>Cuota por servicio: ${{$order->serviceCharge}}
     <p><strong>Total: ${{$order->total}}</strong></p>
     <p></p>
     <p></p>
-    <p style="width:50%;border-bottom:1px solid #000;">Signature: </p>
+    <p style="width:50%;border-bottom:1px solid #000;">Firma: </p>
 </body>
 </html>

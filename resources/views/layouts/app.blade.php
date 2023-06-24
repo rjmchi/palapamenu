@@ -11,34 +11,31 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
         <main>
-            <nav class="titlebar">
-                <a class="logo" href="{{ url('/') }}">
-                    {{ __("Los Palmares Palapa Menu") }}
-                </a>
+            <div class="titlebar mx-auto bg-primary-600 flex flex-wrap shadow-lg justify-center">
+                <h1 class="logo w-full text-white italic text-2xl text-center pb-1 my-1">{{ __("La Palapa Menu at Los Palmares") }}</h1>
 
-                <div class="languages">
+                <div class="languages w-full text-center mb-3">
                         @if(count(config('app.languages')) > 1)
                             @foreach(config('app.languages') as $langLocale => $langName)
-                                <a class="lang" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ $langName }}</a>
+                                <a class="btn btn-secondary" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ $langName }}</a>
                             @endforeach
                         @endif
                 </div>
-            </nav>
-            
+</div>
+
             @if ($flash=session('message'))
                 <div class="alert alert-success" role="alert">{{$flash}}</div>
             @endif

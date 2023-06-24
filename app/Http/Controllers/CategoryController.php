@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Resources\CategoryResource;
 
 class CategoryController extends Controller
 {
@@ -15,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return CategoryResource::collection(Category::orderBy('sort_order')->get());
+        //
     }
 
     /**
@@ -47,40 +46,37 @@ class CategoryController extends Controller
             $cat_data['es']["description"] = $request->es_description;
         }
         $c = Category::create($cat_data);
-        if ($request->web == true) {
-            return redirect(route('admin.menuedit', $request->menu_id));
-        }
-        return new CategoryResource($c);
+        return redirect(route('menu.edit', $request->menu_id));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
     {
-        return new CategoryResource($category);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function edit(Category $category)
     {
         $data['category'] = $category;
-        return view('newadmin.categoryedit')->with($data);
+        return view('admin.category.edit')->with($data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
@@ -95,24 +91,19 @@ class CategoryController extends Controller
             $cat_data['es']["description"] = $request->es_description;
         }
         $category->update($cat_data);
-        if ($request->web == true) {
-            return redirect(route('admin.categoryedit', $category->id));
-        }
-        return new CategoryResource($category);
+        return redirect(route('category.edit', $category->id));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
         $category->delete();
-        if (request('web') == true) {
-            return redirect(route('admin.menuedit', request('menu_id')));
-        }
-        return ($category);
+        return redirect(route('menu.edit', request('menu_id')));
+
     }
 }

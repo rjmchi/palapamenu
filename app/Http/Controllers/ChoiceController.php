@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Choice;
+use App\Models\Choice;
 use Illuminate\Http\Request;
-use App\Http\Resources\ChoiceResource;
-
 
 class ChoiceController extends Controller
 {
@@ -16,7 +14,7 @@ class ChoiceController extends Controller
      */
     public function index()
     {
-        return ChoiceResource::collection(Choice::orderBy('sort_order')->get());
+        //
     }
 
     /**
@@ -52,40 +50,37 @@ class ChoiceController extends Controller
         ];
 
         $c = Choice::create($choice_data);
-        if ($request->web == true) {
-            return redirect(route('admin.itemedit', $request->item_id));
-        }
-        return new ChoiceResource($c);
+        return redirect(route('item.edit', $request->item_id));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Choice  $choice
+     * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
     public function show(Choice $choice)
     {
-        return new ChoiceResource($choice);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Choice  $choice
+     * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
     public function edit(Choice $choice)
     {
         $data['choice'] = $choice;
-        return view('newadmin.choiceedit')->with($data);
+        return view('choice.edit')->with($data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Choice  $choice
+     * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Choice $choice)
@@ -98,24 +93,18 @@ class ChoiceController extends Controller
         ];
 
         $choice->update($choice_data);
-        if ($request->web == true) {
-            return redirect(route('admin.itemedit', $request->item_id));
-        }
-        return new ChoiceResource($choice);
+        return redirect(route('item.edit', $request->item_id));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Choice  $choice
+     * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
     public function destroy(Choice $choice)
     {
         $choice->delete();
-        if (request('web') == true) {
-            return redirect(route('admin.itemedit', request('item_id')));
-        }
-        return $choice;
+        return redirect(route('item.edit', request('item_id')));
     }
 }

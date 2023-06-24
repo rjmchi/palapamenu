@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Selection;
+use App\Models\Selection;
 use Illuminate\Http\Request;
-use App\Http\Resources\SelectionResource;
-
 
 class SelectionController extends Controller
 {
@@ -16,7 +14,7 @@ class SelectionController extends Controller
      */
     public function index()
     {
-        return SelectionResource::collection(Selection::orderBy('sort_order')->get());
+        //
     }
 
     /**
@@ -37,73 +35,51 @@ class SelectionController extends Controller
      */
     public function store(Request $request)
     {
-        $sel_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name],
-            "item_id"=> $request->item_id,
-        ];
-        $s = Selection::create($sel_data); 
-        if ($request->web == true)  {
-            return redirect(route('admin.itemedit', $request->item_id));
-        }
-        return new SelectionResource($s);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Selections  $selections
+     * @param  \App\Models\Selection  $selection
      * @return \Illuminate\Http\Response
      */
     public function show(Selection $selection)
     {
-        return new SelectionResource($selection);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Selections  $selections
+     * @param  \App\Models\Selection  $selection
      * @return \Illuminate\Http\Response
      */
     public function edit(Selection $selection)
     {
-        $data['selection'] = $selection;
-        return view('newadmin.selectionedit')->with($data);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Selection  $selections
+     * @param  \App\Models\Selection  $selection
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Selection $selection)
     {
-        $sel_data = [
-            'en'=> ["name" => $request->en_name],
-            'es'=> ["name" => $request->es_name],
-        ];
-        $selection->update($sel_data);
-        if ($request->web == true)  {
-            return redirect(route('admin.itemedit', $request->item_id));
-        }        
-        return new SelectionResource($selection);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Selection  $selection
+     * @param  \App\Models\Selection  $selection
      * @return \Illuminate\Http\Response
      */
     public function destroy(Selection $selection)
     {
-        $selection->delete();
-        if (request('web') == true)  {
-            return redirect(route('admin.itemedit', request('item_id')));
-        }
-        return $selection;
+        //
     }
 }

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">   
-        @include('menu')
-        @include ('order')
+    <div class="w-full">
+    <div class="menupage flex justify-between mt-4">
+        @include('partials.menu')
+        @include('partials.order')
+    </div><!-- menupage -->
     </div><!-- container-->
 @endsection

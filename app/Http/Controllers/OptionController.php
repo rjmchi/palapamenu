@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Option;
+use App\Models\Option;
 use Illuminate\Http\Request;
-use App\Http\Resources\OptionResource;
-
 
 class OptionController extends Controller
 {
@@ -16,7 +14,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return OptionResource::collection(Option::orderBy('sort_order')->get());
+        //
     }
 
     /**
@@ -50,40 +48,37 @@ class OptionController extends Controller
             $option_data['instructions'] = $request->instructions;
         }
         $o = Option::create($option_data);
-        if ($request->web == true) {
-            return redirect(route('admin.itemedit', $request->item_id));
-        }
-        return new OptionResource($o);
+        return redirect(route('item.edit', $request->item_id));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Option  $option
+     * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
     public function show(Option $option)
     {
-        return new OptionResource($option);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Option  $option
+     * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
     public function edit(Option $option)
     {
         $data['option'] = $option;
-        return view('newadmin.optionedit')->with($data);
+        return view('admin.option.edit')->with($data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Option  $option
+     * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Option $option)
@@ -100,24 +95,18 @@ class OptionController extends Controller
             $option_data['instructions'] = $request->instructions;
         }
         $option->update($option_data);
-        if ($request->web == true) {
-            return redirect(route('admin.itemedit', $request->item_id));
-        }
-        return new OptionResource($option);
+        return redirect(route('admin.item.edit', $request->item_id));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Option  $option
+     * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
     public function destroy(Option $option)
     {
         $option->delete();
-        if (request('web') == true) {
-            return redirect(route('admin.itemedit', request('item_id')));
-        }
-        return $option;
+        return redirect(route('admin.item.edit', request('item_id')));
     }
 }

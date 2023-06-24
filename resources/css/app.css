@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply rounded border-neutral-500 focus:border-primary-500 focus:ring-primary-500 p-1 m-1
+    }
+    select {
+        @apply pr-8
+    }
+    [type='checkbox'],
+    [type='radio']
+    {
+        @apply border-gray-300 text-primary-600 focus:ring-primary-500
+    }
+    [type='checkbox']
+    { @apply rounded-sm}
+
+}
+
+h3 {font-variant: small-caps;
+    @apply mb-1 font-semibold leading-5 text-xl
+}
+.btn {
+    @apply md:m-2 rounded-md border py-2 px-4 md:text-sm cursor-pointer md:tracking-wider border-neutral-500 shadow-md font-semibold
+    text-xs tracking-tight
+}
+.btn-primary {
+    @apply  bg-primary-700 text-primary-50 hover:bg-primary-800
+}
+.btn-secondary {
+    @apply bg-secondary-700 text-secondary-50 hover:bg-secondary-900 font-bold
+}
+.btn-danger {
+    @apply bg-danger-600 text-danger-50 hover:bg-danger-700
+}
+
+.disabled {
+    @apply bg-neutral-200 border-0 text-neutral-400 cursor-not-allowed hover:bg-neutral-200
+}
+
+.alert {
+    @apply text-sm px-3 py-4
+}
+
+.alert-success {
+    @apply bg-success-100 text-success-900
+}
+.alert-danger {
+    @apply bg-danger-100 text-danger-900
+}
+
+.card {
+    @apply flex flex-col
+}
+.card-header {
+    @apply text-center mt-2 mx-auto bg-neutral-100 w-11/12 border-2 border-neutral-300 rounded-t p-5
+}
+.card-body {
+    @apply  mx-auto w-11/12 border-2 border-t-0 border-neutral-300 rounded-b p-3
+}
+.card label {
+    @apply mt-2 block mb-0 text-sm text-neutral-900
+}
+
+.title {
+    @apply text-center p-2 rounded bg-neutral-200 uppercase
+}
+
+.menu h2 {
+    @apply rounded text-xl font-bold
+}
+.menu .category {
+    @apply text-center bg-neutral-300 py-5 px-0 m-0 text-lg font-semibold
+}
+.menu .category h4 {
+    @apply italic text-base font-normal
+}
+
+.menu .item {
+    @apply flex justify-between
+}
+.menu .item span {
+    @apply mr-4
+}
+
+.menu .option {
+    @apply flex justify-between ml-5
+}
+.menu .option span {
+    @apply mr-4
+}
+
+.order {
+    @apply w-1/2 p-10 mx-auto mt-10 border rounded text-center border-neutral-700
+}
+
+.titlebar {
+    background-image:url('/public/images/lospalmareslogo.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:15px;
+}
+
+.top-level {
+    @apply border border-neutral-300 rounded text-lg m-2 p-0.5 flex justify-start items-center flex-wrap
+}
+.top-level a {
+    @apply text-neutral-900 font-medium bg-neutral-200 block mr-3 pl-3 basis-1/4 border border-slate-400 hover:bg-neutral-300
+}
+.newform {
+    @apply border border-slate-500 rounded p-2 bg-sky-100 m-2
+}
+.newform h2 {
+    @apply text-3xl font-semibold
+}
+.newform .input-group, .editform .input-group {
+    @apply flex flex-wrap basis-full
+}
+.newform .input-group label, .editform .input-group label {
+    @apply m-2 font-semibold
+}
+.newform .form-control, .editform .form-control {
+    @apply rounded basis-full
+}
+.editform {
+    @apply border border-neutral-400 bg-amber-100 flex flex-wrap justify-around rounded text-xl p-2 m-2
+}
+
+.sub-level {
+    @apply flex flex-nowrap items-center text-neutral-900 font-medium bg-neutral-200 mx-2 p-1 basis-full border rounded border-slate-400 hover:bg-neutral-300
+}
+
+.sub-level a {
+    @apply text-neutral-900 font-medium bg-neutral-200 block mr-3 basis-1/2 p-2 border border-slate-400 hover:bg-neutral-300
+}
+
+.sub-level p {
+    @apply m-2
+}
+
+.popup{
+    @apply fixed left-0 z-50 bg-neutral-700/70 w-screen h-screen p-10 m-1;
+  }
+  .popup .popUpContainer{
+    @apply w-full md:w-3/4 max-w-2xl p-6 rounded-xl bg-neutral-50 z-50 mx-auto relative;
+  }
+  .popup h2{
+    @apply text-2xl font-bold pt-1 pb-3 text-center text-neutral-800;
+  }
+  .popup article{
+    @apply text-neutral-900 text-lg bg-primary-100 rounded-xl p-10;
+  }
+  /* The cancel button on popup dialog */
+  .popup a.closePopUp{
+    @apply text-red-400 absolute m-0 p-2 font-semibold text-xl top-1 right-1.5 ;
+  }
+  .popup .closePopUpOutSide{
+    @apply w-full h-full absolute z-40 left-0;
+  }

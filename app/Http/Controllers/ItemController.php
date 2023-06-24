@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Item;
+use App\Models\Item;
 use Illuminate\Http\Request;
-use App\Http\Resources\ItemResource;
 
 class ItemController extends Controller
 {
@@ -15,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return ItemResource::collection(Item::orderBy('sort_order')->get());
+        //
     }
 
     /**
@@ -55,40 +54,37 @@ class ItemController extends Controller
         }
         $i = Item::create($item_data);
 
-        if ($request->web == true) {
-            return redirect(route('admin.categoryedit', $request->category_id));
-        }
-        return new ItemResource($i);
+        return redirect(route('category.edit', $request->category_id));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function show(Item $item)
     {
-        return new ItemResource($item);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function edit(Item $item)
     {
         $data['item'] = $item;
-        return view('newadmin.itemedit')->with($data);
+        return view('admin.item.edit')->with($data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Item  $item
+     * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Item $item)
@@ -110,24 +106,18 @@ class ItemController extends Controller
             $item_data['instructions'] = $request->instructions;
         }
         $item->update($item_data);
-        if ($request->web == true) {
-            return redirect(route('admin.itemedit', $item->id));
-        }
-        return new ItemResource($item);
+        return redirect(route('category.edit', $item->category_id));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function destroy(Item $item)
     {
         $item->delete();
-        if (request('web') == true) {
-            return redirect(route('admin.categoryedit', request('category_id')));
-        }
-        return ($item);
+        return redirect(route('category.edit', request('category_id')));
     }
 }

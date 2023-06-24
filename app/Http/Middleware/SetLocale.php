@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 
 class SetLocale
 {
@@ -10,10 +11,10 @@ class SetLocale
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if (request('change_language')) {
             session()->put('language', request('change_language'));
@@ -27,7 +28,6 @@ class SetLocale
         if (isset($language) && config('app.languages.' . $language)) {
             app()->setLocale($language);
         }
-                
         return $next($request);
     }
 }

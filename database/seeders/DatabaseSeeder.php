@@ -1,12 +1,16 @@
 <?php
+
 namespace Database\Seeders;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Category;
+use App\Models\Choice;
+use App\Models\Item;
+use App\Models\Menu;
+use App\Models\Option;
+use App\Models\Selection;
 use Illuminate\Database\Seeder;
-use App\Menu;
-use App\Category;
-use App\Item;
-use App\Option;
-use App\Choice;
-use App\Selection;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,8 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
-        $string = file_get_contents(database_path("seeds/menu.json"));
+        $string = file_get_contents(database_path("seeders/menu.json"));
         $json_a = json_decode($string);
         $menu_sort =0;
         $category_sort = 0;
@@ -114,5 +117,13 @@ class DatabaseSeeder extends Seeder
                 }
             }
         }
+
+
+        // \App\Models\User::factory(10)->create();
+
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }

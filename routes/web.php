@@ -1,5 +1,16 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChoiceController;
+use App\Http\Controllers\ClosingController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\NotOpenController;
+use App\Http\Controllers\OptionController;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,66 +23,36 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', 'HomeController@index')->name('home');
+require __DIR__.'/auth.php';
 
-Route::post('/order', "HomeController@processOrder");
-Route::get('/order/{item}/{option?}/{choice?}', "HomeController@addItemToOrder");
-Route::get('/removeitem/{item}', "HomeController@removeItemFromOrder");
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
-Route::get('/sendorder', "HomeController@sendOrder");
-Route::get('/cancel/{order}', "HomeController@cancelOrder");
+Route::post('/order', [HomeController::class, 'processOrder']);
+Route::get('/order/{item}/{option?}/{choice?}', [HomeController::class,'addItemToOrder']);
+Route::get('/removeitem/{item}', [HomeController::class, 'removeItemFromOrder']);
 
-Route::get('/register', "RegisterController@index");
-Route::post('/register', "RegisterController@register")->name('register');
+Route::get('/sendorder', [HomeController::class, 'sendOrder']);
+Route::get('/cancel/{order}', [HomeController::class, 'cancelOrder']);
+Route::get('/notopen', [NotOpenController::class, 'index'])->name('notopen');
 
-//Route::view('/notopen', 'notopen');
-Route::get('/notopen', 'NotOpenController@index')->name('notopen');
+//admin
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
-//Route::get('/admin', 'AdminController@index')->name('admin');
+Route::resource('menu', MenuController::class);
+Route::resource('category', CategoryController::class);
+Route::resource('item', ItemController::class);
+Route::resource('choice', ChoiceController::class);
+Route::resource('option', OptionController::class);
 
-Route::group([
-    'prefix' => '/admin',
-    'as' => 'admin.',
-    'middleware' => 'auth',
-], function () {
-    Route::get('/', 'AdminController@menus')->name('menulist');
-    Route::get('/menu/edit/{menu}', 'MenuController@edit')->name('menuedit');
-    Route::post('/menu/', 'MenuController@store')->name('menustore')->middleware('auth');
-    Route::put('/menu/{menu}', 'MenuController@update')->name('menuupdate');
-    Route::delete('/menu/delete/{menu}', 'MenuController@destroy')->name('menudelete');
 
-    Route::get('/category', 'AdminController@categories')->name('cateogrylist');
-    Route::get('/category/edit/{category}', 'CategoryController@edit')->name('categoryedit');
-    Route::post('/category', 'CategoryController@store')->name('categorystore');
-    Route::put('category/{category}', 'CategoryController@update')->name('categoryupdate');
-    Route::delete('category/delete/{category}', 'CategoryController@destroy')->name('categorydelete');
+Route::get('/closing', [ClosingController::class, 'index'])->name('closing.index');
+Route::post('/closing',[ClosingController::class, 'store'])->name('closing.store');
+Route::delete('/closing/{closing}',[ClosingController::class, 'destroy'])->name('closing.delete');
 
-    Route::get('/item', 'AdminController@items')->name('cateogrylist');
-    Route::get('/item/edit/{item}', 'ItemController@edit')->name('itemedit');
-    Route::post('/item', 'ItemController@store')->name('itemstore');
-    Route::put('item/{item}', 'ItemController@update')->name('itemupdate');
-    Route::delete('item/delete/{item}', 'ItemController@destroy')->name('itemdelete');
-
-    Route::get('/option', 'AdminController@options')->name('optionlist');
-    Route::get('/option/edit/{option}', 'OptionController@edit')->name('optionedit');
-    Route::post('/option', 'OptionController@store')->name('optionstore');
-    Route::put('option/{option}', 'OptionController@update')->name('optionupdate');
-    Route::delete('option/delete/{option}', 'OptionController@destroy')->name('optiondelete');
-
-    Route::get('/choice', 'AdminController@choices')->name('choicelist');
-    Route::get('/choice/edit/{choice}', 'ChoiceController@edit')->name('choiceedit');
-    Route::post('/choice', 'ChoiceController@store')->name('choicestore');
-    Route::put('choice/{choice}', 'ChoiceController@update')->name('choiceupdate');
-    Route::delete('choice/delete/{choice}', 'ChoiceController@destroy')->name('choicedelete');
-
-    Route::get('/selection', 'AdminController@selections')->name('selectionlist');
-    Route::get('/selection/edit/{selection}', 'SelectionController@edit')->name('selectionedit');
-    Route::post('/selection', 'SelectionController@store')->name('selectionstore');
-    Route::put('selection/{selection}', 'SelectionController@update')->name('selectionupdate');
-    Route::delete('selection/delete/{selection}', 'SelectionController@destroy')->name('selectiondelete');
-
-    Route::get('/list', 'MenuController@list');
-});

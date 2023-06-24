@@ -10,27 +10,26 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/newadmin.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-        <main>
+        <main class="m-5">
             @if ($flash=session('message'))
                 <div class="alert alert-success" role="alert">{{$flash}}</div>
             @endif
+
             @yield('content')
-            <div class="footer">
-                <a class="btn btn-info" href="{{route('admin.menulist')}}">Admin</a>
+
+            <div class="mt-5">
+                <a href="{{route('admin')}}" class="btn btn-secondary" >Admin</a>
+                <a href="{{route('closing.index')}}" class="btn btn-secondary" >Closings</a>
             </div>
         </main>
     </div>
