@@ -112,7 +112,7 @@ class HomeController extends Controller
         $order->subtotal = 0;
         $order->total = 0;
         $order->serviceCharge = 0;
-        $now = Carbon::now('+6:00');
+        $now = Carbon::now('-6:00');
         // $now = Carbon::now('America/Mexico_City');
         $order->date = $now->format('d M Y h:i a');
         foreach ($order->orderItems as $item)  {
