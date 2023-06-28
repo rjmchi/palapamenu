@@ -32,7 +32,7 @@ class Order extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Order',
+            subject: 'Order Number ' . $this->order->id,
         );
     }
 

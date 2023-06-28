@@ -7,7 +7,7 @@
     <title>Palapa Order</title>
 </head>
 <body>
-    <h1>Palapa Order v2</h1>
+    <h1>Palapa Order</h1>
     <h3>{{$order->date}}</h3>
     <p><strong>{{$order->apt}} {{$order->name}}</strong></p>
 
