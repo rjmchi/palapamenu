@@ -103,7 +103,16 @@ class ClosingController extends Controller
      */
     public function edit(Closing $closing)
     {
-        //
+        $today = Carbon::now('-6:00');
+        // $today = Carbon::now('America/Mexico_City');
+        $today->hour = 0;
+        $today->minute = 0;
+        $today->second = 0;
+
+        $data['closings']=Closing::where('close_on', '>=', $today)->orderBy('close_on')->get();
+        $data['edit']= $closing;
+
+        return view('admin.closing.index')->with($data);
     }
 
     /**
@@ -115,7 +124,21 @@ class ClosingController extends Controller
      */
     public function update(Request $request, Closing $closing)
     {
-        //
+        $d = new Carbon($request->date, "-6:00");
+
+        $closing_data = ['close_on'=>$d];
+
+        if (isset($request->en_title)) {
+            $closing_data['en']["title"] = $request->en_title;
+            $closing_data['es']["title"] = $request->es_title;
+        }
+
+        $closing_data['en']["message"] = $request->en_message;
+        $closing_data['es']["message"] = $request->es_message;
+
+        $closing->update($closing_data);
+
+        return redirect(route('closing.index'));
     }
 
     /**

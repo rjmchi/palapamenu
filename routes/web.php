@@ -54,5 +54,7 @@ Route::resource('option', OptionController::class);
 
 Route::get('/closing', [ClosingController::class, 'index'])->name('closing.index');
 Route::post('/closing',[ClosingController::class, 'store'])->name('closing.store');
+Route::get('/closing/{closing}',[ClosingController::class, 'edit'])->name('closing.edit');
+Route::put('/closing/{closing}', [ClosingController::class, 'update'])->name('closing.update');
 Route::delete('/closing/{closing}',[ClosingController::class, 'destroy'])->name('closing.delete');
 
