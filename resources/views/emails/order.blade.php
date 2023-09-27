@@ -16,6 +16,7 @@
     <dl>
         @foreach ($order->orderItems as $item)
             <dt>{{$item->quantity}} {{$item->item->translate('es')->name}} <span>${{$item->price}}</span></dt>
+                <dd>{{$item->item->translate('es')->description}}</dd>
             @if($item->choice)
                 <dd>{{$item->choice->translate('es')->name}}</dd>
             @endif
@@ -30,6 +31,7 @@
             </p>
             @endif
             <dd>{{$item->special}}</dd>
+            <dd>________________________</dd>
         @endforeach
     </dl>
     <p>Subtotal: ${{$order->subtotal}}</p>
