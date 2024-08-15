@@ -28,13 +28,18 @@
                                     </select>
 
                             <div class="form-check">
-                            <label class="form-check-label">
+                            {{-- <label class="form-check-label">
                                 <input class="form-check-input"  type="radio" name="location" value="Palapa" id="location1" {{ (old('location') == 'Palapa' || old('location')=='') ? 'checked' : '' }}>
                                     {{__('I will eat at the Palapa')}} &mdash; {{__('use glass dishes')}}
-                                </label>
+                                </label> --}}
+
+                                {{-- <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="location" value="Para llevar" id="location2" {{ (old('location') == 'Para llevar') ? 'checked' : '' }}>
+		                            {{__('I will pick up from the Palapa')}} &mdash; {{__('use paper plates')}}
+                                </label> --}}
 
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="location" value="Para llevar" id="location2" {{ (old('location') == 'Para llevar') ? 'checked' : '' }}>
+                                    <input class="form-check-input" type="radio" name="location" value="Para llevar" id="location2" checked>
 		                            {{__('I will pick up from the Palapa')}} &mdash; {{__('use paper plates')}}
                                 </label>
                             </div>
