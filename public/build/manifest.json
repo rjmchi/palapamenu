@@ -1,16 +1,16 @@
 {
   "public/images/lospalmareslogo.png": {
-    "file": "assets/lospalmareslogo-d18503b7.png",
+    "file": "assets/lospalmareslogo.d18503b7.png",
     "src": "public/images/lospalmareslogo.png"
   },
-  "resources/css/app.css": {
-    "file": "assets/app-dcbf1e20.css",
-    "isEntry": true,
-    "src": "resources/css/app.css"
-  },
   "resources/js/app.js": {
-    "file": "assets/app-540823bc.js",
-    "isEntry": true,
-    "src": "resources/js/app.js"
+    "file": "assets/app.1f1033b5.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.acd3c04c.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
   }
 }

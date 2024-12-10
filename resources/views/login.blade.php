@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="w-full">
-            <div class="card mx-auto">
+            <div class="mx-auto card">
                 <div class="card-header">{{ __('Login') }}
-                    <h4 class="font-semibold text-xl">
+                    <h4 class="text-xl font-semibold">
                         {{__('messages.order',['startTime' => $openTime, 'endTime'=>$closeTime])}}
                     </h4>
                 </div>
@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="form-group text-center">
+                        <div class="text-center form-group">
                             <label for="unit">{{__('Unit Number')}}:</label>
                             <input type="text" name="unit" value="{{old('unit')}}">
                             <label for="name">{{__('Last Name')}}:</label>
@@ -44,7 +44,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group text-center">
+                        <div class="text-center form-group">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
@@ -52,7 +52,7 @@
                     </form>
 
 @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="text-center alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>

@@ -26,7 +26,7 @@ class RegisterUnit extends FormRequest
         return [
             'unit' => [
                 'required',
-                'in:101, 102, 103, 104, 201, 202, 203, 301, 302, 303, 401, 402, 403, 501, 502, 601, 602, 701, 702, 703, 801, 802, 803, 901, 902, 903, 1001, 1002, 1003, 1101, 1102, 1201'
+                'in:101, 102, 103, 202, 203, 303, 401, 502, 602, 701, 702, 801, 802, 901, 902, 1001, 1002, 1003, 1101, 1201'
             ],
             'name' => ['required'],
         ];
@@ -36,7 +36,7 @@ class RegisterUnit extends FormRequest
     {
         return [
             'unit.required' => __('You must enter a unit number'),
-            'unit.in' => __('The Unit number is not valid'),
+            'unit.in' => __('Unknown Error'),
             'name.required' => __('You must enter a name')
         ];
     }
